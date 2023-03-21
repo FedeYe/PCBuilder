@@ -1,5 +1,5 @@
-#ifndef ITEM_ABSTRACT_ITEM_H
-#define ITEM_ABSTRACT_ITEM_H
+#ifndef COMPONENT_ABSTRACT_COMPONENT_H
+#define COMPONENT_ABSTRACT_COMPONENT_H
 
 #include <string>
 
@@ -30,7 +30,7 @@ class AbstractComponent {
         unsigned int getIdentifier() const;
         const std::string& getName() const;
         AbstractComponent& setName(const std::string name);
-        const double getPrice() const;
+        double getPrice() const;
         AbstractComponent& setPrice(const double price);
         const std::string& getBrand() const;
         AbstractComponent& setBrand(const std::string brand);
