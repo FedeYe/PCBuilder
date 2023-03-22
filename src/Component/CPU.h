@@ -12,8 +12,8 @@ namespace Component
         std::string chipset;
         unsigned int numCores;
         unsigned int threads;
-        unsigned double coreclock;
-        unsigned double boostclock;
+        double coreclock;
+        double boostclock;
         unsigned int cache;
 
     public:
@@ -26,8 +26,8 @@ namespace Component
             const std::string chipset,
             const unsigned int numCores,
             const unsigned int threads,
-            const unsigned double coreclock,
-            const unsigned double boostclock,
+            const double coreclock,
+            const double boostclock,
             const unsigned int cache);
 
         const std::string &getChipset() const;
@@ -39,11 +39,11 @@ namespace Component
         unsigned int getThreads() const;
         CPU &setThreads(const unsigned int threads);
 
-        unsigned double getCoreclock() const;
-        CPU &setCoreclock(const unsigned double coreclock);
+        double getCoreclock() const;
+        CPU &setCoreclock(const double coreclock);
 
-        unsigned double getBoostclock() const;
-        CPU &setBoostclock(const unsigned double boostclock);
+        double getBoostclock() const;
+        CPU &setBoostclock(const double boostclock);
 
         unsigned int getCache() const;
         CPU &setCache(const unsigned int cache);
