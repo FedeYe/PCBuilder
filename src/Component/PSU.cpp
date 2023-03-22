@@ -38,6 +38,11 @@ namespace Component {
         return *this;
     }
 
-
+    void PSU::accept(IConstVisitor& visitor) const {
+        visitor.visit(*this);
+    }
+    void PSU::accept(IVisitor& visitor) {
+        visitor.visit(*this);
+    }
 
 }

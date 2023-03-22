@@ -56,4 +56,10 @@ namespace Component {
         return *this;
     }   
 
+    void MotherBoard::accept(IConstVisitor& visitor) const {
+        visitor.visit(*this);
+    }
+    void MotherBoard::accept(IVisitor& visitor) {
+        visitor.visit(*this);
+    }
 }

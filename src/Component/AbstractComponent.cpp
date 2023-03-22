@@ -25,7 +25,7 @@ AbstractComponent& AbstractComponent::setName(const std::string name) {
     return *this;
 }
 
-const double AbstractComponent::getPrice() const {
+double AbstractComponent::getPrice() const {
     return price;
 }
 

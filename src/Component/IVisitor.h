@@ -12,7 +12,7 @@ class RAM;
 class IVisitor {
   public:
     virtual ~IVisitor() {};
-    virtual void visit(Motherboard& mother_board) = 0;
+    virtual void visit(MotherBoard& mother_board) = 0;
     virtual void visit(CPU& cpu) = 0;
     virtual void visit(GPU& gpu) = 0;
     virtual void visit(PSU& psu) = 0;

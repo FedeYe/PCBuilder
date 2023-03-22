@@ -47,6 +47,12 @@ namespace Component{
         return *this;
     }
 
+    void RAM::accept(IConstVisitor& visitor) const {
+        visitor.visit(*this);
+    }
+    void RAM::accept(IVisitor& visitor) {
+        visitor.visit(*this);
+    }
 
 
 }

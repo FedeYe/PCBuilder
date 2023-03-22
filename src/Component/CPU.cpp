@@ -82,4 +82,10 @@ namespace Component
         return *this;
     }
 
+    void CPU::accept(IConstVisitor& visitor) const {
+        visitor.visit(*this);
+    }
+    void CPU::accept(IVisitor& visitor) {
+        visitor.visit(*this);
+    }
 }

@@ -55,4 +55,11 @@ namespace Component
         this->availability = availability;
         return *this;
     }
+
+    void GPU::accept(IConstVisitor& visitor) const {
+        visitor.visit(*this);
+    }
+    void GPU::accept(IVisitor& visitor) {
+        visitor.visit(*this);
+    }
 }
