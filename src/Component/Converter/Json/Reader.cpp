@@ -79,8 +79,8 @@ namespace Component
                     object.value("socket").toString().toStdString(),
                     object.value("chipset").toString().toStdString(),
                     object.value("generation").toString().toStdString(),
-                    object.value("NumRAM").toInt(),
-                    object.value("NumSSD").toInt());
+                    object.value("numRAM").toInt(),
+                    object.value("numSSD").toInt());
             }
 
             AbstractComponent *Reader::readCPU(const QJsonObject &object) const;
