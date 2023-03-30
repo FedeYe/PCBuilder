@@ -78,10 +78,10 @@ namespace Json {
         ram_object.insert("price", QJsonValue::fromVariant(ram.getPrice()));
         ram_object.insert("brand", QJsonValue::fromVariant(ram.getBrand().c_str()));
         ram_object.insert("imagePath", QJsonValue::fromVariant(ram.getImagePath().c_str()));
-        psu_object.insert("capacity", QJsonValue::fromVariant(ram.getCapacity()));
-        psu_object.insert("stockSpeed", QJsonValue::fromVariant(ram.getStockSpeed()));
-        psu_object.insert("maxSpeed", QJsonValue::fromVariant(ram.getMaxSpeed()));
-        psu_object.insert("generation", QJsonValue::fromVariant(ram.getGeneration().c_str()));
+        ram_object.insert("capacity", QJsonValue::fromVariant(ram.getCapacity()));
+        ram_object.insert("stockSpeed", QJsonValue::fromVariant(ram.getStockSpeed()));
+        ram_object.insert("maxSpeed", QJsonValue::fromVariant(ram.getMaxSpeed()));
+        ram_object.insert("generation", QJsonValue::fromVariant(ram.getGeneration().c_str()));
         object = ram_object;
     }
 
