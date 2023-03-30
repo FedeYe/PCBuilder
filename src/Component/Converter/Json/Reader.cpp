@@ -8,6 +8,7 @@
 #include "../../GPU.h"
 #include "../../PSU.h"
 #include "../../RAM.h"
+#include "Service/Logger/Singleton.h"
 
 namespace Component
 {
