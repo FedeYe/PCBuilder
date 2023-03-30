@@ -16,7 +16,7 @@ namespace Json {
         public:
             Json(IReader& _reader);
             const IReader& getReader() const;
-            QJsonObject fromObject(const AbstractComponent component) const;
+            QJsonObject fromObject(const AbstractComponent& component) const;
             AbstractComponent* toObject(const QJsonObject& json) const;
     };
 }

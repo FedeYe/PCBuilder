@@ -5,7 +5,7 @@
 #include "../Converter/Json/Reader.h"
 #include "../Converter/Json/Json.h"
 
-namespace Item {
+namespace Component {
 namespace Repository {
 
     JsonRepository::JsonRepository(DataMapper::JsonFile data_mapper) 
@@ -16,7 +16,7 @@ namespace Repository {
             cit != items.end();
             cit++
         ) {
-            repository[(*cit)->getIdentifier()] = *it;
+            repository[(*cit)->getIdentifier()] = *cit;
         }
     }
 
@@ -30,7 +30,7 @@ namespace Repository {
         }
     }
 
-    static JsonRepository JsonRepository::fromPath(const std::string path) {
+    JsonRepository JsonRepository::fromPath(const std::string path) {
         Converter::Json::Reader reader;
         Converter::Json::Json converter(reader);
         DataMapper::JsonFile data_mapper(path, converter);
@@ -56,7 +56,7 @@ namespace Repository {
     }
 
     JsonRepository& JsonRepository::create(AbstractComponent* component) {
-        repository[item->getIdentifier()] = component
+        repository[component->getIdentifier()] = component;
         return *this;
     }
 
@@ -69,7 +69,7 @@ namespace Repository {
     }
 
     JsonRepository& JsonRepository::update(AbstractComponent* component) {
-        return create(item);
+        return create(component);
     }
 
     JsonRepository& JsonRepository::remove(const unsigned int identifier) {

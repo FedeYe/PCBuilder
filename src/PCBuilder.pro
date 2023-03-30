@@ -1,8 +1,4 @@
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-CONFIG += c++17
+QT += core widgets
 CONFIG += debug
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -18,7 +14,7 @@ SOURCES += \
     \
     Component/Repository/JsonRepository.cpp\
     \
-    Component/AbsstractComponent.cpp\
+    Component/AbstractComponent.cpp\
     Component/MotherBoard.cpp\
     Component/CPU.cpp\
     Component/GPU.cpp\
@@ -46,7 +42,7 @@ HEADERS += \
     Component/Repository/IRepository.h\
     Component/Repository/JsonRepository.h\
     \
-    Component/AbsstractComponent.h\
+    Component/AbstractComponent.h\
     Component/MotherBoard.h\
     Component/CPU.h\
     Component/GPU.h\

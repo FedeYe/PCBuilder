@@ -1,21 +1,36 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef VIEW_MAIN_WINDOW_H
+#define VIEW_MAIN_WINDOW_H
 
 #include <QMainWindow>
+#include <QStackedWidget>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+#include "../Component/Repository/JsonRepository.h"
+#include "../Engine/IEngine.h"
+#include "../Engine/Query.h"
+//#include "ResultWidget.h"
+//#include "ShoppingCart.h"
+//#include "ComponentRender/Full.h"
 
-class MainWindow : public QMainWindow
-{
-    Q_OBJECT
+namespace View { 
 
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    class MainWindow : public QMainWindow
+    {
+        Q_OBJECT
+        private:
+            bool has_unsaved_changes;
+            QAction* create_item;
+            QToolBar* toolbar;
+            Engine::IEngine& ricerca;
+            Component::Repository::JsonRepository* repo;
+            //ResultWidget*  
+            //
+            //
+            //
+        public:
+            MainWindow(QWidget *parent = nullptr);
+            ~MainWindow();
 
-private:
-    Ui::MainWindow *ui;
-};
+        
+    };
+}
 #endif // MAINWINDOW_H

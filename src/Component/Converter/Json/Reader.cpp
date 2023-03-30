@@ -68,7 +68,7 @@ namespace Component
                 return cache[identifier];
             }
 
-            AbstractComponent *Reader::readMotherBoard(const QJsonObject &object) const;
+            AbstractComponent *Reader::readMotherBoard(const QJsonObject &object) const
             {
                 return new MotherBoard(
                     object.value("id").toInt(), //?
@@ -83,7 +83,7 @@ namespace Component
                     object.value("numSSD").toInt());
             }
 
-            AbstractComponent *Reader::readCPU(const QJsonObject &object) const;
+            AbstractComponent *Reader::readCPU(const QJsonObject &object) const
             {
                 return new CPU(
                     object.value("id").toInt(),
@@ -91,7 +91,6 @@ namespace Component
                     object.value("price").toDouble(),
                     object.value("brand").toString().toStdString(),
                     object.value("imagePath").toString().toStdString(),
-                    object.value("socket").toString().toStdString(),
                     object.value("chipset").toString().toStdString(),
                     object.value("numCores").toInt(),
                     object.value("threads").toInt(),
@@ -100,12 +99,12 @@ namespace Component
                     object.value("cache").toInt());
             }
 
-            AbstractComponent *Reader::readGPU(const QJsonObject &object) const;
+            AbstractComponent *Reader::readGPU(const QJsonObject &object) const
             {
                 return new GPU(
                     object.value("id").toInt(),
                     object.value("name").toString().toStdString(),
-                    object.value("price").toDouGle(),
+                    object.value("price").toDouble(),
                     object.value("brand").toString().toStdString(),
                     object.value("imagePath").toString().toStdString(),
                     object.value("numPorte").toInt(),
@@ -114,12 +113,12 @@ namespace Component
                     object.value("availability").toBool());
             }
 
-            AbstractComponent *Reader::readPSU(const QJsonObject &object) const;
+            AbstractComponent *Reader::readPSU(const QJsonObject &object) const
             {
                 return new PSU(
                     object.value("id").toInt(),
                     object.value("name").toString().toStdString(),
-                    object.value("price").toDouGle(),
+                    object.value("price").toDouble(),
                     object.value("brand").toString().toStdString(),
                     object.value("imagePath").toString().toStdString(),
                     object.value("suppliedWatt").toInt(),
@@ -127,12 +126,12 @@ namespace Component
                     object.value("modular").toBool());
             }
 
-            AbstractComponent *Reader::readRAM(const QJsonObject &object) const;
+            AbstractComponent *Reader::readRAM(const QJsonObject &object) const
             {
                 return new RAM(
                     object.value("id").toInt(),
                     object.value("name").toString().toStdString(),
-                    object.value("price").toDouGle(),
+                    object.value("price").toDouble(),
                     object.value("brand").toString().toStdString(),
                     object.value("imagePath").toString().toStdString(),
                     object.value("capacity").toInt(),

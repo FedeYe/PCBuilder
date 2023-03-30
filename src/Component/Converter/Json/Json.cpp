@@ -7,13 +7,13 @@ namespace Json {
 
     Json::Json(IReader& _reader) : reader(_reader) {}
 
-    const Json::IReader& getReader() const {
+    const IReader& Json::getReader() const {
         return reader;
     }
 
-    QJsonObject Json::fromObject(const AbstractComponent component) const {
+    QJsonObject Json::fromObject(const AbstractComponent& component) const {
         JsonVisitor json_visitor;
-        item.accept(json_visitor);
+        component.accept(json_visitor);
         return json_visitor.getObject();
     }
 
@@ -24,5 +24,3 @@ namespace Json {
 }
 }
 }
-
-#endif
