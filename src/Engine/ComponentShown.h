@@ -8,9 +8,13 @@ namespace Engine {
     class ComponentShown {
         private:
             const Component::AbstractComponent* component;
+            double price_shown;
         public:
             ComponentShown(const Component::AbstractComponent* comp);
             const Component::AbstractComponent* getComponent() const;
+            double getPriceShown() const;
+            bool operator<(const ComponentShown& component_shown) const;
+            bool operator>(const ComponentShown& component_shown) const;
     };
 }
 #endif

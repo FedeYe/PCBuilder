@@ -18,25 +18,12 @@ namespace Engine{
         return *this;
     }
 
-
-
-    bool ResultSet::functionPriceA(ComponentShown i, ComponentShown j) const {
-       return (i.getComponent()->getPrice() < j.getComponent()->getPrice()); }
-    bool ResultSet::functionPriceD(ComponentShown i, ComponentShown j) const {
-        return (i.getComponent()->getPrice() > j.getComponent()->getPrice()); }
-    bool ResultSet::functionBrand(ComponentShown i, ComponentShown j) const {
-        return (i.getComponent()->getBrand() < j.getComponent()->getBrand()); }
-
     ResultSet& ResultSet::priceASort() {
-        std::sort(shownItems.begin(), shownItems.end(), &ResultSet::functionPriceA);
+        std::sort(shownItems.begin(), shownItems.end());
         return *this;
     }
     ResultSet& ResultSet::priceDSort() {
-        std::sort(shownItems.begin(), shownItems.end(), &ResultSet::functionPriceD);
-        return *this;
-    }
-    ResultSet& ResultSet::brandSort() {
-        std::sort(shownItems.begin(), shownItems.end(), &ResultSet::functionBrand);
+        std::sort(shownItems.begin(), shownItems.end(), std::greater<ComponentShown>());
         return *this;
     }
     

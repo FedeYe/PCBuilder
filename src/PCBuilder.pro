@@ -1,4 +1,5 @@
-QT += core widgets
+QT += core
+QT += widgets
 CONFIG += debug
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -26,6 +27,9 @@ SOURCES += \
     Engine/Memory.cpp\
     Engine/Query.cpp\
     Engine/ResultSet.cpp\
+    \
+    Service/Logger/AbstractLogger.cpp\
+    Service/Logger/Singleton.cpp\
     \
     main.cpp \
     \
@@ -58,6 +62,10 @@ HEADERS += \
     Engine/Query.h\
     Engine/ResultSet.h\
     \
+    Service/Logger/Level.h\
+    Service/Logger/AbstractLogger.h\
+    Service/Logger/Singleton.h\
+    \
     Service/Container.h\
     \
     View/MainWindow.h
@@ -66,7 +74,4 @@ HEADERS += \
 FORMS += \
     View/mainwindow.ui
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+target = PCBuilder
