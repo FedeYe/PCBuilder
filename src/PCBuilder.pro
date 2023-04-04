@@ -1,5 +1,4 @@
-QT += core
-QT += widgets
+QT += core widgets
 CONFIG += debug
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -27,6 +26,7 @@ SOURCES += \
     Engine/Memory.cpp\
     Engine/Query.cpp\
     Engine/ResultSet.cpp\
+    Engine/ShoppingCart.cpp\
     \
     Service/Logger/AbstractLogger.cpp\
     Service/Logger/Singleton.cpp\
@@ -61,6 +61,7 @@ HEADERS += \
     Engine/Memory.h\
     Engine/Query.h\
     Engine/ResultSet.h\
+    Engine/ShoppingCart.h\
     \
     Service/Logger/Level.h\
     Service/Logger/AbstractLogger.h\
