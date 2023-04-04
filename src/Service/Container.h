@@ -120,7 +120,7 @@ namespace Service
             Node *n = head;
             while (n != nullptr)
             {
-                if (typeid(*(head->data)) == typeid(*newChoice))
+                if (typeid(*(head->getData())) == typeid(*newChoice))
                     return head->getData();
                 n = n->getNext();
             }
