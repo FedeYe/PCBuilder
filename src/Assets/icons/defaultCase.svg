@@ -1,0 +1,26 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" id="b">
+      <stop stop-color="#FFF" offset="0%"/>
+      <stop stop-color="#FFF" stop-opacity="0" offset="100%"/>
+    </radialGradient>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="99.5547421%" id="d">
+      <stop stop-color="#796299" offset="0%"/>
+      <stop stop-color="#8877A1" offset="100%"/>
+    </linearGradient>
+    <rect id="a" x="0" y="0" width="44" height="44" rx="1"/>
+    <path d="M3,2 L41,2 C41.5522847,2 42,2.44771525 42,3 L42,33 L42,33 L3,33 C2.44771525,33 2,32.5522847 2,32 L2,3 C2,2.44771525 2.44771525,2 3,2 Z" id="c"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(2.000000, 1.000000)">
+      <use fill="#CAC1D5" xlink:href="#a"/>
+      <use fill-opacity="0.6" fill="url(#b)" xlink:href="#a"/>
+    </g>
+    <path fill="#9883B4" opacity="0.971512278" d="M3 44L9 44 8 47 4 47zM35 44L41 44 40 47 36 47z" transform="translate(2.000000, 1.000000)"/>
+    <g transform="translate(2.000000, 1.000000)">
+      <use fill="#FFF" xlink:href="#c"/>
+      <use fill="url(#d)" xlink:href="#c"/>
+    </g>
+    <path fill="#FFF" opacity="0.300000012" d="M30 2H36V33H30z" transform="translate(2.000000, 1.000000)"/>
+  </g>
+</svg>
