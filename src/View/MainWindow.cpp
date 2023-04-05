@@ -12,30 +12,29 @@ namespace View
     {
         // Actions
         QAction *create = new QAction(
-            QIcon(QPixmap((":/assets/icons/....."))),
+            QIcon(QPixmap((":/Assets/icons/new.svg"))),
             "New");
         create->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_N));
         QAction *open = new QAction(
-            QIcon(QPixmap((":/assets/icons/......"))),
+            QIcon(QPixmap((":/Assets/icons/open.svg"))),
             "Open");
         open->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_O));
         QAction *save = new QAction(
-            QIcon(QPixmap((":/assets/icons/......"))),
+            QIcon(QPixmap((":/Assets/icons/save.svg"))),
             "Save");
         save->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_S));
         QAction *save_as = new QAction(
-            QIcon(QPixmap((":/assets/icons/....."))),
+            QIcon(QPixmap((":/Assets/icons/save_as.svg"))),
             "Save As");
         save_as->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_S));
         QAction *close = new QAction(
-            QIcon(QPixmap((":/assets/icons/close.svg"))),
+            QIcon(QPixmap((":/Assets/icons/close.svg"))),
             "Close");
         close->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q));
-        // QAction *togge_toolbar = new QAction(
-        //   "Toolbar");
+        QAction *togge_toolbar = new QAction("Toolbar");
         create_item = new QAction(
-            QIcon(QPixmap((":/assets/icons/.........."))),
-            "Add to catalog"); //???????????????????????
+            QIcon(QPixmap((":/assets/icons/new_product.svg"))),
+            "Add to catalog");
         create_item->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_N));
         create_item->setEnabled(false);
 
@@ -51,8 +50,8 @@ namespace View
         QMenu *item_menu = menuBar()->addMenu("&Item");
         item_menu->addAction(create_item);
 
-        // QMenu *view = menuBar()->addMenu("&View");
-        // view->addAction(togge_toolbar);   NON SO COSA FA toggebar
+        QMenu *view = menuBar()->addMenu("&View");
+        view->addAction(togge_toolbar);   // serve a rendere visibile/non visibile la toolbar
 
         // toolbar
         toolbar = addToolBar("File Toolbar");
@@ -84,21 +83,21 @@ namespace View
         connect(save, &QAction::triggered, this, &MainWindow::saveDataset);
         connect(save_as, &QAction::triggered, this, &MainWindow::saveAsDataset);
         connect(close, &QAction::triggered, this, &MainWindow::close);
-        //  connect(togge_toolbar, &QAction::triggered, this, &MainWindow::toggleToolbar);
-        connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchMotherBoard); // da noi uno per tasto di ricerca
-        connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchCPU);
-        connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchGPU);
-        connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchPSU);
-        connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchRAM);
+        connect(togge_toolbar, &QAction::triggered, this, &MainWindow::toggleToolbar);
+        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchMotherBoard); // da noi uno per tasto di ricerca
+        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchCPU);
+        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchGPU);
+        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchPSU);
+        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchRAM);
 
-        //  connect(result_widget, &ResultWidget::previousPage, search_widget, &SearchWidget::previousComponent);
-        //  connect(result_widget, &ResultWidget::nextPage, search_widget, &SearchWidget::nextComponent);
+        connect(result_widget, &ResultWidget::previousPage, search_widget, &SearchWidget::previousComponent);
+        connect(result_widget, &ResultWidget::nextPage, search_widget, &SearchWidget::nextComponent);
         connect(result_widget, &ResultWidget::showItem, this, &MainWindow::showComponent);
         connect(create_item, &QAction::triggered, this, &MainWindow::createComponent);
         connect(result_widget, &ResultWidget::editItem, this, &MainWindow::editComponent);
         connect(result_widget, &ResultWidget::deleteItem, this, &MainWindow::deleteComponent);
-        // forse qualcosa per bottone ordinamento?
-        // forse qualcosa per visualizzazione in tasti shopping cart
+        //  forse qualcosa per bottone ordinamento?
+        //  forse qualcosa per visualizzazione in tasti shopping cart
 
         //.....................TO BE CONTINUED
     }
@@ -127,7 +126,7 @@ namespace View
         return *this;
     }
 
-    SearchWidget *MainWindow::getShoppingCartWidget()
+    ShoppingCartWidget *MainWindow::getShoppingCartWidget()
     {
         return shopping_cart_widget;
     }
@@ -218,10 +217,10 @@ namespace View
         showStatus("Dataset saved as \"" + path + "\".");
     }
 
-    /*void MainWindow::toggleToolbar() {
+    void MainWindow::toggleToolbar() {
     toolbar->setVisible(!toolbar->isVisible());
     showStatus("Toolbar toggled.");
-    }*/
+    }
 
     void MainWindow::showStatus(QString message)
     {

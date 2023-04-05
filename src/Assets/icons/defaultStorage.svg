@@ -1,0 +1,19 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <rect id="a" x="0" y="0" width="42" height="30" rx="1.74545455"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(3.000000, 9.000000)">
+      <mask id="b" fill="#fff">
+        <use xlink:href="#a"/>
+      </mask>
+      <use fill="#CAC1D5" xlink:href="#a"/>
+      <rect fill="#9883B4" opacity="0.971512278" mask="url(#b)" x="41" y="17" width="4" height="9" rx="1"/>
+      <rect fill="#9883B4" opacity="0.971512278" mask="url(#b)" x="41" y="9" width="4" height="6" rx="1"/>
+    </g>
+    <text font-family="Gotham-Medium, Gotham" font-size="2" font-weight="400" fill="#9884B4">
+      <tspan x="15.122" y="29">SSD / M.2 / HDD</tspan>
+    </text>
+    <rect fill="#9883B4" opacity="0.971512278" x="11" y="21" width="24" height="4" rx="1"/>
+  </g>
+</svg>

@@ -44,7 +44,6 @@ namespace View
         void saveDataset();
         void saveAsDataset();
         void toggleToolbar();
-        void showStatus(Qstring message);
         void searchMotherBoard(Engine::Query query); // 1 per ogni bottone?
         void searchCPU(Engine::Query query);
         void searchGPU(Engine::Query query);

@@ -7,7 +7,7 @@
 int main(int argc, char *argv[]) {
 
     QApplication app(argc, argv);
-    //app.setWindowIcon(QIcon(":Assets/appIcon.extension"));        //da aggiustare in seguito
+    app.setWindowIcon(QIcon(":Assets/appIcon.jpeg"));        //da aggiustare in seguito
 
     //QFile stylesheet(":/Assets/stylesheet.qss");       //da aggiustare in seguito
     //styleshhet.open(QFile::ReadOnly);
