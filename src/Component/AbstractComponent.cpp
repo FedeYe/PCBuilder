@@ -30,7 +30,7 @@ double AbstractComponent::getPrice() const {
 }
 
 AbstractComponent& AbstractComponent::setPrice(const double price) {
-    this->price;
+    this->price = price;
     return *this;
 }
 

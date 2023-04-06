@@ -31,9 +31,9 @@ SOURCES += \
     Service/Logger/AbstractLogger.cpp\
     Service/Logger/Singleton.cpp\
     \
-    main.cpp \
+    View/MainWindow.cpp \
     \
-    View/MainWindow.cpp
+    main.cpp
 
 HEADERS += \
     Component/Converter/Json/IReader.h\
