@@ -77,4 +77,4 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-target = PCBuilder
+TARGET = PCBuilder
