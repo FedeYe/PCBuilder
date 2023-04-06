@@ -39,6 +39,7 @@ namespace View
         void clearStack(); // usato da show,edit,create  ---> per implementarlo serve stacked widget
 
     public slots:
+        void showStatus(QString message);
         void newDataset();
         void openDataset();
         void saveDataset();

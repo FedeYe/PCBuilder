@@ -15,6 +15,11 @@
 #include <QStackedWidget>
 #include <QScrollArea>
 
+//#include "EditWidget.h"
+#include "../Item/DataMapper/JsonFile.h"
+#include "../Item/Converter/Json/Reader.h"
+#include "../Item/Converter/Json/Json.h"
+
 namespace View
 {
 
@@ -120,7 +125,7 @@ namespace View
         //.....................TO BE CONTINUED
     }
 
-    Item::Repository::JsonRepository* MainWindow::getRepository()
+    Component::Repository::JsonRepository* MainWindow::getRepository()
     {
         return repo;
     }
@@ -159,6 +164,11 @@ namespace View
     //        widget = stacked_widget->widget(1);
     //   }
     //}
+
+    void MainWindow::showStatus(QString message)
+    {
+        statusBar()->showMessage(message);
+    }
 
     void MainWindow::newDataset()
     {
@@ -202,7 +212,7 @@ namespace View
         Component::Converter::Json::Reader reader;
         Component::Converter::Json::Json converter(reader);
         Component::DataMapper::JsonFile data_mapper(path.toStdString(), converter);
-        repo = new Item::Repository::JsonRepository(data_mapper);
+        repo = new Component::Repository::JsonRepository(data_mapper);
         reloadData();
         create_item->setEnabled(true);
         showStatus("Data successfully loaded from " + path + ".");
@@ -235,14 +245,10 @@ namespace View
         showStatus("Dataset saved as \"" + path + "\".");
     }
 
-    void MainWindow::toggleToolbar() {
-    toolbar->setVisible(!toolbar->isVisible());
-    showStatus("Toolbar toggled.");
-    }
-
-    void MainWindow::showStatus(QString message)
+    void MainWindow::toggleToolbar() 
     {
-        statusBar()->showMessage(message);
+        toolbar->setVisible(!toolbar->isVisible());
+        showStatus("Toolbar toggled.");
     }
 
     /*
