@@ -71,8 +71,10 @@ HEADERS += \
     \
     View/MainWindow.h
 
-
 FORMS += \
     View/mainwindow.ui
+
+RESOURCES += \
+    resources.qrc
 
 target = PCBuilder
