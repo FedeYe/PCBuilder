@@ -16,9 +16,9 @@
 #include <QScrollArea>
 
 //#include "EditWidget.h"
-#include "../Item/DataMapper/JsonFile.h"
-#include "../Item/Converter/Json/Reader.h"
-#include "../Item/Converter/Json/Json.h"
+#include "../Component/DataMapper/JsonFile.h"
+#include "../Component/Converter/Json/Reader.h"
+#include "../Component/Converter/Json/Json.h"
 
 namespace View
 {
