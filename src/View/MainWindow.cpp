@@ -52,7 +52,7 @@ namespace View
         close->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q));
         QAction* togge_toolbar = new QAction("Toolbar");
         create_item = new QAction(
-            QIcon(QPixmap((":/assets/icons/new_product.svg"))),
+            QIcon(QPixmap((":/Assets/icons/new_product.svg"))),
             "Add to catalog");
         create_item->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_N));
         create_item->setEnabled(false);
