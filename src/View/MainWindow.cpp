@@ -1,5 +1,19 @@
 #include "MainWindow.h"
 // #include "ui_mainwindow.h"
+#include <QApplication>
+#include <QPushButton>
+#include <QMessageBox>
+#include <QToolBar>
+#include <QIcon>
+#include <QAction>
+#include <QMenu>
+#include <QMenuBar>
+#include <QStatusBar>
+#include <QTextEdit>
+#include <QSplitter>
+#include <QFileDialog>
+#include <QStackedWidget>
+#include <QScrollArea>
 
 namespace View
 {
@@ -72,14 +86,14 @@ namespace View
         //result_widget = new ResultWidget();
         //stacked_widget->addWidget(result_widget);
 
-        splitter->addStretch();  //sostituisce ShoppingWidget per ora
-        splitter->addStretch();
+        //splitter->addStretch();  //sostituisce ShoppingWidget per ora
+        //splitter->addStretch();
         /*
         shopping_cart_widget = new ShoppingCartWidget();
         splitter->addWidget(shopping_cart_widget);
         */
 
-        splitter->setSizes(QList<int>() << 2000 << 2000);
+        //splitter->setSizes(QList<int>() << 2000 << 2000);
 
         // Connettere segnali
         connect(create, &QAction::triggered, this, &MainWindow::newDataset);
@@ -135,16 +149,16 @@ namespace View
     //    return shopping_cart_widget;
     //}
 
-    void MainWindow::clearStack()
-    {
-        QWidget* widget = stacked_widget->widget(1);
-        while (widget)
-        {
-            stacked_widget->removeWidget(widget);
-            delete widget;
-            widget = stacked_widget->widget(1);
-        }
-    }
+    //void MainWindow::clearStack()
+    //{
+    //    QWidget* widget = stacked_widget->widget(1);
+    //    while (widget)
+    //    {
+    //        stacked_widget->removeWidget(widget);
+    //        delete widget;
+    //        widget = stacked_widget->widget(1);
+    //   }
+    //}
 
     void MainWindow::newDataset()
     {
