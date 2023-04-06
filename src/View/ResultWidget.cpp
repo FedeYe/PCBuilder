@@ -1,4 +1,5 @@
-#include "ResultsWidget.h"
+/*
+#include "ResultWidget.h"
 
 #include <QVBoxLayout>
 #include <QScrollArea>
@@ -53,7 +54,7 @@ namespace View
         /* next_page = new QPushButton(QIcon(QPixmap(":/assets/icons/next.svg")), "");
         next_page->setEnabled(false);
         hbox2->addWidget(next_page); */
-
+        /*
         // Connects signals
         connect(order_ascendent, &QPushButton::clicked, this, &ResultsWidget::setOrderAsc); // SARA DEFAULT
         connect(order_descendent, &QPushButton::clicked, this, &ResultsWidget::setOrderDesc);
@@ -117,3 +118,4 @@ namespace View
         emit refreshResults();
     }
 }
+*/

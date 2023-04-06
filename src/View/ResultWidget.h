@@ -1,3 +1,5 @@
+/*
+
 #ifndef VIEW_RESULTS_WIDGET_H
 #define VIEW_RESULTS_WIDGET_H
 
@@ -43,3 +45,5 @@ namespace View
 }
 
 #endif
+
+*/
