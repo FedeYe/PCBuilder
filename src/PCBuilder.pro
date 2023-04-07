@@ -31,9 +31,13 @@ SOURCES += \
     Service/Logger/AbstractLogger.cpp\
     Service/Logger/Singleton.cpp\
     \
-    main.cpp \
+    View/MainWindow.cpp\
+    View/ResultWidget.cpp\
+    View/EditWidget.cpp\
+    View/TypeSelector.cpp\
+    View/WidgetLookup.cpp\
     \
-    View/MainWindow.cpp
+    main.cpp
 
 HEADERS += \
     Component/Converter/Json/IReader.h\
@@ -69,10 +73,16 @@ HEADERS += \
     \
     Service/Container.h\
     \
-    View/MainWindow.h
-
+    View/MainWindow.h\
+    View/ResultWidget.h\
+    View/EditWidget.h\
+    View/TypeSelector.h\
+    View/WidgetLookup.h
 
 FORMS += \
     View/mainwindow.ui
 
-target = PCBuilder
+RESOURCES += \
+    resources.qrc
+
+TARGET = PCBuilder

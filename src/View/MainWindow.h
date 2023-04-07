@@ -19,21 +19,21 @@ namespace View
         Q_OBJECT
     private:
         bool has_unsaved_changes;
-        QAction *create_item;
-        QToolBar *toolbar;
-        Engine::IEngine &ricerca;
-        Component::Repository::JsonRepository *repo;
-        ResultWidget *result_widget;
-        ShoppingCartWidget *shopping_cart_widget;
-        QStackedWidget *stacked_widget;
+        QAction* create_item;
+        QToolBar* toolbar;
+        Engine::IEngine& ricerca;
+        Component::Repository::JsonRepository* repo;
+        ResultWidget* result_widget;
+        ShoppingCartWidget* shopping_cart_widget;
+        QStackedWidget* stacked_widget;
         ComponentRenderer::Full full_renderer;
 
     public:
-        MainWindow(Engine::IEngine &ricerca, QWidget *parent = nullptr);
-        Component::Repository::JsonRepository *getRepository();
-        Engine::IEngine &getEngine();
-        MainWindow &reloadData();
-        ShoppingCartWidget *getShoppingCartWidget();
+        MainWindow(Engine::IEngine& ricerca, QWidget* parent = nullptr);
+        Component::Repository::JsonRepository* getRepository();
+        Engine::IEngine& getEngine();
+        MainWindow& reloadData();
+        ShoppingCartWidget* getShoppingCartWidget();
 
     private:
         void clearStack(); // usato da show,edit,create  ---> per implementarlo serve stacked widget
@@ -44,11 +44,8 @@ namespace View
         void saveDataset();
         void saveAsDataset();
         void toggleToolbar();
-        void searchMotherBoard(Engine::Query query); // 1 per ogni bottone?
-        void searchCPU(Engine::Query query);
-        void searchGPU(Engine::Query query);
-        void searchPSU(Engine::Query query);
-        void searchRAM(Engine::Query query);
+        void showStatus(QString message);
+        void search(Engine::Query query); 
         void createComponent();
         void showComponent(const Component::AbstractComponent *component);
         void editComponent(const Component::AbstractComponent *component);

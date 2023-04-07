@@ -18,7 +18,7 @@ namespace View
     {
         Q_OBJECT
     private:
-        QLabel *results_total;
+        QLabel* results_total;
         // QPushButton *previous_page;
         // QPushButton *next_page;
         QVector<WidgetLookup> lookup;
@@ -30,7 +30,7 @@ namespace View
     signals:
         void refreshResults();
         // void previousPage();
-        //  void nextPage();
+        // void nextPage();
         void showComponent(const Component::AbstractComponent *component);
         void editComponent(const Component::AbstractComponent *component);
         void deleteComponent(const Component::AbstractComponent *component);

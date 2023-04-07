@@ -1,4 +1,4 @@
-#include "ResultsWidget.h"
+#include "ResultWidget.h"
 
 #include <QVBoxLayout>
 #include <QScrollArea>
@@ -11,13 +11,13 @@
 
 namespace View
 {
-    ResultsWidget::ResultsWidget(QWidget *parent)
+    ResultsWidget::ResultsWidget(QWidget* parent)
         : QWidget(parent)
     {
-        QVBoxLayout *vbox = new QVBoxLayout(this);
+        QVBoxLayout* vbox = new QVBoxLayout(this);
         vbox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
 
-        QHBoxLayout *hbox = new QHBoxLayout();
+        QHBoxLayout* hbox = new QHBoxLayout();
         hbox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
         vbox->addLayout(hbox);
 
@@ -26,13 +26,13 @@ namespace View
 
         hbox->addStretch();
 
-        QPushButton *order_ascendent = new QPushButton(QIcon(QPixmap(":/assets/icons/priceasc.svg")), "");
+        QPushButton* order_ascendent = new QPushButton(QIcon(QPixmap(":/Assets/icons/priceasc.png")), "Prezzo crescente");
         hbox->addWidget(order_ascendent);
 
-        QPushButton *order_descendend = new QPushButton(QIcon(QPixmap(":/assets/icons/pricedesc.svg")), "");
+        QPushButton* order_descendend = new QPushButton(QIcon(QPixmap(":/Assets/icons/pricedesc.png")), "Prezzo decrescente");
         hbox->addWidget(order_descendend);
 
-        QScrollArea *scroll_area = new QScrollArea();
+        QScrollArea* scroll_area = new QScrollArea();
         scroll_area->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setWidgetResizable(true);
@@ -42,7 +42,7 @@ namespace View
         renderer = new ResultRenderer::List();
 
         /*parte sotto con precedente e next
-        QHBoxLayout *hbox2 = new QHBoxLayout();
+        QHBoxLayout* hbox2 = new QHBoxLayout();
         hbox2->setAlignment(Qt::AlignCenter | Qt::AlignBottom);
         vbox->addLayout(hbox2); */
 
@@ -55,7 +55,7 @@ namespace View
         hbox2->addWidget(next_page); */
 
         // Connects signals
-        connect(order_ascendent, &QPushButton::clicked, this, &ResultsWidget::setOrderAsc); // SARA DEFAULT
+        connect(order_ascendent, &QPushButton::clicked, this, &ResultsWidget::setOrderAsc); // DEFAULT MODE
         connect(order_descendent, &QPushButton::clicked, this, &ResultsWidget::setOrderDesc);
         // connect(previous_page, &QPushButton::clicked, this, &ResultsWidget::previousPage);
         // connect(next_page, &QPushButton::clicked, this, &ResultsWidget::nextPage);
@@ -81,7 +81,7 @@ namespace View
         }
         // previous_page->setEnabled(query.getOffset() > 0);
         // next_page->setEnabled(results.getItems().size() == query.getSize());
-        //  renderer->render(grid, results, &lookup);    DA NOI NO?
+        // renderer->render(grid, results, &lookup);    DA NOI NO?
         // Connect signals
         for (
             QVector<WidgetLookup>::const_iterator it = lookup.begin();

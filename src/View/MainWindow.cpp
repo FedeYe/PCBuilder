@@ -1,45 +1,63 @@
 #include "MainWindow.h"
 // #include "ui_mainwindow.h"
+#include <QApplication>
+#include <QPushButton>
+#include <QMessageBox>
+#include <QToolBar>
+#include <QIcon>
+#include <QAction>
+#include <QMenu>
+#include <QMenuBar>
+#include <QStatusBar>
+#include <QTextEdit>
+#include <QSplitter>
+#include <QFileDialog>
+#include <QStackedWidget>
+#include <QScrollArea>
+
+#include "../Component/DataMapper/JsonFile.h"
+#include "../Component/Converter/Json/Reader.h"
+#include "../Component/Converter/Json/Json.h"
 
 namespace View
 {
 
-    MainWindow::MainWindow(/*Engine::IEngine& engine,*/ QWidget *parent)
+    MainWindow::MainWindow(Engine::IEngine& engine, QWidget *parent)
         : QMainWindow(parent),
           has_unsaved_changes(false),
-          engine(ricerca),
-          repository(nullptr)
+          ricerca(ricerca),
+          repo(nullptr)
     {
         // Actions
-        QAction *create = new QAction(
+        QAction* create = new QAction(
             QIcon(QPixmap((":/Assets/icons/new.svg"))),
             "New");
         create->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_N));
-        QAction *open = new QAction(
+        QAction* open = new QAction(
             QIcon(QPixmap((":/Assets/icons/open.svg"))),
             "Open");
         open->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_O));
-        QAction *save = new QAction(
+        QAction* save = new QAction(
             QIcon(QPixmap((":/Assets/icons/save.svg"))),
             "Save");
         save->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_S));
-        QAction *save_as = new QAction(
+        QAction* save_as = new QAction(
             QIcon(QPixmap((":/Assets/icons/save_as.svg"))),
             "Save As");
         save_as->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_S));
-        QAction *close = new QAction(
+        QAction* close = new QAction(
             QIcon(QPixmap((":/Assets/icons/close.svg"))),
             "Close");
         close->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q));
-        QAction *togge_toolbar = new QAction("Toolbar");
+        QAction* togge_toolbar = new QAction("Toolbar");
         create_item = new QAction(
-            QIcon(QPixmap((":/assets/icons/new_product.svg"))),
+            QIcon(QPixmap((":/Assets/icons/new_product.svg"))),
             "Add to catalog");
         create_item->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_N));
         create_item->setEnabled(false);
 
         // barra menù  (Sono le tre cose in alto a sx da prof )
-        QMenu *file = menuBar()->addMenu("&File");
+        QMenu* file = menuBar()->addMenu("&File");
         file->addAction(create);
         file->addAction(open);
         file->addAction(save);
@@ -47,10 +65,10 @@ namespace View
         file->addSeparator();
         file->addAction(close);
 
-        QMenu *item_menu = menuBar()->addMenu("&Item");
+        QMenu* item_menu = menuBar()->addMenu("&Item");
         item_menu->addAction(create_item);
 
-        QMenu *view = menuBar()->addMenu("&View");
+        QMenu* view = menuBar()->addMenu("&View");
         view->addAction(togge_toolbar);   // serve a rendere visibile/non visibile la toolbar
 
         // toolbar
@@ -63,7 +81,7 @@ namespace View
         toolbar->addAction(create_item);
 
         // Main Panel
-        QSplitter *splitter = new QSplitter(this);
+        QSplitter* splitter = new QSplitter(this);
         setCentralWidget(splitter);
 
         shopping_cart_widget = new ShoppingCartWidget();
@@ -102,17 +120,17 @@ namespace View
         //.....................TO BE CONTINUED
     }
 
-    Item::Repository::JsonRepository *MainWindow::getRepository()
+    Component::Repository::JsonRepository* MainWindow::getRepository()
     {
         return repo;
     }
 
-    Engine::IEngine &MainWindow::getEngine()
+    Engine::IEngine& MainWindow::getEngine()
     {
         return ricerca;
     }
 
-    MainWindow &MainWindow::reloadData()
+    MainWindow& MainWindow::reloadData()
     {
         ricerca.clear();
         std::vector<Component::AbstractComponent *> catalog(repo->readAll());
@@ -126,14 +144,14 @@ namespace View
         return *this;
     }
 
-    ShoppingCartWidget *MainWindow::getShoppingCartWidget()
+    ShoppingCartWidget* MainWindow::getShoppingCartWidget()
     {
         return shopping_cart_widget;
     }
 
     void MainWindow::clearStack()
     {
-        QWidget *widget = stacked_widget->widget(1);
+        QWidget* widget = stacked_widget->widget(1);
         while (widget)
         {
             stacked_widget->removeWidget(widget);
@@ -184,7 +202,7 @@ namespace View
         Component::Converter::Json::Reader reader;
         Component::Converter::Json::Json converter(reader);
         Component::DataMapper::JsonFile data_mapper(path.toStdString(), converter);
-        repo = new Item::Repository::JsonRepository(data_mapper);
+        repo = new Component::Repository::JsonRepository(data_mapper);
         reloadData();
         create_item->setEnabled(true);
         showStatus("Data successfully loaded from " + path + ".");
@@ -217,9 +235,10 @@ namespace View
         showStatus("Dataset saved as \"" + path + "\".");
     }
 
-    void MainWindow::toggleToolbar() {
-    toolbar->setVisible(!toolbar->isVisible());
-    showStatus("Toolbar toggled.");
+    void MainWindow::toggleToolbar() 
+    {
+        toolbar->setVisible(!toolbar->isVisible());
+        showStatus("Toolbar toggled.");
     }
 
     void MainWindow::showStatus(QString message)
@@ -227,42 +246,10 @@ namespace View
         statusBar()->showMessage(message);
     }
 
-    void MainWindow::searchMotherBoard(Engine::Query query)
+    void MainWindow::search(Engine::Query query)
     {
-        showStatus("Running query for \"" + QString::fromStdString(query.getText()) + "\".");
-        results_widget->showResults(query, ricerca.search(query)); //..............
-        stacked_widget->setCurrentIndex(0);
-        clearStack();
-    }
-
-    void MainWindow::searchCPU(Engine::Query query)
-    {
-        showStatus("Running query for \"" + QString::fromStdString(query.getText()) + "\".");
-        results_widget->showResults(query, ricerca.search(query));
-        stacked_widget->setCurrentIndex(0);
-        clearStack();
-    }
-
-    *void MainWindow::searchGPU(Engine::Query query)
-    {
-        showStatus("Running query for \"" + QString::fromStdString(query.getText()) + "\".");
-        results_widget->showResults(query, ricerca.search(query));
-        stacked_widget->setCurrentIndex(0);
-        clearStack();
-    }
-
-    *void MainWindow::searchPSU(Engine::Query query)
-    {
-        showStatus("Running query for \"" + QString::fromStdString(query.getText()) + "\".");
-        results_widget->showResults(query, ricerca.search(query));
-        stacked_widget->setCurrentIndex(0);
-        clearStack();
-    }
-
-    *void MainWindow::searchRAM(Engine::Query query)
-    {
-        showStatus("Running query for \"" + QString::fromStdString(query.getText()) + "\".");
-        results_widget->showResults(query, ricerca.search(query));
+        showStatus("Running query for component \"" + QVariant(query.getType()).toString() + "\".");
+        results_widget->showResults(query, ricerca.search(query)); 
         stacked_widget->setCurrentIndex(0);
         clearStack();
     }
@@ -270,11 +257,11 @@ namespace View
     void MainWindow::createComponent()
     {
         clearStack();
-        QScrollArea *scroll_area = new QScrollArea();
+        QScrollArea* scroll_area = new QScrollArea();
         scroll_area->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setWidgetResizable(true);
-        EditWidget *edit_widget = new EditWidget(this, repo, nullptr);
+        EditWidget* edit_widget = new EditWidget(this, repo, nullptr);
         scroll_area->setWidget(edit_widget);
         stacked_widget->addWidget(scroll_area);
         stacked_widget->setCurrentIndex(1);
@@ -282,28 +269,28 @@ namespace View
         showStatus("Creating a new component.");
     }
 
-    void MainWindow::showComponent(const Component::AbstractComponent *component) // è component?
+    void MainWindow::showComponent(const Component::AbstractComponent *component) 
     {
         clearStack();
-        component->accept(full_renderer); // è component?
-        QScrollArea *scroll_area = new QScrollArea();
+        component->accept(full_renderer); 
+        QScrollArea* scroll_area = new QScrollArea();
         scroll_area->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setWidgetResizable(true);
         scroll_area->setWidget(full_renderer.getWidget());
         stacked_widget->addWidget(scroll_area);
         stacked_widget->setCurrentIndex(1);
-        showStatus("Showing component " + QString::fromStdString(component->getName()) + "."); // è component?
+        showStatus("Showing component " + QString::fromStdString(component->getName()) + "."); 
     }
 
     void MainWindow::editComponent(const Component::AbstractComponent *component)
     {
         clearStack();
-        QScrollArea *scroll_area = new QScrollArea();
+        QScrollArea* scroll_area = new QScrollArea();
         scroll_area->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setWidgetResizable(true);
-        EditWidget *edit_widget = new EditWidget(this, repo, component);
+        EditWidget* edit_widget = new EditWidget(this, repo, component);
         scroll_area->setWidget(edit_widget);
         stacked_widget->addWidget(scroll_area);
         stacked_widget->setCurrentIndex(1);
@@ -316,7 +303,7 @@ namespace View
         showStatus("Component " + QString::fromStdString(component->getName()) + " removed.");
         repo->remove(component->getIdentifier());
         ricerca.remove(component);
-        search_widget->search();
+        shopping_cart_widget->search();
         has_unsaved_changes = true;
     }
 

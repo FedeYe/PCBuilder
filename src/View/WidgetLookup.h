@@ -13,23 +13,23 @@ namespace View
     {
     private:
         const Component::AbstractComponent *component;
-        QWidget *widget;
-        QPushButton *info_button;
-        QPushButton *edit_button;
-        QPushButton *delete_button;
+        QWidget* widget;
+        QPushButton* info_button;
+        QPushButton* edit_button;
+        QPushButton* delete_button;
 
     public:
         WidgetLookup(
             const Component::AbstractComponent *component,
-            QWidget *widget,
-            QPushButton *info_button,
-            QPushButton *edit_button,
-            QPushButton *delete_button);
+            QWidget* widget,
+            QPushButton* info_button,
+            QPushButton* edit_button,
+            QPushButton* delete_button);
         const Component::AbstractComponent *getComponent() const;
-        QWidget *getWidget() const;
-        QPushButton *getInfoButton() const;
-        QPushButton *getEditButton() const;
-        QPushButton *getDeleteButton() const;
+        QWidget* getWidget() const;
+        QPushButton* getInfoButton() const;
+        QPushButton* getEditButton() const;
+        QPushButton* getDeleteButton() const;
     };
 
 }
