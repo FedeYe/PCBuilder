@@ -19,8 +19,10 @@ namespace View
         Q_OBJECT
     private:
         QLabel* results_total;
-        // QPushButton *previous_page;
-        // QPushButton *next_page;
+        QPushButton* order_ascendent;
+        QPushButton* order_descendent;
+        QPushButton* prev_component;
+        QPushButton* next_component;
         QVector<WidgetLookup> lookup;
         ResultRenderer::IResultRendererStrategy *renderer;
 
@@ -29,15 +31,17 @@ namespace View
 
     signals:
         void refreshResults();
-        // void previousPage();
-        // void nextPage();
+        void prevComponentType();
+        void nextComponentType();
         void showComponent(const Component::AbstractComponent *component);
         void editComponent(const Component::AbstractComponent *component);
         void deleteComponent(const Component::AbstractComponent *component);
+        void addComponentToCart(const Component::AbstractComponent *component);
 
     public slots:
         void showResults(Engine::Query query, Engine::ResultSet results);
-        void setListRenderer();
+        void setOrderAsc();
+        void setOrderDesc();
     };
 
 }

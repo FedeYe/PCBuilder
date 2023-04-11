@@ -3,17 +3,17 @@
 
 namespace Engine
 {
-
-    class Query
-    {
+    class Query {
     private:
-        const unsigned int type;
-
+        unsigned int type;
+        //valore di type identifica la componente che vogliamo ricercare 
+        //valori speciali sono -1: valore di default
+        //                      0: set type to max( qui max = 5)
+        //                      6(max+1): set type to 1
     public:
-        Query(
-            const unsigned int type);
-
+        Query(unsigned int type = -1);
         unsigned int getType() const;
+        void setType(unsigned int newValue);
     };
 }
 

@@ -8,8 +8,9 @@ namespace View
         QWidget* widget,
         QPushButton* info_button,
         QPushButton* edit_button,
-        QPushButton* delete_button)
-        : component(component), widget(widget), info_button(info_button), edit_button(edit_button), delete_button(delete_button)
+        QPushButton* delete_button,
+        QPushButton *add_button)
+        : component(component), widget(widget), info_button(info_button), edit_button(edit_button), delete_button(delete_button), add_button(add_button)
     {
     }
 
@@ -36,6 +37,11 @@ namespace View
     QPushButton* WidgetLookup::getDeleteButton() const
     {
         return delete_button;
+    }
+
+    QPushButton *WidgetLookup::getAddButton() const
+    {
+        return add_button;
     }
 
 }

@@ -2,14 +2,14 @@
 
 namespace Engine
 {
-    Query::Query(
-        const unsigned int type)
-        : type(type)
-    {
+    Query::Query(unsigned int type): type(type) {
     }
 
-    unsigned int Query::getType() const
-    {
+    unsigned int Query::getType() const {
         return type;
+    }
+
+    void Query::setType(unsigned int newValue) {
+        type = newValue;
     }
 }
