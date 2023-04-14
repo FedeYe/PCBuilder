@@ -31,8 +31,12 @@ SOURCES += \
     Service/Logger/AbstractLogger.cpp\
     Service/Logger/Singleton.cpp\
     \
+    View/ResultRenderer/ListAsc.cpp\
+    View/ResultRenderer/ListDesc.cpp\
+    \
     View/MainWindow.cpp\
     View/ResultWidget.cpp\
+    View/ShoppingCartWidget.cpp\
     View/EditWidget.cpp\
     View/TypeSelector.cpp\
     View/WidgetLookup.cpp\
@@ -73,8 +77,13 @@ HEADERS += \
     \
     Service/Container.h\
     \
+    View/ResultRenderer/IResultRenderer.h\
+    View/ResultRenderer/ListAsc.h\
+    View/ResultRenderer/ListDesc.h\
+    \
     View/MainWindow.h\
     View/ResultWidget.h\
+    View/ShoppingCartWidget.h\
     View/EditWidget.h\
     View/TypeSelector.h\
     View/WidgetLookup.h

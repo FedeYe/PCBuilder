@@ -84,7 +84,8 @@ namespace View
         QSplitter* splitter = new QSplitter(this);
         setCentralWidget(splitter);
 
-        shopping_cart_widget = new ShoppingCartWidget();
+        Engine::Query& defaultQuery = new Engine::Query();
+        shopping_cart_widget = new ShoppingCartWidget(defaultQuery);
         splitter->addWidget(shopping_cart_widget);
 
         stacked_widget = new QStackedWidget(this);
@@ -102,18 +103,15 @@ namespace View
         connect(save_as, &QAction::triggered, this, &MainWindow::saveAsDataset);
         connect(close, &QAction::triggered, this, &MainWindow::close);
         connect(togge_toolbar, &QAction::triggered, this, &MainWindow::toggleToolbar);
-        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchMotherBoard); // da noi uno per tasto di ricerca
-        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchCPU);
-        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchGPU);
-        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchPSU);
-        //  connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::searchRAM);
 
-        connect(result_widget, &ResultWidget::previousPage, search_widget, &SearchWidget::previousComponent);
-        connect(result_widget, &ResultWidget::nextPage, search_widget, &SearchWidget::nextComponent);
-        connect(result_widget, &ResultWidget::showItem, this, &MainWindow::showComponent);
+        connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::search); 
+
+        connect(result_widget, &ResultWidget::prevComponentType, shopping_cart_widget, &ShoppingCartWidget::prevComponent);
+        connect(result_widget, &ResultWidget::nextComponentType, shopping_cart_widget, &ShoppingCartWidget::nextComponent);
+        connect(result_widget, &ResultWidget::showComponent, this, &MainWindow::showComponent);
         connect(create_item, &QAction::triggered, this, &MainWindow::createComponent);
-        connect(result_widget, &ResultWidget::editItem, this, &MainWindow::editComponent);
-        connect(result_widget, &ResultWidget::deleteItem, this, &MainWindow::deleteComponent);
+        connect(result_widget, &ResultWidget::editComponent, this, &MainWindow::editComponent);
+        connect(result_widget, &ResultWidget::deleteComponent, this, &MainWindow::deleteComponent);
         //  forse qualcosa per bottone ordinamento?
         //  forse qualcosa per visualizzazione in tasti shopping cart
 
@@ -248,7 +246,7 @@ namespace View
 
     void MainWindow::search(Engine::Query query)
     {
-        showStatus("Running query for component \"" + QVariant(query.getType()).toString() + "\".");
+        showStatus("Running query for component \"" + QString::number(query.getType()) + "\".");
         results_widget->showResults(query, ricerca.search(query)); 
         stacked_widget->setCurrentIndex(0);
         clearStack();

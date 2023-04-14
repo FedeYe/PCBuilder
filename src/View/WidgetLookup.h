@@ -9,14 +9,15 @@
 namespace View
 {
 
-    class WidgetLookup
-    {
+    class WidgetLookup {
+    
     private:
         const Component::AbstractComponent *component;
         QWidget* widget;
         QPushButton* info_button;
         QPushButton* edit_button;
         QPushButton* delete_button;
+        QPushButton* add_button;
 
     public:
         WidgetLookup(
@@ -24,14 +25,16 @@ namespace View
             QWidget* widget,
             QPushButton* info_button,
             QPushButton* edit_button,
-            QPushButton* delete_button);
+            QPushButton* delete_button,
+            QPushButton* add_button);
+
         const Component::AbstractComponent *getComponent() const;
         QWidget* getWidget() const;
         QPushButton* getInfoButton() const;
         QPushButton* getEditButton() const;
         QPushButton* getDeleteButton() const;
+        QPushButton* getAddButton() const;
     };
-
 }
 
 #endif

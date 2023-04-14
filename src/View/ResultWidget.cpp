@@ -41,24 +41,24 @@ namespace View
 
         renderer = new ResultRenderer::List();
 
-        /*parte sotto con precedente e next
+        /*parte sotto con precedente e next */
         QHBoxLayout* hbox2 = new QHBoxLayout();
-        hbox2->setAlignment(Qt::AlignCenter | Qt::AlignBottom);
-        vbox->addLayout(hbox2); */
+        hbox2->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+        vbox->addLayout(hbox2); 
 
-        /* previous_page = new QPushButton(QIcon(QPixmap(":/assets/icons/previous.svg")), "");
-         previous_page->setEnabled(false);
-         hbox2->addWidget(previous_page); */
+        prev_component = new QPushButton(QIcon(QPixmap(":/Assets/icons/previous.svg")), "Componente Precedente");
+        prev_component->setEnabled(false);
+        hbox2->addWidget(prev_component);
 
-        /* next_page = new QPushButton(QIcon(QPixmap(":/assets/icons/next.svg")), "");
-        next_page->setEnabled(false);
-        hbox2->addWidget(next_page); */
+        next_component = new QPushButton(QIcon(QPixmap(":/Assets/icons/next.svg")), "Componente Successiva");
+        next_component->setEnabled(false);
+        hbox2->addWidget(next_component); 
 
         // Connects signals
         connect(order_ascendent, &QPushButton::clicked, this, &ResultsWidget::setOrderAsc); // DEFAULT MODE
         connect(order_descendent, &QPushButton::clicked, this, &ResultsWidget::setOrderDesc);
-        // connect(previous_page, &QPushButton::clicked, this, &ResultsWidget::previousPage);
-        // connect(next_page, &QPushButton::clicked, this, &ResultsWidget::nextPage);
+        connect(prev_component, &QPushButton::clicked, this, &ResultsWidget::prevComponentType);
+        connect(next_component, &QPushButton::clicked, this, &ResultsWidget::nextComponentType);
     }
 
     void ResultsWidget::showResults(Engine::Query query, Engine::ResultSet results)
@@ -73,16 +73,17 @@ namespace View
         // Shows new data
         if (results.getTotal() > 0)
         {
-            results_total->setText(QString::number(results.getTotal()) + " results for \"" + QString::fromStdString(query.getText()) + "\":");
+            results_total->setText(QString::number(results.getTotal()) + " results for component \"" + QString::number(query.getType()) + "\":");        // aggiungendo una stringa text è possibile mostrare nome della componente
         }
         else
         {
-            results_total->setText("No results for \"" + QString::fromStdString(query.getText()) + "\".");
+            results_total->setText("No results for component \"" + QString::number(query.getType()) + "\".");
         }
-        // previous_page->setEnabled(query.getOffset() > 0);
-        // next_page->setEnabled(results.getItems().size() == query.getSize());
+        prev_component->setEnabled(true);
+        next_component->setEnabled(true);
         // renderer->render(grid, results, &lookup);    DA NOI NO?
-        // Connect signals
+
+        // Connect signals per INFO, EDIT, DELETE
         for (
             QVector<WidgetLookup>::const_iterator it = lookup.begin();
             it != lookup.end();
@@ -90,15 +91,19 @@ namespace View
         {
             if (it->getViewButton())
             {
-                connect(it->getViewButton(), &QPushButton::clicked, std::bind(&ResultsWidget::showComponent, this, it->getItem()));
+                connect(it->getViewButton(), &QPushButton::clicked, std::bind(&ResultsWidget::showComponent, this, it->getComponent()));
             }
             if (it->getEditButton())
             {
-                connect(it->getEditButton(), &QPushButton::clicked, std::bind(&ResultsWidget::editComponent, this, it->getItem()));
+                connect(it->getEditButton(), &QPushButton::clicked, std::bind(&ResultsWidget::editComponent, this, it->getComponent()));
             }
             if (it->getDeleteButton())
             {
-                connect(it->getDeleteButton(), &QPushButton::clicked, std::bind(&ResultsWidget::deleteComponent, this, it->getItem()));
+                connect(it->getDeleteButton(), &QPushButton::clicked, std::bind(&ResultsWidget::deleteComponent, this, it->getComponent()));
+            }
+            if (it->getAddButton())
+            {
+                connect(it->getAddButton(), &QPushButton::clicked, std::bind(&ResultsWidget::addComponentToCart, this, it->getComponent()))
             }
         }
     }

@@ -1,5 +1,6 @@
 // Classe che rappresenta il carrello, simile a Memory e ResultSet
-// in particolare metodo per calcolo del costo totale delle componenti attualmente scelte
+// in particolare metodo per calcolo del costo totale delle componenti attualmente scelte 
+// e per gestire il carrello/selettore di componenti
 #ifndef ENGINE_SHOPPING_CART_H
 #define ENGINE_SHOPPING_CART_H
 
@@ -20,8 +21,8 @@ namespace Engine {
             ShoppingCart& remove(const Component::AbstractComponent* component);
             ShoppingCart& clear();
 
-            double getTotalCost() const;
-            void calculateTotalCost();
+            double getTotalCost() const;            
+            void calculateTotalCost();              //viene richiamato già quando uso metodi add, remove, clear
 
     };
 }
