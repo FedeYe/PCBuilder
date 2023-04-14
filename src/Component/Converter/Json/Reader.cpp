@@ -109,7 +109,7 @@ namespace Component
                     object.value("brand").toString().toStdString(),
                     object.value("imagePath").toString().toStdString(),
                     object.value("numPorte").toInt(),
-                    object.value("numCores").toInt(),
+                    object.value("numVRam").toInt(),
                     object.value("numVentole").toInt(),
                     object.value("availability").toBool());
             }
@@ -135,7 +135,7 @@ namespace Component
                     object.value("price").toDouble(),
                     object.value("brand").toString().toStdString(),
                     object.value("imagePath").toString().toStdString(),
-                    object.value("capacity").toInt(),
+                    object.value("capacity").toString().toStdString(),
                     object.value("stockSpeed").toInt(),
                     object.value("maxSpeed").toInt(),
                     object.value("generation").toString().toStdString());

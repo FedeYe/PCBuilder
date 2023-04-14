@@ -5,10 +5,11 @@
 #include <QWidget>
 #include <QLabel>
 #include <QPushButton>
+#include <QGridLayout>
 
 #include "../Engine/Query.h"
 #include "../Engine/ResultSet.h"
-#include "ResultRenderer/IResultRendererStrategy.h"
+#include "ResultRenderer/IResultRenderer.h"
 #include "WidgetLookup.h"
 
 namespace View
@@ -18,13 +19,15 @@ namespace View
     {
         Q_OBJECT
     private:
+        QLabel* component_name;
         QLabel* results_total;
         QPushButton* order_ascendent;
         QPushButton* order_descendent;
         QPushButton* prev_component;
         QPushButton* next_component;
         QVector<WidgetLookup> lookup;
-        ResultRenderer::IResultRendererStrategy *renderer;
+        QGridLayout* grid;
+        ResultRenderer::IResultRenderer *renderer;
 
     public:
         explicit ResultsWidget(QWidget *parent = 0);

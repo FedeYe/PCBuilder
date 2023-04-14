@@ -17,7 +17,7 @@ namespace View
         private:
             QSpinBox *suppliedWatt_input;
             QSpinBox *efficiency_input;
-            // QComboBox *modular_input;   probabilmente sbagliato ma non trovo nella documentazione cosa cazzo usare
+            QComboBox *modular_input;   //probabilmente sbagliato ma non trovo nella documentazione cosa usare
 
         public:
             PSUEditor(QWidget *parent = 0);

@@ -5,10 +5,9 @@
 
 namespace Component{
 
-//PSU = Power Supply Unit
 class RAM : public AbstractComponent {
     private: 
-        unsigned int capacity;
+        std::string capacity;
         unsigned int stockSpeed;
         unsigned int maxSpeed;
         std::string generation;
@@ -19,14 +18,14 @@ class RAM : public AbstractComponent {
             const double price,
             const std::string brand,
             const std::string image_path,
-            const unsigned int capacity,
+            const std::string capacity,
             const unsigned int stockSpeed,
             const unsigned int maxSpeed,
             const std::string generation
         );
 
-        unsigned int getCapacity() const;
-        RAM& setCapacity(const unsigned int capacity);
+        std::string getCapacity() const;
+        RAM& setCapacity(const std::string capacity);
 
         unsigned int getStockSpeed() const;
         RAM& setStockSpeed(const unsigned int stockSpeed);

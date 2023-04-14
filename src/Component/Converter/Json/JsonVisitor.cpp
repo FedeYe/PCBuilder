@@ -57,7 +57,7 @@ namespace Component
                 gpu_object.insert("brand", QJsonValue::fromVariant(gpu.getBrand().c_str()));
                 gpu_object.insert("imagePath", QJsonValue::fromVariant(gpu.getImagePath().c_str()));
                 gpu_object.insert("numPorte", QJsonValue::fromVariant(gpu.getNumPorte()));
-                gpu_object.insert("numCores", QJsonValue::fromVariant(gpu.getNumCores()));
+                gpu_object.insert("numVRam", QJsonValue::fromVariant(gpu.getNumVRam()));
                 gpu_object.insert("numVentole", QJsonValue::fromVariant(gpu.getNumVentole()));
                 gpu_object.insert("availability", QJsonValue::fromVariant(gpu.isAvailable()));
                 object = gpu_object;
@@ -87,7 +87,7 @@ namespace Component
                 ram_object.insert("price", QJsonValue::fromVariant(ram.getPrice()));
                 ram_object.insert("brand", QJsonValue::fromVariant(ram.getBrand().c_str()));
                 ram_object.insert("imagePath", QJsonValue::fromVariant(ram.getImagePath().c_str()));
-                ram_object.insert("capacity", QJsonValue::fromVariant(ram.getCapacity()));
+                ram_object.insert("capacity", QJsonValue::fromVariant(ram.getCapacity().c_str()));
                 ram_object.insert("stockSpeed", QJsonValue::fromVariant(ram.getStockSpeed()));
                 ram_object.insert("maxSpeed", QJsonValue::fromVariant(ram.getMaxSpeed()));
                 ram_object.insert("generation", QJsonValue::fromVariant(ram.getGeneration().c_str()));

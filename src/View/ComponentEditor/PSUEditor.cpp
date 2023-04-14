@@ -20,7 +20,7 @@ namespace View
             suppliedWatt_input->setObjectName("suppliedWatt-input");
             suppliedWatt_input->setMinimum(0);
             suppliedWatt_input->setMaximum(INT_MAX);
-            suppliedWatt_input->addRow("Supplied Watt", suppliedWatt_input);
+            form->addRow("Supplied Watt", suppliedWatt_input);
 
             efficiency_input = new QSpinBox();
             efficiency_input->setObjectName("efficiency-input");
@@ -59,11 +59,11 @@ namespace View
                 modular_input->currentIndex()); // devo mettere anche quello per bool
         }
 
-        void PSU::setValues(const Component::PSU &psu)
+        void PSUEditor::setValues(const Component::PSU &psu)
         {
             suppliedWatt_input->setValue(psu.getSuppWatt());
             efficiency_input->setValue(psu.getEfficiency());
-            // modular_input->setCurrentIndex(psu.isModular());
+            modular_input->setCurrentIndex(psu.isModular());
         }
 
     }

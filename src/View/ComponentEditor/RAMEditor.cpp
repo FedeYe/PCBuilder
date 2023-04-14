@@ -16,11 +16,17 @@ namespace View
             form->setObjectName("ram-form");
             form->setLabelAlignment(Qt::AlignRight | Qt::AlignTop);
 
+            /*
             capacity_input = new QSpinBox();
             capacity_input->setObjectName("capacity-input");
             capacity_input->setMinimum(0);
             capacity_input->setMaximum(INT_MAX);
-            capacity_input->addRow("Capacity", capacity_input);
+            form->addRow("Capacity", capacity_input);
+            */
+
+            capacity_input = new QLineEdit("examples: 2x8GB/4x8GB/2x16GB/4x16GB");
+            capacity_input->setObjectName("capacity-input");
+            form->addRow("Capacity", capacity_input);
 
             stockSpeed_input = new QSpinBox();
             stockSpeed_input->setObjectName("stockSpeed-input");
@@ -34,7 +40,7 @@ namespace View
             maxSpeed_input->setMaximum(INT_MAX);
             form->addRow("MaxSpeed", maxSpeed_input);
 
-            generation_input = new QLineEdit();
+            generation_input = new QLineEdit("examples: DDR3/DDR4/DDR5");
             generation_input->setObjectName("generation-input");
             form->addRow("Generation", generation_input);
         }
@@ -56,7 +62,7 @@ namespace View
                 brand.toStdString(),
                 price,
                 image_path.toStdString(),
-                capacity_input->value(),
+                capacity_input->text().toStdString(),
                 stockSpeed_input->value(),
                 maxSpeed_input->value(),
                 generation_input->text().toStdString());
@@ -64,7 +70,7 @@ namespace View
 
         void RAMEditor::setValues(const Component::RAM &ram)
         {
-            capacity_input->setValue(ram.getCapacity());
+            capacity_input->setText(QString::fromStdString(ram.getCapacity()));
             stockSpeed_input->setValue(ram.getStockSpeed());
             maxSpeed_input->setValue(ram.getMaxSpeed());
             generation_input->setText(QString::fromStdString(ram.getGeneration()));

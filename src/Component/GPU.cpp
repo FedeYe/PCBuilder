@@ -9,11 +9,11 @@ namespace Component
         const std::string brand,
         const std::string image_path,
         const unsigned int numPorte,
-        const unsigned int numCores,
+        const unsigned int numVRam,
         const unsigned int numVentole,
         const bool availability
         ) : AbstractComponent(identifier, name, price, brand, image_path),
-            numPorte(numPorte), numCores(numCores), numVentole(numVentole), availability(availability) {}
+            numPorte(numPorte), numVRam(numVRam), numVentole(numVentole), availability(availability) {}
 
     unsigned int GPU::getNumPorte() const
     {
@@ -26,14 +26,14 @@ namespace Component
         return *this;
     }
 
-    unsigned int GPU::getNumCores() const
+    unsigned int GPU::getNumVRam() const
     {
-        return numCores;
+        return numVRam;
     }
 
-    GPU& GPU::setNumCores(const unsigned int numCores)
+    GPU& GPU::setNumVRam(const unsigned int numVRam)
     {
-        this->numCores = numCores;
+        this->numVRam = numVRam;
         return *this;
     }
 

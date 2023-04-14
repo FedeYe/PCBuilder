@@ -20,13 +20,13 @@ namespace View
             numPorte_input->setObjectName("numPorte-input");
             numPorte_input->setMinimum(0);
             numPorte_input->setMaximum(INT_MAX);
-            numPorte_input->addRow("number of Porte", numPorte_input);
+            form->addRow("number of Porte", numPorte_input);
 
-            numCores_input = new QSpinBox();
-            numCores_input->setObjectName("numCores-input");
-            numCores_input->setMinimum(0);
-            numCores_input->setMaximum(INT_MAX);
-            form->addRow("number of Cores", numCores_input);
+            numVRam_input = new QSpinBox();
+            numVRam_input->setObjectName("numCores-input");
+            numVRam_input->setMinimum(0);
+            numVRam_input->setMaximum(INT_MAX);
+            form->addRow("number of VRam", numVRam_input);
 
             numVentole_input = new QSpinBox();
             numVentole_input->setObjectName("numVentole-input");
@@ -34,7 +34,7 @@ namespace View
             numVentole_input->setMaximum(INT_MAX);
             form->addRow("number of Ventole", numVentole_input);
 
-            /* QUELLO PER AVAIABILITY
+            /* QUELLO PER AVAILABILITY
             availability_input = new QComboBox();
             availability_input->setObjectName("availability-input");
             availability_input->addItem("si");
@@ -61,15 +61,15 @@ namespace View
                 price,
                 image_path.toStdString(),
                 numPorte_input->value(),
-                numCores_input->value(),
+                numVRam_input->value(),
                 numVentole_input->value(),
-                avaiability_input->currentIndex()); // devo mettere anche quello per bool
+                availability_input->currentIndex()); // devo mettere anche quello per bool
         }
 
-        void GPU::setValues(const Component::GPU &gpu)
+        void GPUEditor::setValues(const Component::GPU &gpu)
         {
             numPorte_input->setValue(gpu.getNumPorte());
-            numCores_input->setValue(gpu.getNumCores());
+            numVRam_input->setValue(gpu.getNumVRam());
             numVentole_input->setValue(gpu.getNumVentole());
             // avaiability_input->setCurrentIndex(gpu.isAvailable());
         }

@@ -31,6 +31,15 @@ SOURCES += \
     Service/Logger/AbstractLogger.cpp\
     Service/Logger/Singleton.cpp\
     \
+    View/ComponentEditor/AbstractComponentEditor.cpp\
+    View/ComponentEditor/CPUEditor.cpp\
+    View/ComponentEditor/GPUEditor.cpp\
+    View/ComponentEditor/MotherBoardEditor.cpp\
+    View/ComponentEditor/PSUEditor.cpp\
+    View/ComponentEditor/RAMEditor.cpp\
+    \
+    View/ComponentRenderer/ListComponent.cpp\
+    \
     View/ResultRenderer/ListAsc.cpp\
     View/ResultRenderer/ListDesc.cpp\
     \
@@ -77,6 +86,16 @@ HEADERS += \
     Service/Logger/Singleton.h\
     \
     Service/Container.h\
+    \
+    View/ComponentEditor/AbstractComponentEditor.h\
+    View/ComponentEditor/CPUEditor.h\
+    View/ComponentEditor/GPUEditor.h\
+    View/ComponentEditor/MotherBoardEditor.h\
+    View/ComponentEditor/PSUEditor.h\
+    View/ComponentEditor/RAMEditor.h\
+    \
+    View/ComponentRenderer/IComponentRenderer.h\
+    View/ComponentRenderer/ListComponent.h\
     \
     View/ResultRenderer/IResultRenderer.h\
     View/ResultRenderer/ListAsc.h\

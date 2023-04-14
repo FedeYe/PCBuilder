@@ -10,7 +10,7 @@ namespace Component
     {
     private:
         unsigned int numPorte;
-        unsigned int numCores;
+        unsigned int numVRam;
         unsigned int numVentole;
         bool availability;
 
@@ -22,15 +22,15 @@ namespace Component
             const std::string brand,
             const std::string image_path,
             const unsigned int numPorte,
-            const unsigned int numCores,
+            const unsigned int numVRam,
             const unsigned int numVentole,
             const bool availability);
 
         unsigned int getNumPorte() const;
         GPU &setNumPorte(const unsigned int numPorte);
 
-        unsigned int getNumCores() const;
-        GPU &setNumCores(const unsigned int numCores);
+        unsigned int getNumVRam() const;
+        GPU &setNumVRam(const unsigned int numVRam);
 
         unsigned int getNumVentole() const;
         GPU &setNumVentole(const unsigned int numVentole);
