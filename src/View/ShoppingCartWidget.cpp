@@ -15,8 +15,8 @@ namespace View {
 
         vbox->addStretch();
 
-        builder_widget = new BuilderWidget();
-        vbox->addWidget(builder_widget);
+        build_widget = new BuildWidget();
+        vbox->addWidget(build_widget);
 
         vbox->addStretch();
 
@@ -37,10 +37,10 @@ namespace View {
         vbox->addWidget(summary);
 
         //connect
-        connect(builder_widget, &BuilderWidget::comp_selected_event, this, &ShoppingCartWidget::search);        // selezionando una tipologia di componente da ricercare   
+        connect(build_widget, &BuildWidget::comp_selected_event, this, &ShoppingCartWidget::search);        // selezionando una tipologia di componente da ricercare   
         
-        connect(builder_widget, /* event = aggiunto un item in carrello */, this, &ShoppingCartWidget::refreshTotalCost);
-        connect(builder_widget, /* event = rimosso un item da carrello */, this, &ShoppingCartWidget::refreshTotalCost);
+        connect(build_widget, &BuildWidget::addedToCartEvent, this, &ShoppingCartWidget::refreshTotalCost);
+        connect(build_widget, &BuildWidget::removedFromCartEvent, this, &ShoppingCartWidget::refreshTotalCost);
 
         connect(order_input, &QPushButton::clicked, this, &ShoppingCartWidget::orderMessageBox);                // click su tasto ORDER -> messagge box "ordine effettuato"
     }
@@ -70,7 +70,7 @@ namespace View {
         emit search_event(query);
     }    
 
-    void ShoppingCartWidget::refreshTotalCost(Engine::ShoppingCart carrello) {
+    void ShoppingCartWidget::refreshTotalCost(const Engine::ShoppingCart& carrello) {
         total_cost->setText("Costo Totale : \"" + QString::number(carrello.getTotalCost()));
     }
 
