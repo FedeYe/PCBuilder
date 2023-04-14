@@ -20,6 +20,8 @@ namespace Engine {
             ShoppingCart& add(const Component::AbstractComponent* component);
             ShoppingCart& remove(const Component::AbstractComponent* component);
             ShoppingCart& clear();
+            // metodo search
+            // metodo che controlla la compatibilità
 
             double getTotalCost() const;            
             void calculateTotalCost();              //viene richiamato già quando uso metodi add, remove, clear

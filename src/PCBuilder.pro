@@ -37,6 +37,7 @@ SOURCES += \
     View/MainWindow.cpp\
     View/ResultWidget.cpp\
     View/ShoppingCartWidget.cpp\
+    View/BuildWidget.cpp\
     View/EditWidget.cpp\
     View/TypeSelector.cpp\
     View/WidgetLookup.cpp\
@@ -84,6 +85,7 @@ HEADERS += \
     View/MainWindow.h\
     View/ResultWidget.h\
     View/ShoppingCartWidget.h\
+    View/BuildWidget.h\
     View/EditWidget.h\
     View/TypeSelector.h\
     View/WidgetLookup.h
