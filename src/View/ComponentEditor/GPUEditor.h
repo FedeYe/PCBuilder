@@ -16,9 +16,9 @@ namespace View
         {
         private:
             QSpinBox *numPorte_input;
-            QSpinBox *numCores_input;
+            QSpinBox *numVRam_input;
             QSpinBox *numVentole_input;
-            // QComboBox *availability_input;   probabilmente sbagliato ma non trovo nella documentazione cosa cazzo usare
+            QComboBox *availability_input;   //probabilmente sbagliato ma non trovo nella documentazione cosa cazzo usare
 
         public:
             GPUEditor(QWidget *parent = 0);

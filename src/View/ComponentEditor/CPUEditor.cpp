@@ -1,6 +1,7 @@
 #include "CPUEditor.h"
 
 #include <QFormLayout>
+#include <limits>
 
 #include "../../Component/CPU.h"
 
@@ -35,13 +36,13 @@ namespace View
             coreclock_input = new QDoubleSpinBox();
             coreclock_input->setObjectName("coreclock-input");
             coreclock_input->setMinimum(0.0);
-            coreclock_input->setMaximum(__DBL_MAX__);
+            coreclock_input->setMaximum(std::numeric_limits<double>::max());
             form->addRow("Coreclock", coreclock_input);
 
             boostclock_input = new QDoubleSpinBox();
             boostclock_input->setObjectName("boostclock-input");
             boostclock_input->setMinimum(0.0);
-            boostclock_input->setMaximum(__DBL_MAX__);
+            boostclock_input->setMaximum(std::numeric_limits<double>::max());
             form->addRow("Boostclock", boostclock_input);
 
             cache_input = new QSpinBox();
@@ -76,14 +77,14 @@ namespace View
                 cache_input->value());
         }
 
-        void CPU::setValues(const Component::CPU &cpu)
+        void CPUEditor::setValues(const Component::CPU &cpu)
         {
-            chipset_input->setText(QString::fromStdString(mother_board.getChipset()));
+            chipset_input->setText(QString::fromStdString(cpu.getChipset()));
             numCores_input->setValue(cpu.getNumCores());
             threads_input->setValue(cpu.getThreads());
-            coreclock_input->setValue(cpu.getCoreclock);
-            boostclock_input->setValue(cpu.getBoostclock);
-            cache_input->setValue(cpu.getCache);
+            coreclock_input->setValue(cpu.getCoreclock());
+            boostclock_input->setValue(cpu.getBoostclock());
+            cache_input->setValue(cpu.getCache());
         }
 
     }

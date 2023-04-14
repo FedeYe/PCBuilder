@@ -3,8 +3,8 @@
 
 #include "IResultRenderer.h"
 
-#include "../ResultsWidget.h"
-// #include "../ComponentRenderer/ListComponent.h"  DA IMPLEMENTARE
+#include "../ResultWidget.h"
+#include "../ComponentRenderer/ListComponent.h"  
 
 namespace View
 {
@@ -14,11 +14,11 @@ namespace View
         class ListAsc : public IResultRenderer
         {
         private:
-            ComponentRenderer::ListComponent list_component; // component o ?
+            ComponentRenderer::ListComponent list_component; 
 
         public:
             virtual void render(QGridLayout *grid, Engine::ResultSet &result, QVector<WidgetLookup> *lookup);
-        }; // grid????
+        }; 
 
     }
 }

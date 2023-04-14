@@ -15,7 +15,7 @@ namespace View
         class RAMEditor : public AbstractComponentEditor
         {
         private:
-            QSpinBox *capacity_input;
+            QLineEdit *capacity_input;
             QSpinBox *stockSpeed_input;
             QSpinBox *maxSpeed_input;
             QLineEdit *generation_input;

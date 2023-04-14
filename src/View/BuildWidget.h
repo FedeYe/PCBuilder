@@ -20,7 +20,7 @@ namespace View {
             Engine::ShoppingCart& cart;
             QVector<WidgetLookup> lookup;
             QGridLayout* grid;
-            ResultRender::IResultRenderer* renderer;
+            ResultRenderer::IResultRenderer* renderer;
 
 
         public:
@@ -28,7 +28,7 @@ namespace View {
             Engine::ShoppingCart& getCart() const;
         
         signals:    
-            void comp_selected_event(Engine::Query query);                              // è stata scelta la tipologia di componente che si vuole visualizzare 
+            void compSelectedEvent(Engine::Query query);                              // è stata scelta la tipologia di componente che si vuole visualizzare 
             void addedToCartEvent(const Engine::ShoppingCart& cart);                    // è stato aggiunto un prodotto per una determinata componente con successo -> refresh total_cost sulla View        
             void removedFromCartEvent(const Engine::ShoppingCart& cart);                // è stato rimosso un prodotto per una determinata componente con successo -> refresh total_cost sulla View
 

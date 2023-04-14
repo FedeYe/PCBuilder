@@ -8,17 +8,17 @@ namespace Component{
         const double price,
         const std::string brand,
         const std::string image_path,
-        const unsigned int capacity,
+        const std::string capacity,
         const unsigned int stockSpeed,
         const unsigned int maxSpeed,
         const std::string generation
     ) : AbstractComponent(identifier, name, price, brand, image_path), 
         capacity(capacity), stockSpeed(stockSpeed), maxSpeed(maxSpeed), generation(generation) {}
 
-    unsigned int RAM::getCapacity() const {
+    std::string RAM::getCapacity() const {
         return capacity;
     }
-    RAM& RAM::setCapacity(const unsigned int capacity) {
+    RAM& RAM::setCapacity(const std::string capacity) {
         this->capacity = capacity;
         return *this;
     }

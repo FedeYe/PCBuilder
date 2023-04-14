@@ -4,8 +4,10 @@
 #include <QScrollArea>
 #include <QLabel>
 #include <QPushButton>
+#include <string>
 
-#include "ResultRenderer/List.h"
+#include "ResultRenderer/ListAsc.h"
+#include "ResultRenderer/ListDesc.h"
 
 // MODIFICARE NEXT E PREVIOUS COMPONENT
 
@@ -23,6 +25,8 @@ namespace View
 
         component_name = new QLabel();
         hbox->addWidget(component_name);
+        results_total = new QLabel();
+        hbox->addWidget(results_total);
 
         hbox->addStretch();
 
@@ -32,6 +36,10 @@ namespace View
         QPushButton* order_descendend = new QPushButton(QIcon(QPixmap(":/Assets/icons/pricedesc.png")), "Prezzo decrescente");
         hbox->addWidget(order_descendend);
 
+        grid = new QGridLayout();
+        grid->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
+        QWidget* container = new QWidget();
+        container->setLayout(grid);
         QScrollArea* scroll_area = new QScrollArea();
         scroll_area->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
@@ -39,7 +47,7 @@ namespace View
         scroll_area->setWidget(container);
         vbox->addWidget(scroll_area);
 
-        renderer = new ResultRenderer::List();
+        renderer = new ResultRenderer::ListAsc();
 
         /*parte sotto con precedente e next */
         QHBoxLayout* hbox2 = new QHBoxLayout();
@@ -70,10 +78,25 @@ namespace View
             delete info.getWidget();
         }
 
+        switch(query.getType()) {
+            case 1:
+            component_name->setText("MotherBoard"); break;
+            case 2:
+            component_name->setText("CPU"); break;
+            case 3:
+            component_name->setText("GPU"); break;
+            case 4:
+            component_name->setText("PSU"); break;
+            case 5:
+            component_name->setText("RAM"); break;
+            default:
+            component_name->setText("<blank>"); break;
+        }
+
         // Shows new data
-        if (results.getTotal() > 0)
+        if (results.getSize() > 0)
         {
-            results_total->setText(QString::number(results.getTotal()) + " results for component \"" + QString::number(query.getType()) + "\":");        // aggiungendo una stringa text è possibile mostrare nome della componente
+            results_total->setText(QString::number(results.getSize()) + " results for component \"" + QString::number(query.getType()) + "\":");        // aggiungendo una stringa text è possibile mostrare nome della componente
         }
         else
         {
@@ -81,7 +104,7 @@ namespace View
         }
         prev_component->setEnabled(true);
         next_component->setEnabled(true);
-        // renderer->render(grid, results, &lookup);    DA NOI NO?
+        renderer->render(grid, results, &lookup);
 
         // Connect signals per INFO, EDIT, DELETE
         for (
@@ -89,9 +112,9 @@ namespace View
             it != lookup.end();
             it++)
         {
-            if (it->getViewButton())
+            if (it->getInfoButton())
             {
-                connect(it->getViewButton(), &QPushButton::clicked, std::bind(&ResultsWidget::showComponent, this, it->getComponent()));
+                connect(it->getInfoButton(), &QPushButton::clicked, std::bind(&ResultsWidget::showComponent, this, it->getComponent()));
             }
             if (it->getEditButton())
             {
@@ -103,7 +126,7 @@ namespace View
             }
             if (it->getAddButton())
             {
-                connect(it->getAddButton(), &QPushButton::clicked, std::bind(&ResultsWidget::addComponentToCart, this, it->getComponent()))
+                connect(it->getAddButton(), &QPushButton::clicked, std::bind(&ResultsWidget::addComponentToCart, this, it->getComponent()));
             }
         }
     }

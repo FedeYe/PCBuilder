@@ -108,12 +108,15 @@ namespace View
 
         connect(result_widget, &ResultWidget::prevComponentType, shopping_cart_widget, &ShoppingCartWidget::prevComponent);
         connect(result_widget, &ResultWidget::nextComponentType, shopping_cart_widget, &ShoppingCartWidget::nextComponent);
+
+        connect(result_widget, &ResultWidget::addComponentToCart, shopping_cart_widget, &ShoppingCartWidget::tryAddComponentToCartEvent);
+
         connect(result_widget, &ResultWidget::showComponent, this, &MainWindow::showComponent);
         connect(create_item, &QAction::triggered, this, &MainWindow::createComponent);
         connect(result_widget, &ResultWidget::editComponent, this, &MainWindow::editComponent);
         connect(result_widget, &ResultWidget::deleteComponent, this, &MainWindow::deleteComponent);
-        //  forse qualcosa per bottone ordinamento?
         //  forse qualcosa per visualizzazione in tasti shopping cart
+        
 
         //.....................TO BE CONTINUED
     }

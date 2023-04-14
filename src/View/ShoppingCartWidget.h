@@ -22,10 +22,13 @@ namespace View {
 
         signals:
             void search_event(Engine::Query query);
+            void tryAddComponentToCartEvent(const Component::AbstractComponent *component)
             
         public slots:
+
             void prevComponent();             // modifico la query (-1 al type) ed emetto nuovamente il signal search_event(query) 
             void nextComponent();             // modifico la query (+1 al type) ecc...
+            
             void search(Engine::Query query);         
             void refreshTotalCost(const Engine::ShoppingCart& carrello);
             void orderMessageBox(); 

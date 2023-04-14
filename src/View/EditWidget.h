@@ -12,7 +12,7 @@
 
 #include "MainWindow.h"
 #include "../Component/AbstractComponent.h"
-// #include "ComponentEditor/AbstractComponentEditor.h"   da implementare
+#include "ComponentEditor/AbstractComponentEditor.h"  
 #include "../Component/Repository/JsonRepository.h"
 
 namespace View

@@ -3,9 +3,8 @@
 
 #include "IResultRenderer.h"
 
-#include "../ResultsWidget.h"
-// #include "../ComponentRenderer/ListComponent.h"  DA IMPLEMENTARE
-
+#include "../ResultWidget.h"
+#include "../ComponentRenderer/ListComponent.h"  
 namespace View
 {
     namespace ResultRenderer
@@ -18,7 +17,7 @@ namespace View
 
         public:
             virtual void render(QGridLayout *grid, Engine::ResultSet &result, QVector<WidgetLookup> *lookup);
-        }; // grid????
+        }; 
 
     }
 }

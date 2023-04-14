@@ -4,7 +4,12 @@
 
 namespace View {
 
-    BuildWiget(QWidget* parent)
+    BuildWiget(QWidget* parent) : {
+
+
+
+        connect()
+    }
 
     Engine::ShoppingCart& getCart() const
 

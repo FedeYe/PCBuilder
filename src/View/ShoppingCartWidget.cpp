@@ -37,7 +37,9 @@ namespace View {
         vbox->addWidget(summary);
 
         //connect
-        connect(build_widget, &BuildWidget::comp_selected_event, this, &ShoppingCartWidget::search);        // selezionando una tipologia di componente da ricercare   
+        connect(this, &BuildWidget::tryAddComponentToCartEvent, build_widget, &BuildWidget::addToCart); 
+
+        connect(build_widget, &BuildWidget::compSelectedEvent, this, &ShoppingCartWidget::search);        // selezionando una tipologia di componente da ricercare   
         
         connect(build_widget, &BuildWidget::addedToCartEvent, this, &ShoppingCartWidget::refreshTotalCost);
         connect(build_widget, &BuildWidget::removedFromCartEvent, this, &ShoppingCartWidget::refreshTotalCost);
