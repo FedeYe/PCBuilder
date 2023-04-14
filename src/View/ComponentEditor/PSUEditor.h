@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QSpinBox>
-// #include <QComboBox>
+#include <QComboBox>
 
 #include "AbstractComponentEditor.h"
 

@@ -66,8 +66,8 @@ namespace View
             return new Component::CPU(
                 identifier,
                 name.toStdString(),
-                brand.toStdString(),
                 price,
+                brand.toStdString(),
                 image_path.toStdString(),
                 chipset_input->text().toStdString(),
                 numCores_input->value(),

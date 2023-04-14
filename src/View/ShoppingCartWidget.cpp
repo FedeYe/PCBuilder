@@ -1,5 +1,6 @@
 #include "ShoppingCartWidget.h"
 
+#include <QApplication>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QMessageBox>
@@ -34,10 +35,10 @@ namespace View {
         summary->addWidget(order_input);
 
         summary->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-        vbox->addWidget(summary);
+        vbox->addLayout(summary);
 
         //connect
-        connect(this, &BuildWidget::tryAddComponentToCartEvent, build_widget, &BuildWidget::addToCart); 
+        connect(this, &ShoppingCartWidget::tryAddComponentToCartEvent, build_widget, &BuildWidget::addToCart);
 
         connect(build_widget, &BuildWidget::compSelectedEvent, this, &ShoppingCartWidget::search);        // selezionando una tipologia di componente da ricercare   
         
@@ -52,7 +53,7 @@ namespace View {
     }
 
     void ShoppingCartWidget::prevComponent() {
-        unsigned int currentType = currentQuery.getType()
+        unsigned int currentType = currentQuery.getType();
         if(currentType == 1) 
             currentQuery.setType(5); 
         currentQuery.setType(currentType - 1);
@@ -60,7 +61,7 @@ namespace View {
     }           
 
     void ShoppingCartWidget::nextComponent() {
-        unsigned int currentType = currentQuery.getType()
+        unsigned int currentType = currentQuery.getType();
         if(currentType == 5) 
             currentQuery.setType(1);
         currentQuery.setType(currentType + 1);

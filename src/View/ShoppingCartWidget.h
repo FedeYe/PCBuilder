@@ -22,7 +22,7 @@ namespace View {
 
         signals:
             void search_event(Engine::Query query);
-            void tryAddComponentToCartEvent(const Component::AbstractComponent *component)
+            void tryAddComponentToCartEvent(const Component::AbstractComponent *component);
             
         public slots:
 
@@ -31,8 +31,8 @@ namespace View {
             
             void search(Engine::Query query);         
             void refreshTotalCost(const Engine::ShoppingCart& carrello);
-            void orderMessageBox(); 
-    }
+            void orderMessageBox();
+    };
 }
 
 

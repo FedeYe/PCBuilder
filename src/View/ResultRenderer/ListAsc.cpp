@@ -20,9 +20,11 @@ namespace View
                 lookup->push_back(WidgetLookup(
                     it->getComponent(),
                     widget,
-                    list_component.getViewButton(), // che roba è list item? --> da itemRenderes
+                    list_component.getViewButton(), // list_component --> da ComponentRenderer
                     list_component.getEditButton(),
-                    list_component.getDeleteButton()));
+                    list_component.getDeleteButton(),
+                    list_component.getAddButton()
+                    ));
                 index++;
             }
         }

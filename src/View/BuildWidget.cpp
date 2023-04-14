@@ -4,21 +4,31 @@
 
 namespace View {
 
-    BuildWiget(QWidget* parent) : {
+    BuildWidget(QWidget* parent) : {
 
 
 
         connect()
     }
 
-    Engine::ShoppingCart& getCart() const
+    Engine::ShoppingCart& getCart() const {
 
-    void selectSearchedComp()
+    }
 
-    void addToCart(Component::AbstractComponent* component)
+    void selectSearchedComp() {
 
-    void removeFromCart(Component::AbstractComponent* component)
+    }
 
-    void showProduct(Engine::Query query, Engine::ShoppingCart cart)
+    void addToCart(Component::AbstractComponent* component) {
+
+    }
+
+    void removeFromCart(Component::AbstractComponent* component) {
+
+    }
+
+    void showProduct(Engine::Query query, Engine::ShoppingCart cart) {
+
+    }
     
 }

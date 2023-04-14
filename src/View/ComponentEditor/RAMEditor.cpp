@@ -59,8 +59,8 @@ namespace View
             return new Component::RAM(
                 identifier,
                 name.toStdString(),
-                brand.toStdString(),
                 price,
+                brand.toStdString(),
                 image_path.toStdString(),
                 capacity_input->text().toStdString(),
                 stockSpeed_input->value(),

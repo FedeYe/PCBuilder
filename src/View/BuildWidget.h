@@ -8,7 +8,7 @@
 
 #include "../Engine/Query.h"
 #include "../Engine/ShoppingCart.h"
-#include "ResultRenderer::IResultRenderer.h"
+#include "ResultRenderer/IResultRenderer.h"
 #include "WidgetLookup.h"
 
 
@@ -24,7 +24,7 @@ namespace View {
 
 
         public:
-            BuildWiget(QWidget* parent = 0);
+            BuildWidget(QWidget* parent = 0);
             Engine::ShoppingCart& getCart() const;
         
         signals:    

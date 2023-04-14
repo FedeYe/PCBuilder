@@ -34,13 +34,13 @@ namespace View
             numVentole_input->setMaximum(INT_MAX);
             form->addRow("number of Ventole", numVentole_input);
 
-            /* QUELLO PER AVAILABILITY
+            /* QUELLO PER AVAILABILITY */
             availability_input = new QComboBox();
             availability_input->setObjectName("availability-input");
-            availability_input->addItem("si");
-            availability_input->addItem("no");
+            availability_input->addItem("Not available");                               // index 1
+            availability_input->addItem("Available");                                   // index 2     -> per la conversione in bool necessita quindi -1
             form->addRow("is Available", availability_input);
-            */
+
         }
 
         GPUEditor::~GPUEditor()
@@ -57,13 +57,13 @@ namespace View
             return new Component::GPU(
                 identifier,
                 name.toStdString(),
-                brand.toStdString(),
                 price,
+                brand.toStdString(),
                 image_path.toStdString(),
                 numPorte_input->value(),
                 numVRam_input->value(),
                 numVentole_input->value(),
-                availability_input->currentIndex()); // devo mettere anche quello per bool
+                (availability_input->currentIndex()-1)); // devo mettere anche quello per bool
         }
 
         void GPUEditor::setValues(const Component::GPU &gpu)
@@ -71,7 +71,7 @@ namespace View
             numPorte_input->setValue(gpu.getNumPorte());
             numVRam_input->setValue(gpu.getNumVRam());
             numVentole_input->setValue(gpu.getNumVentole());
-            // avaiability_input->setCurrentIndex(gpu.isAvailable());
+            availability_input->setCurrentIndex(gpu.isAvailable()+1);
         }
 
     }

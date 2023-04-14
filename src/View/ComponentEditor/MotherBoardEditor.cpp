@@ -55,9 +55,9 @@ namespace View
             return new Component::MotherBoard(
                 identifier,
                 name.toStdString(),
-                brand.toStdString(),
                 price,
-                image_path.toStdString(),
+                brand.toStdString(),
+                image_path.toStdString(),             
                 socket_input->text().toStdString(),
                 chipset_input->text().toStdString(),
                 generation_input->text().toStdString(),

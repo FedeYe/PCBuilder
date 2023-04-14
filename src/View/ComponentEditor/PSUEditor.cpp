@@ -28,13 +28,13 @@ namespace View
             efficiency_input->setMaximum(INT_MAX);
             form->addRow("Efficiency", efficiency_input);
 
-            /* QUELLO PER MODULAR
+            /* QUELLO PER MODULAR  */
             modular_input = new QComboBox();
             modular_input->setObjectName("modular-input");
-            modular_input->addItem("si");
-            modular_input->addItem("no");
+            modular_input->addItem("Not Modular");                  // index 1
+            modular_input->addItem("Modular");                      // index 2     -> per la conversione in bool necessita quindi -1
             form->addRow("is Modular", modular_input);
-            */
+
         }
 
         PSUEditor::~PSUEditor()
@@ -51,19 +51,19 @@ namespace View
             return new Component::PSU(
                 identifier,
                 name.toStdString(),
-                brand.toStdString(),
                 price,
+                brand.toStdString(),
                 image_path.toStdString(),
                 suppliedWatt_input->value(),
                 efficiency_input->value(),
-                modular_input->currentIndex()); // devo mettere anche quello per bool
+                (modular_input->currentIndex())-1); // devo mettere anche quello per bool
         }
 
         void PSUEditor::setValues(const Component::PSU &psu)
         {
             suppliedWatt_input->setValue(psu.getSuppWatt());
             efficiency_input->setValue(psu.getEfficiency());
-            modular_input->setCurrentIndex(psu.isModular());
+            modular_input->setCurrentIndex(psu.isModular()+1);
         }
 
     }
