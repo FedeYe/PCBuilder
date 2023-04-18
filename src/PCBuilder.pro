@@ -39,6 +39,8 @@ SOURCES += \
     View/ComponentEditor/RAMEditor.cpp\
     \
     View/ComponentRenderer/ListComponent.cpp\
+    View/ComponentRenderer/CartComponent.cpp\
+    View/ComponentRenderer/Full.cpp\
     \
     View/ResultRenderer/ListAsc.cpp\
     View/ResultRenderer/ListDesc.cpp\
@@ -96,6 +98,8 @@ HEADERS += \
     \
     View/ComponentRenderer/IComponentRenderer.h\
     View/ComponentRenderer/ListComponent.h\
+    View/ComponentRenderer/CartComponent.h\
+    View/ComponentRenderer/Full.h\
     \
     View/ResultRenderer/IResultRenderer.h\
     View/ResultRenderer/ListAsc.h\

@@ -14,6 +14,9 @@
     <file>Assets/icons/delete.png</file>
     <file>Assets/icons/edit.png</file>
     <file>Assets/icons/info.png</file>
+    <file>Assets/icons/addToCart.png</file>
+    <file>Assets/icons/removeFromCart.png</file>
+    <file>Assets/icons/notAvailable.png</file>
     <file>Assets/icons/new.svg</file>
     <file>Assets/icons/new_product.svg</file>
     <file>Assets/icons/open.svg</file>
