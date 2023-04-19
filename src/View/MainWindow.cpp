@@ -15,6 +15,7 @@
 #include <QStackedWidget>
 #include <QScrollArea>
 
+#include "EditWidget.h".h"
 #include "../Component/DataMapper/JsonFile.h"
 #include "../Component/Converter/Json/Reader.h"
 #include "../Component/Converter/Json/Json.h"
@@ -84,14 +85,14 @@ namespace View
         QSplitter* splitter = new QSplitter(this);
         setCentralWidget(splitter);
 
-        Engine::Query& defaultQuery = new Engine::Query();
+        Engine::Query defaultQuery;
         shopping_cart_widget = new ShoppingCartWidget(defaultQuery);
         splitter->addWidget(shopping_cart_widget);
 
         stacked_widget = new QStackedWidget(this);
         splitter->addWidget(stacked_widget);
 
-        result_widget = new ResultWidget();
+        result_widget = new ResultsWidget();
         stacked_widget->addWidget(result_widget);
 
         splitter->setSizes(QList<int>() << 2000 << 2000);
@@ -106,15 +107,15 @@ namespace View
 
         connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::search); 
 
-        connect(result_widget, &ResultWidget::prevComponentType, shopping_cart_widget, &ShoppingCartWidget::prevComponent);
-        connect(result_widget, &ResultWidget::nextComponentType, shopping_cart_widget, &ShoppingCartWidget::nextComponent);
+        connect(result_widget, &ResultsWidget::prevComponentType, shopping_cart_widget, &ShoppingCartWidget::prevComponent);
+        connect(result_widget, &ResultsWidget::nextComponentType, shopping_cart_widget, &ShoppingCartWidget::nextComponent);
 
-        connect(result_widget, &ResultWidget::addComponentToCart, shopping_cart_widget, &ShoppingCartWidget::tryAddComponentToCartEvent);
+        connect(result_widget, &ResultsWidget::addComponentToCart, shopping_cart_widget, &ShoppingCartWidget::tryAddComponentToCartEvent);
 
-        connect(result_widget, &ResultWidget::showComponent, this, &MainWindow::showComponent);
+        connect(result_widget, &ResultsWidget::showComponent, this, &MainWindow::showComponent);
         connect(create_item, &QAction::triggered, this, &MainWindow::createComponent);
-        connect(result_widget, &ResultWidget::editComponent, this, &MainWindow::editComponent);
-        connect(result_widget, &ResultWidget::deleteComponent, this, &MainWindow::deleteComponent);
+        connect(result_widget, &ResultsWidget::editComponent, this, &MainWindow::editComponent);
+        connect(result_widget, &ResultsWidget::deleteComponent, this, &MainWindow::deleteComponent);
         //  forse qualcosa per visualizzazione in tasti shopping cart
         
 
@@ -250,7 +251,7 @@ namespace View
     void MainWindow::search(Engine::Query query)
     {
         showStatus("Running query for component \"" + QString::number(query.getType()) + "\".");
-        results_widget->showResults(query, ricerca.search(query)); 
+        result_widget->showResults(query, ricerca.search(query));
         stacked_widget->setCurrentIndex(0);
         clearStack();
     }

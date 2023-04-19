@@ -66,11 +66,11 @@ namespace ComponentRenderer {
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         QHBoxLayout* controlsbox = new QHBoxLayout();
-        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         buttonsbox->addLayout(controlsbox);
         if(has_controls) {  
             view_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/info.png")), "");
@@ -88,7 +88,7 @@ namespace ComponentRenderer {
         
         buttonsbox->addStretch();
 
-        add_button = new QPushButton("Aggiungi");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
     }
@@ -142,11 +142,11 @@ namespace ComponentRenderer {
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         QHBoxLayout* controlsbox = new QHBoxLayout();
-        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         buttonsbox->addLayout(controlsbox);
         if(has_controls) {  
             view_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/info.png")), "");
@@ -164,7 +164,7 @@ namespace ComponentRenderer {
         
         buttonsbox->addStretch();
 
-        add_button = new QPushButton("Aggiungi");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
     }
@@ -224,11 +224,11 @@ namespace ComponentRenderer {
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         QHBoxLayout* controlsbox = new QHBoxLayout();
-        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         buttonsbox->addLayout(controlsbox);
         if(has_controls) {  
             view_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/info.png")), "");
@@ -246,11 +246,12 @@ namespace ComponentRenderer {
         
         buttonsbox->addStretch();
 
-        add_button = new QPushButton("Aggiungi");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
         if(!gpu.isAvailable()) {
             add_button->setDown(true);
+            add_button->setIcon(QIcon(QPixmap(":/Assets/icons/notAvailable.png")));
             add_button->setText("Not Available");
         }  
     }
@@ -303,11 +304,11 @@ namespace ComponentRenderer {
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         QHBoxLayout* controlsbox = new QHBoxLayout();
-        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         buttonsbox->addLayout(controlsbox);
         if(has_controls) {  
             view_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/info.png")), "");
@@ -325,7 +326,7 @@ namespace ComponentRenderer {
         
         buttonsbox->addStretch();
 
-        add_button = new QPushButton("Aggiungi");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
     }
@@ -378,11 +379,11 @@ namespace ComponentRenderer {
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         QHBoxLayout* controlsbox = new QHBoxLayout();
-        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+        controlsbox->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         buttonsbox->addLayout(controlsbox);
         if(has_controls) {  
             view_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/info.png")), "");
@@ -400,7 +401,7 @@ namespace ComponentRenderer {
         
         controlsbox->addStretch();
 
-        add_button = new QPushButton("Aggiungi");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
     }

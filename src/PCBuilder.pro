@@ -39,12 +39,14 @@ SOURCES += \
     View/ComponentEditor/RAMEditor.cpp\
     \
     View/ComponentRenderer/ListComponent.cpp\
+    View/ComponentRenderer/CartComponent.cpp\
+    View/ComponentRenderer/Full.cpp\
     \
     View/ResultRenderer/ListAsc.cpp\
     View/ResultRenderer/ListDesc.cpp\
     \
     View/MainWindow.cpp\
-    View/ResultWidget.cpp\
+    View/ResultsWidget.cpp\
     View/ShoppingCartWidget.cpp\
     View/BuildWidget.cpp\
     View/EditWidget.cpp\
@@ -96,13 +98,15 @@ HEADERS += \
     \
     View/ComponentRenderer/IComponentRenderer.h\
     View/ComponentRenderer/ListComponent.h\
+    View/ComponentRenderer/CartComponent.h\
+    View/ComponentRenderer/Full.h\
     \
     View/ResultRenderer/IResultRenderer.h\
     View/ResultRenderer/ListAsc.h\
     View/ResultRenderer/ListDesc.h\
     \
     View/MainWindow.h\
-    View/ResultWidget.h\
+    View/ResultsWidget.h\
     View/ShoppingCartWidget.h\
     View/BuildWidget.h\
     View/EditWidget.h\
