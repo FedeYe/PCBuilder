@@ -15,7 +15,7 @@
 #include "ComponentEditor/GPUEditor.h"
 #include "ComponentEditor/PSUEditor.h"
 #include "ComponentEditor/RAMEditor.h"
-// #include "ComponentEditor/ComponentInjector.h"
+#include "ComponentEditor/ComponentInjector.h"
 
 namespace View
 {
@@ -70,8 +70,8 @@ namespace View
         }
         form->addRow("price", price_input);
 
-            // aggiungo brand
-            brand_input = new QLineEdit();
+        // aggiungo brand
+        brand_input = new QLineEdit();
         brand_input->setObjectName("brand-input");
         if (subject != nullptr)
         {
@@ -80,6 +80,11 @@ namespace View
         form->addRow("brand", brand_input);
 
         // aggiungo immagine
+        QHBoxLayout *image_selector = new QHBoxLayout();
+        image_selector->setObjectName("image-selector");
+        image_selector->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+        form->addRow("image", image_selector);
+
         image_input = new QLineEdit();
         image_input->setObjectName("image-input");
         if (subject != nullptr)
@@ -187,8 +192,8 @@ namespace View
     {
         int identifier = identifier_input->value();
         QString name = name_input->text();
-        double price = price_input->value(); // non sono sicuro ma dovrebbere essere ok
-        QString brand = brand_input->toPlainText();
+        double price = price_input->value();
+        QString brand = brand_input->text();
         QString image_path = image_input->text();
         ComponentEditor::AbstractComponentEditor *editor = editors[stacked_editor->currentIndex()];
         Component::AbstractComponent *component = editor->create(identifier, name, price, brand, image_path);
