@@ -4,30 +4,30 @@
 
 namespace View {
 
-    BuildWidget(QWidget* parent) : {
+    BuildWidget::BuildWidget(QWidget* parent) : {
 
 
 
         connect()
     }
 
-    Engine::ShoppingCart& getCart() const {
+    Engine::ShoppingCart& BuildWidget::getCart() const {
 
     }
 
-    void selectSearchedComp() {
+    void BuildWidget::selectSearchedComp() {
 
     }
 
-    void addToCart(Component::AbstractComponent* component) {
+    void BuildWidget::addToCart(Component::AbstractComponent* component) {
 
     }
 
-    void removeFromCart(Component::AbstractComponent* component) {
+    void BuildWidget::removeFromCart(Component::AbstractComponent* component) {
 
     }
 
-    void showProduct(Engine::Query query, Engine::ShoppingCart cart) {
+    void BuildWidget::showProduct(Engine::Query query, Engine::ShoppingCart cart) {
 
     }
     

@@ -1,4 +1,4 @@
-#include "ResultWidget.h"
+#include "ResultsWidget.h"
 
 #include <QVBoxLayout>
 #include <QScrollArea>

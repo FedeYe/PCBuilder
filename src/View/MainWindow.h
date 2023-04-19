@@ -7,9 +7,9 @@
 #include "../Component/Repository/JsonRepository.h"
 #include "../Engine/IEngine.h"
 #include "../Engine/Query.h"
-#include "ResultWidget.h"
+#include "ResultsWidget.h"
 #include "ShoppingCartWidget.h"
-#include "ComponentRender/Full.h"
+#include "ComponentRenderer/Full.h"
 
 namespace View
 {
@@ -23,7 +23,7 @@ namespace View
         QToolBar* toolbar;
         Engine::IEngine& ricerca;
         Component::Repository::JsonRepository* repo;
-        ResultWidget* result_widget;
+        ResultsWidget* result_widget;
         ShoppingCartWidget* shopping_cart_widget;
         QStackedWidget* stacked_widget;
         ComponentRenderer::Full full_renderer;

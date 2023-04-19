@@ -7,7 +7,11 @@
 #include <QPushButton>
 #include <string>
 
-
+#include "../../Component/MotherBoard.h"
+#include "../../Component/CPU.h"
+#include "../../Component/GPU.h"
+#include "../../Component/PSU.h"
+#include "../../Component/RAM.h"
 
 namespace View {
 namespace ComponentRenderer {
@@ -185,7 +189,7 @@ namespace ComponentRenderer {
         identifierBox->addWidget(identifierValue);
 
         QHBoxLayout* chipsetBox = new QHBoxLayout();
-        socketBox->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        chipsetBox->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
         details->addLayout(chipsetBox);
         QLabel* chipsetLabel = new QLabel("Chipset: ");
         chipsetLabel->setObjectName("Chipset Label");
@@ -320,11 +324,11 @@ namespace ComponentRenderer {
         QLabel* numVRAMLabel = new QLabel("Number of VRAM: ");
         numVRAMLabel->setObjectName("NumVRAM Label");
         numVRAMLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-        numRAMBox->addWidget(numVRAMLabel);
-        QLabel* numVRAMValue = new QLabel(QString::number(gpu.getNumVRAM()) + " GB");
+        numVRAMBox->addWidget(numVRAMLabel);
+        QLabel* numVRAMValue = new QLabel(QString::number(gpu.getNumVRam()) + " GB");
         numVRAMValue->setObjectName("NumVRAM Value");
         numVRAMValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-        numRAMBox->addWidget(numVRAMValue);
+        numVRAMBox->addWidget(numVRAMValue);
 
         QHBoxLayout* numVentoleBox = new QHBoxLayout();
         numVentoleBox->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
@@ -338,8 +342,8 @@ namespace ComponentRenderer {
         numVentoleValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         numVentoleBox->addWidget(numVentoleValue);
 
-        string availabilityString = "<default>";
-        if(gpu.getNumVentole() == 1) 
+        std::string availabilityString = "<default>";
+        if(gpu.isAvailable() == true)
             availabilityString = "In Stock";
         else 
             availabilityString = "Out of Stock";
@@ -350,7 +354,7 @@ namespace ComponentRenderer {
         availabilityLabel->setObjectName("Availability Label");
         availabilityLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         availabilityBox->addWidget(availabilityLabel);
-        QLabel* availabilityValue = new QLabel(QString::stdString(availabilityString));
+        QLabel* availabilityValue = new QLabel(QString::fromStdString(availabilityString));
         availabilityValue->setObjectName("Availability Value");
         availabilityValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         availabilityBox->addWidget(availabilityValue);
@@ -436,8 +440,8 @@ namespace ComponentRenderer {
         efficiencyValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         efficiencyBox->addWidget(efficiencyValue);
 
-        string modularString = "<default>";
-        if(psu.getModular() == 1) 
+        std::string modularString = "<default>";
+        if(psu.isModular() == true)
             modularString = "Modular";
         else 
             modularString = "Not Modular";
@@ -448,7 +452,7 @@ namespace ComponentRenderer {
         modularLabel->setObjectName("Modular Label");
         modularLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         modularBox->addWidget(modularLabel);
-        QLabel* modularValue = new QLabel(QString::stdString(modularString));
+        QLabel* modularValue = new QLabel(QString::fromStdString(modularString));
         modularValue->setObjectName("Modular Value");
         modularValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         modularBox->addWidget(modularValue);
@@ -530,7 +534,7 @@ namespace ComponentRenderer {
         stockSpeedLabel->setObjectName("StockSpeed Label");
         stockSpeedLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         stockSpeedBox->addWidget(stockSpeedLabel);
-        QLabel* stockSpeedValue = new QLabel(QString::number(ram.getCoreSpeed()) + " MHz");
+        QLabel* stockSpeedValue = new QLabel(QString::number(ram.getStockSpeed()) + " MHz");
         stockSpeedValue->setObjectName("StockSpeed Value");
         stockSpeedValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         stockSpeedBox->addWidget(stockSpeedValue);
@@ -597,7 +601,7 @@ namespace ComponentRenderer {
         return remove_button;
     }
     
-    PushButton* Full::getSearchButton() const {
+    QPushButton* Full::getSearchButton() const {
         return search_button;
     }
 

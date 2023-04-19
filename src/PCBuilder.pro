@@ -46,7 +46,7 @@ SOURCES += \
     View/ResultRenderer/ListDesc.cpp\
     \
     View/MainWindow.cpp\
-    View/ResultWidget.cpp\
+    View/ResultsWidget.cpp\
     View/ShoppingCartWidget.cpp\
     View/BuildWidget.cpp\
     View/EditWidget.cpp\
@@ -106,7 +106,7 @@ HEADERS += \
     View/ResultRenderer/ListDesc.h\
     \
     View/MainWindow.h\
-    View/ResultWidget.h\
+    View/ResultsWidget.h\
     View/ShoppingCartWidget.h\
     View/BuildWidget.h\
     View/EditWidget.h\

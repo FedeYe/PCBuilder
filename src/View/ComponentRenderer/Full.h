@@ -19,10 +19,11 @@ namespace ComponentRenderer {
         QPushButton* search_button;
 
     public:
-        virtual void visit(const Item::WebPage& web_page);
-        virtual void visit(const Item::Simple& simple);
-        virtual void visit(const Item::Virtual& virtual_item);
-        virtual void visit(const Item::Bundle& bundle);
+        virtual void visit(const Component::MotherBoard& mother_board);
+        virtual void visit(const Component::CPU& cpu);
+        virtual void visit(const Component::GPU& gpu);
+        virtual void visit(const Component::PSU& psu);
+        virtual void visit(const Component::RAM& ram);
         virtual QWidget* getWidget() const;
         virtual QPushButton* getViewButton() const;
         virtual QPushButton* getEditButton() const;

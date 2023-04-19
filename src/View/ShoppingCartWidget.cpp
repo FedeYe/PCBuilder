@@ -8,7 +8,7 @@
 
 namespace View {
 
-    ShoppingCartWidget::ShoppingCartWidget(Engine::Query& cQuery, QWidget* parent) 
+    ShoppingCartWidget::ShoppingCartWidget(Engine::Query cQuery, QWidget* parent) 
         : currentQuery(cQuery), QWidget(parent) 
     {
         QVBoxLayout* vbox = new QVBoxLayout(this);
@@ -48,7 +48,7 @@ namespace View {
         connect(order_input, &QPushButton::clicked, this, &ShoppingCartWidget::orderMessageBox);                // click su tasto ORDER -> messagge box "ordine effettuato"
     }
 
-    Engine::Query& ShoppingCartWidget::getCurrentQuery() const {
+    Engine::Query ShoppingCartWidget::getCurrentQuery() const {
         return currentQuery;
     }
 

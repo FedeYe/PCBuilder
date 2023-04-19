@@ -1,4 +1,4 @@
-#include "ListComponent.h"
+#include "CartComponent.h"
 
 #include <QLabel>
 #include <QVBoxLayout>
@@ -60,14 +60,14 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "")
-        remove_button->setObjectName("remove-button")
+        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+        remove_button->setObjectName("remove-button");
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
 
-        search_button = new QPushButton("Cambia")
-        search_button->setObjectName("search_button")
+        search_button = new QPushButton("Cambia");
+        search_button->setObjectName("search_button");
         buttonsbox->addWidget(search_button);
     }
     
@@ -114,14 +114,14 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "")
-        remove_button->setObjectName("remove-button")
+        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+        remove_button->setObjectName("remove-button");
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
 
-        search_button = new QPushButton("Cambia")
-        search_button->setObjectName("search_button")
+        search_button = new QPushButton("Cambia");
+        search_button->setObjectName("search_button");
         buttonsbox->addWidget(search_button);
     }
     
@@ -168,14 +168,14 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "")
-        remove_button->setObjectName("remove-button")
+        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+        remove_button->setObjectName("remove-button");
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
 
-        search_button = new QPushButton("Cambia")
-        search_button->setObjectName("search_button")
+        search_button = new QPushButton("Cambia");
+        search_button->setObjectName("search_button");
         buttonsbox->addWidget(search_button);
     }
     
@@ -222,14 +222,14 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "")
-        remove_button->setObjectName("remove-button")
+        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+        remove_button->setObjectName("remove-button");
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
 
-        search_button = new QPushButton("Cambia")
-        search_button->setObjectName("search_button")
+        search_button = new QPushButton("Cambia");
+        search_button->setObjectName("search_button");
         buttonsbox->addWidget(search_button);
     }
     
@@ -280,14 +280,14 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "")
-        remove_button->setObjectName("remove-button")
+        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+        remove_button->setObjectName("remove-button");
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
 
-        search_button = new QPushButton("Cambia")
-        search_button->setObjectName("search_button")
+        search_button = new QPushButton("Cambia");
+        search_button->setObjectName("search_button");
         buttonsbox->addWidget(search_button);
     }
 
@@ -317,7 +317,7 @@ namespace ComponentRenderer {
         return remove_button;
     }
     
-    PushButton* CartComponent::getSearchButton() const {
+    QPushButton* CartComponent::getSearchButton() const {
         return search_button;
     }    
 

@@ -8,13 +8,13 @@
 #include <QFileDialog>
 #include <QComboBox>
 
-// #include "ShoppingCartWidget.h"
+#include "ShoppingCartWidget.h"
 #include "TypeSelector.h"
-// #include "ComponentEditor/MotherBoardEditor.h"
-// #include "ComponentEditor/CPUEditor.h"
-// #include "ComponentEditor/GPUEditor.h"
-// #include "ComponentEditor/PSUEditor.h"
-// #include "ComponentEditor/RAMEditor.h"
+#include "ComponentEditor/MotherBoardEditor.h"
+#include "ComponentEditor/CPUEditor.h"
+#include "ComponentEditor/GPUEditor.h"
+#include "ComponentEditor/PSUEditor.h"
+#include "ComponentEditor/RAMEditor.h"
 // #include "ComponentEditor/ComponentInjector.h"
 
 namespace View
@@ -66,9 +66,9 @@ namespace View
         price_input->setMaximum(__DBL_MAX__);
         if (subject != nullptr)
         {
-            price_input->setValue(subject->getPrice())
+            price_input->setValue(subject->getPrice());
         }
-        form->addRow("price", price_input)
+        form->addRow("price", price_input);
 
             // aggiungo brand
             brand_input = new QLineEdit();
@@ -187,7 +187,7 @@ namespace View
     {
         int identifier = identifier_input->value();
         QString name = name_input->text();
-        double price = price_imput->value(); // non sono sicuro ma dovrebbere essere ok
+        double price = price_input->value(); // non sono sicuro ma dovrebbere essere ok
         QString brand = brand_input->toPlainText();
         QString image_path = image_input->text();
         ComponentEditor::AbstractComponentEditor *editor = editors[stacked_editor->currentIndex()];

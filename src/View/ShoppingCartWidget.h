@@ -15,10 +15,10 @@ namespace View {
         private:
             QLabel* total_cost;                     // mostra il prezzo totale di tutte le componenti
             BuildWidget* build_widget;          // contiene un grid layout dove poter selezionare/visualizzare le varie componenti
-            Engine::Query& currentQuery;            // salvo l'ultima query usata dal search( quindi quella usata per i prodotti attualmente presenti in ResultSet)
+            Engine::Query currentQuery;            // salvo l'ultima query usata dal search( quindi quella usata per i prodotti attualmente presenti in ResultSet)
         public:
-            explicit ShoppingCartWidget(Engine::Query& cQuery, QWidget* parent = 0);
-            Engine::Query& getCurrentQuery() const;
+            explicit ShoppingCartWidget(Engine::Query cQuery, QWidget* parent = 0);
+            Engine::Query getCurrentQuery() const;
 
         signals:
             void search_event(Engine::Query query);
