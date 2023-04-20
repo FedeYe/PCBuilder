@@ -16,16 +16,16 @@ class MotherBoard : public AbstractComponent {
 
     public:
         MotherBoard(
-            const unsigned int identifier,
-            const std::string name,
-            const double price,
-            const std::string brand,
-            const std::string image_path, 
-            const std::string socket,
-            const std::string chipset,
-            const std::string generation,
-            const unsigned int numRAM,
-            const unsigned int numSSD
+            const unsigned int identifier = 0,
+            const std::string name = "MotherBoard",
+            const double price = 0,
+            const std::string brand = "",
+            const std::string image_path = ":/Assets/icons/defaultMB.svg", 
+            const std::string socket = "",
+            const std::string chipset = "<default>",
+            const std::string generation = "<default>",
+            const unsigned int numRAM = 0,
+            const unsigned int numSSD = 0
         );
         
         const std::string& getSocket() const;

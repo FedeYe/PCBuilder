@@ -33,8 +33,8 @@ namespace View
         QPushButton* order_ascendent = new QPushButton(QIcon(QPixmap(":/Assets/icons/priceasc.png")), "Prezzo crescente");
         hbox->addWidget(order_ascendent);
 
-        QPushButton* order_descendend = new QPushButton(QIcon(QPixmap(":/Assets/icons/pricedesc.png")), "Prezzo decrescente");
-        hbox->addWidget(order_descendend);
+        QPushButton* order_descendent = new QPushButton(QIcon(QPixmap(":/Assets/icons/pricedesc.png")), "Prezzo decrescente");
+        hbox->addWidget(order_descendent);
 
         grid = new QGridLayout();
         grid->setAlignment(Qt::AlignHCenter | Qt::AlignTop);

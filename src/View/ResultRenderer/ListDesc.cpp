@@ -23,7 +23,9 @@ namespace View
                     list_component.getViewButton(), //  list_component --> da ComponentRenderer
                     list_component.getEditButton(),
                     list_component.getDeleteButton(),
-                    list_component.getAddButton()
+                    list_component.getAddButton(),
+                    list_component.getRemoveButton(),
+                    list_component.getSearchButton()
                     ));
                 index++;
             }

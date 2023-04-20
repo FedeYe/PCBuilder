@@ -31,7 +31,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(mother_board.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/icons/defaultMB.svg");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));
@@ -160,7 +160,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(cpu.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/icons/defaultCPU.svg");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));
@@ -278,7 +278,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(gpu.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/icons/defaultGPU.svg");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));
@@ -388,7 +388,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(psu.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/icons/defaultPSU.svg");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));
@@ -487,7 +487,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(ram.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/icons/defaultRAM.svg");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));

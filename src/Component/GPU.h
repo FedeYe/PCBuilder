@@ -16,15 +16,15 @@ namespace Component
 
     public:
         GPU(
-            const unsigned int identifier,
-            const std::string name,
-            const double price,
-            const std::string brand,
-            const std::string image_path,
-            const unsigned int numPorte,
-            const unsigned int numVRam,
-            const unsigned int numVentole,
-            const bool availability);
+            const unsigned int identifier = 0,
+            const std::string name = "GPU",
+            const double price = 0,
+            const std::string brand = "",
+            const std::string image_path = ":/Assets/icons/defaultGPU.svg",
+            const unsigned int numPorte = 0,
+            const unsigned int numVRam = 0,
+            const unsigned int numVentole = 0,
+            const bool availability = true);
 
         unsigned int getNumPorte() const;
         GPU &setNumPorte(const unsigned int numPorte);

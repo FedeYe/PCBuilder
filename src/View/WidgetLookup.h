@@ -18,6 +18,8 @@ namespace View
         QPushButton* edit_button;
         QPushButton* delete_button;
         QPushButton* add_button;
+        QPushButton* remove_button;
+        QPushButton* search_button;
 
     public:
         WidgetLookup(
@@ -26,7 +28,9 @@ namespace View
             QPushButton* info_button,
             QPushButton* edit_button,
             QPushButton* delete_button,
-            QPushButton* add_button);
+            QPushButton* add_button,
+            QPushButton* remove_button,
+            QPushButton* search_button);
 
         const Component::AbstractComponent *getComponent() const;
         QWidget* getWidget() const;
@@ -34,6 +38,9 @@ namespace View
         QPushButton* getEditButton() const;
         QPushButton* getDeleteButton() const;
         QPushButton* getAddButton() const;
+        QPushButton* getRemoveButton() const;
+        QPushButton* getSearchButton() const;
+
     };
 }
 

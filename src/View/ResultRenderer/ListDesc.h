@@ -3,7 +3,7 @@
 
 #include "IResultRenderer.h"
 
-#include "../ResultWidget.h"
+#include "../ResultsWidget.h"
 #include "../ComponentRenderer/ListComponent.h"  
 namespace View
 {
