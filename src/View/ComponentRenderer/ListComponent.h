@@ -2,7 +2,7 @@
 #define VIEW_COMPONENT_RENDERER_LIST_COMPONENT_H
 
 #include "IComponentRenderer.h"
-#include "../ResultWidget.h"
+#include "../ResultsWidget.h"
 
 namespace View {
 namespace ComponentRenderer {

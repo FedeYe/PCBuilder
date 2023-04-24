@@ -18,17 +18,17 @@ namespace Component
 
     public:
         CPU(
-            const unsigned int identifier,
-            const std::string name,
-            const double price,
-            const std::string brand,
-            const std::string image_path,
-            const std::string chipset,
-            const unsigned int numCores,
-            const unsigned int threads,
-            const double coreclock,
-            const double boostclock,
-            const unsigned int cache);
+            const unsigned int identifier = 0,
+            const std::string name = "CPU",
+            const double price = 0,
+            const std::string brand = "",
+            const std::string image_path = ":/Assets/icons/defaultCPU.svg",
+            const std::string chipset = "<default>", 
+            const unsigned int numCores = 0,
+            const unsigned int threads = 0,
+            const double coreclock = 0,
+            const double boostclock = 0,
+            const unsigned int cache = 0);
 
         const std::string &getChipset() const;
         CPU &setChipset(const std::string chipset);

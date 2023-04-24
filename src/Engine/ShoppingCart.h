@@ -17,11 +17,13 @@ namespace Engine {
             ShoppingCart();
             ~ShoppingCart() = default;
 
+            Service::Container<const Component::AbstractComponent*>::Node* getCartHead() const;
+
             ShoppingCart& add(const Component::AbstractComponent* component);
             ShoppingCart& remove(const Component::AbstractComponent* component);
             ShoppingCart& clear();
-            // metodo search
-            // metodo che controlla la compatibilità
+            const Component::AbstractComponent* getAdded(const Component::AbstractComponent* old_component);
+            bool areCompatible(const Component::AbstractComponent* comp1, const Component::AbstractComponent* comp2) const;    // metodo che controlla la compatibilità
 
             double getTotalCost() const;            
             void calculateTotalCost();              //viene richiamato già quando uso metodi add, remove, clear

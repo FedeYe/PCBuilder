@@ -15,10 +15,11 @@
 namespace View {
 namespace ComponentRenderer {
 
-    CartComponent::CartComponent() {
+    CartComponent::CartComponent(const int type_c) : type_comp(type_c) {
     }
 
     void CartComponent::visit(const Component::MotherBoard& mother_board) {
+        type_comp = 0;
         widget = new QWidget();
         widget->setObjectName("list-component-motherboard");
         view_button = nullptr;
@@ -33,7 +34,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(mother_board.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -51,17 +52,21 @@ namespace ComponentRenderer {
 
         QLabel* price = new QLabel("Price: " + QString::number(mother_board.getPrice()) + "€");
         price->setObjectName("Price");
+        if(mother_board.getIdentifier() == 0)
+            price->setText("");
         infobox->addWidget(price);
 
         hbox->addStretch();
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
         remove_button->setObjectName("remove-button");
+        if(mother_board.getIdentifier() == 0)
+            remove_button->setDown(true);
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
@@ -72,7 +77,7 @@ namespace ComponentRenderer {
     }
     
     void CartComponent::visit(const Component::CPU& cpu) {
-
+        type_comp = 1;
         widget = new QWidget();
         widget->setObjectName("list-component-cpu");
         view_button = nullptr;
@@ -87,7 +92,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(cpu.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -105,17 +110,21 @@ namespace ComponentRenderer {
 
         QLabel* price = new QLabel("Price: " + QString::number(cpu.getPrice()) + "€");
         price->setObjectName("Price");
+        if(cpu.getIdentifier() == 0)
+            price->setText("");
         infobox->addWidget(price);
 
         hbox->addStretch();
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
         remove_button->setObjectName("remove-button");
+        if(cpu.getIdentifier() == 0)
+            remove_button->setDown(true);
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
@@ -126,7 +135,7 @@ namespace ComponentRenderer {
     }
     
     void CartComponent::visit(const Component::GPU& gpu) {
-
+        type_comp = 2;
         widget = new QWidget();
         widget->setObjectName("list-component-cpu");
         view_button = nullptr;
@@ -141,7 +150,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(gpu.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -159,17 +168,21 @@ namespace ComponentRenderer {
 
         QLabel* price = new QLabel("Price: " + QString::number(gpu.getPrice()) + "€");
         price->setObjectName("Price");
+        if(gpu.getIdentifier() == 0)
+            price->setText("");
         infobox->addWidget(price);
 
         hbox->addStretch();
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
         remove_button->setObjectName("remove-button");
+        if(gpu.getIdentifier() == 0)
+            remove_button->setDown(true);
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
@@ -180,7 +193,7 @@ namespace ComponentRenderer {
     }
     
     void CartComponent::visit(const Component::PSU& psu) {
-
+        type_comp = 3;
         widget = new QWidget();
         widget->setObjectName("list-component-psu");
         view_button = nullptr;
@@ -195,7 +208,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(psu.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -213,17 +226,21 @@ namespace ComponentRenderer {
 
         QLabel* price = new QLabel("Price: " + QString::number(psu.getPrice()) + "€");
         price->setObjectName("Price");
+        if(psu.getIdentifier() == 0)
+            price->setText("");
         infobox->addWidget(price);
 
         hbox->addStretch();
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
         remove_button->setObjectName("remove-button");
+        if(psu.getIdentifier() == 0)
+            remove_button->setDown(true);
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
@@ -234,7 +251,7 @@ namespace ComponentRenderer {
     }
     
     void CartComponent::visit(const Component::RAM& ram) {
-
+        type_comp = 4;
         widget = new QWidget();
         widget->setObjectName("list-component-ram");
         view_button = nullptr;
@@ -249,7 +266,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(ram.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/images/placeholder.png");
+        	image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -267,21 +284,27 @@ namespace ComponentRenderer {
 
         QLabel* capacity = new QLabel("Capacity: " + QString::fromStdString(ram.getCapacity()));
         capacity->setObjectName("Capacity");
+        if(ram.getIdentifier() == 0)
+            capacity->setText("");
         infobox->addWidget(capacity);
 
         QLabel* price = new QLabel("Price: " + QString::number(ram.getPrice()) + "€");
         price->setObjectName("Price");
+        if(ram.getIdentifier() == 0)
+            price->setText("");
         infobox->addWidget(price);
 
         hbox->addStretch();
 
         //pannello bottoni
         QVBoxLayout* buttonsbox = new QVBoxLayout();
-        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
         remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
         remove_button->setObjectName("remove-button");
+        if(ram.getIdentifier() == 0)
+            remove_button->setDown(true);
         buttonsbox->addWidget(remove_button);
 
         buttonsbox->addStretch();
@@ -291,7 +314,9 @@ namespace ComponentRenderer {
         buttonsbox->addWidget(search_button);
     }
 
-
+    int CartComponent::getTypeComp() const {
+        return type_comp;
+    }
     
     QWidget* CartComponent::getWidget() const{
         return widget;

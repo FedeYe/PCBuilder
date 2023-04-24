@@ -199,6 +199,6 @@ namespace View
         Component::AbstractComponent *component = editor->create(identifier, name, price, brand, image_path);
         main_window->getRepository()->update(component);
         main_window->reloadData();
-        // main_window->getShoppingCartWidget()->search();
+        main_window->getShoppingCartWidget()->search();
     }
 }

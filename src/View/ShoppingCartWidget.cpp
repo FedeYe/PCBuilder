@@ -4,20 +4,37 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QMessageBox>
+#include <typeinfo>
 //#include <>
+
+#include "../Component/MotherBoard.h"
+#include "../Component/CPU.h"
+#include "../Component/GPU.h"
+#include "../Component/PSU.h"
+#include "../Component/RAM.h"
+#include "CartRenderer/Grid.h"
+#include "TypeIdentifier.h"
+
 
 namespace View {
 
-    ShoppingCartWidget::ShoppingCartWidget(Engine::Query cQuery, QWidget* parent) 
-        : currentQuery(cQuery), QWidget(parent) 
+    ShoppingCartWidget::ShoppingCartWidget(Engine::Query cQuery, Engine::ShoppingCart& default_cart, QWidget* parent) 
+        : currentQuery(cQuery), shop_cart(default_cart), QWidget(parent) 
     {
         QVBoxLayout* vbox = new QVBoxLayout(this);
         vbox->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
 
         vbox->addStretch();
 
-        build_widget = new BuildWidget();
-        vbox->addWidget(build_widget);
+        // griglia che rappresenta il carrello
+        grid = new QGridLayout();
+        grid->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        QWidget* container = new QWidget();
+        container->setLayout(grid);
+        vbox->addWidget(container);
+
+        renderer = new CartRenderer::Grid();  
+        showCart();
 
         vbox->addStretch();
 
@@ -37,26 +54,68 @@ namespace View {
         summary->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         vbox->addLayout(summary);
 
-        //connect
-        connect(this, &ShoppingCartWidget::tryAddComponentToCartEvent, build_widget, &BuildWidget::addToCart);
-
-        connect(build_widget, &BuildWidget::compSelectedEvent, this, &ShoppingCartWidget::search);        // selezionando una tipologia di componente da ricercare   
-        
-        connect(build_widget, &BuildWidget::addedToCartEvent, this, &ShoppingCartWidget::refreshTotalCost);
-        connect(build_widget, &BuildWidget::removedFromCartEvent, this, &ShoppingCartWidget::refreshTotalCost);
-
+        //connect        
         connect(order_input, &QPushButton::clicked, this, &ShoppingCartWidget::orderMessageBox);                // click su tasto ORDER -> messagge box "ordine effettuato"
     }
+
+    void ShoppingCartWidget::addToCart(const Component::AbstractComponent* new_component) {
+        shop_cart.add(new_component);
+        showCart();
+        refreshTotalCost();
+    }
+
+    void ShoppingCartWidget::errorMessage(QString error_msg) {
+        QMessageBox msgBox;
+        msgBox.setText("Warning");
+        msgBox.setInformativeText(error_msg);
+        msgBox.exec();
+    }
+
+    void ShoppingCartWidget::refreshTotalCost() {
+        total_cost->setText("Costo Totale : \"" + QString::number(shop_cart.getTotalCost()));
+    }
+
 
     Engine::Query ShoppingCartWidget::getCurrentQuery() const {
         return currentQuery;
     }
 
+    Engine::ShoppingCart& ShoppingCartWidget::getCart() const {
+        return shop_cart;
+    }
+
+    void ShoppingCartWidget::showCart() {
+
+        while (!lookup.isEmpty()) {
+            WidgetLookup info = lookup.takeLast();
+            delete info.getWidget();
+        }
+
+        // Shows new data
+        renderer->render(grid, shop_cart, &lookup);
+
+        // Connects signals
+        for (
+                QVector<WidgetLookup>::const_iterator it = lookup.begin();
+                it != lookup.end();
+                it++
+        ) {
+            if (it->getRemoveButton()) {
+                connect(it->getRemoveButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::removeFromCart, this, it->getComponent()));
+            }
+            if (it->getSearchButton()) {
+                connect(it->getSearchButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::componentSelected, this, it->getComponent()));
+            }
+        }
+    }
+
+
     void ShoppingCartWidget::prevComponent() {
         unsigned int currentType = currentQuery.getType();
         if(currentType == 1) 
             currentQuery.setType(5); 
-        currentQuery.setType(currentType - 1);
+        else
+            currentQuery.setType(currentType - 1);
         emit search_event(currentQuery);
     }           
 
@@ -64,17 +123,69 @@ namespace View {
         unsigned int currentType = currentQuery.getType();
         if(currentType == 5) 
             currentQuery.setType(1);
-        currentQuery.setType(currentType + 1);
+        else 
+            currentQuery.setType(currentType + 1);
         emit search_event(currentQuery);
     }     
 
-    void ShoppingCartWidget::search(Engine::Query query) {
+    void ShoppingCartWidget::tryAddComponentToCart(const Component::AbstractComponent* new_component) {
+        QString error_msg = "No Errors corrently";
+        if(typeid(*new_component) != typeid(const Component::GPU) && typeid(*new_component) != typeid(const Component::PSU)) {
+            // new_component è MB-CPU-RAM
+            if(typeid(*new_component) == typeid(Component::MotherBoard)) {
+                // new_component è MB
+                const Component::CPU* p_cpu = new Component::CPU();
+                const Component::AbstractComponent* old_cpu = shop_cart.getAdded(p_cpu);
+
+                const Component::RAM* p_ram = new Component::RAM();
+                const Component::AbstractComponent* old_ram = shop_cart.getAdded(p_ram);
+                
+                if(old_cpu && !shop_cart.areCompatible(new_component, old_cpu)) {
+                    QString error_msg = "Errore di compatibilità tra motherboard e CPU scelte";
+                    errorMessage(error_msg);
+                    return;
+                }
+                if(old_ram && !shop_cart.areCompatible(new_component, old_ram)) {
+                    QString error_msg = "Errore di compatibilità tra motherboard e RAM scelte";
+                    errorMessage(error_msg);
+                    return;
+                }  
+            } else {
+                // new_component è CPU o RAM
+                const Component::MotherBoard* p_mb = new Component::MotherBoard();
+                const Component::AbstractComponent* old_mb = shop_cart.getAdded(p_mb);
+                if(old_mb && !shop_cart.areCompatible(old_mb, new_component)) {
+                    if(typeid(*new_component) == typeid(Component::CPU)) {
+                        // new_component è CPU
+                        QString error_msg = "Errore di compatibilità tra motherboard e CPU scelte";
+                    } else {
+                        // new_component è RAM
+                        QString error_msg = "Errore di compatibilità tra motherboard e RAM scelte";
+                    }
+                    errorMessage(error_msg);
+                    return;
+                }
+            }
+        } // new_component è GPU-PSU oppure non ci sono problemi di compatibilità tra MB-CPU-RAM
+        addToCart(new_component);
+    }   
+
+    void ShoppingCartWidget::componentSelected(Component::AbstractComponent* component) {
+        TypeIdentifier typeId;
+        component->accept(typeId);
+        Engine::Query query(typeId.getCompType());
         currentQuery = query;
-        emit search_event(query);
+        emit search_event(currentQuery);
+    }
+
+    void ShoppingCartWidget::search() {
+        emit search_event(currentQuery);
     }    
 
-    void ShoppingCartWidget::refreshTotalCost(const Engine::ShoppingCart& carrello) {
-        total_cost->setText("Costo Totale : \"" + QString::number(carrello.getTotalCost()));
+    void ShoppingCartWidget::removeFromCart(Component::AbstractComponent* component) {
+        shop_cart.remove(component);
+        showCart();
+        refreshTotalCost();
     }
 
     void ShoppingCartWidget::orderMessageBox() {
@@ -83,11 +194,13 @@ namespace View {
             confirmation = QMessageBox::question(
                 this,
                 "Concludere ordine",
-                "Confermare l'ordine? .\n?",
+                "Confermare l'ordine?",
                 QMessageBox::Yes | QMessageBox::No );
             if (confirmation == QMessageBox::Yes) 
             {
                 QApplication::quit();
             }
     } 
+
+    
 }

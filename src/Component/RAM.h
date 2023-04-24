@@ -13,15 +13,15 @@ class RAM : public AbstractComponent {
         std::string generation;
     public:
         RAM(
-            const unsigned int identifier,
-            const std::string name,
-            const double price,
-            const std::string brand,
-            const std::string image_path,
-            const std::string capacity,
-            const unsigned int stockSpeed,
-            const unsigned int maxSpeed,
-            const std::string generation
+            const unsigned int identifier = 0,
+            const std::string name = "RAM",
+            const double price = 0,
+            const std::string brand = "",
+            const std::string image_path = ":/Assets/icons/defaultRAM.svg",
+            const std::string capacity = "",
+            const unsigned int stockSpeed = 0,
+            const unsigned int maxSpeed = 0,
+            const std::string generation = "<default>"
         );
 
         std::string getCapacity() const;

@@ -13,14 +13,14 @@ class PSU : public AbstractComponent {
         bool modular;
     public:
         PSU(
-            const unsigned int identifier,
-            const std::string name,
-            const double price,
-            const std::string brand,
-            const std::string image_path,
-            const unsigned int suppliedWatt,
-            const unsigned int efficiency,
-            const bool modular
+            const unsigned int identifier = 0,
+            const std::string name = "PSU",
+            const double price = 0,
+            const std::string brand = "",
+            const std::string image_path = ":/Assets/icons/defaultPSU.svg",
+            const unsigned int suppliedWatt = 0,
+            const unsigned int efficiency = 0,
+            const bool modular = true
         );
 
         unsigned int getSuppWatt() const;
