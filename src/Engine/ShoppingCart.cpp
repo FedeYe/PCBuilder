@@ -19,10 +19,14 @@ namespace Engine {
         cart = cart.add(new Component::MotherBoard);
     }
 
+    Service::Container<const Component::AbstractComponent*>::Node* ShoppingCart::getCartHead() const {
+        return cart.getHead();
+    }
+
     ShoppingCart& ShoppingCart::add(const Component::AbstractComponent* new_component) {
 
         const Component::AbstractComponent* old_component = nullptr;
-        old_component = cart.checkAdded(new_component);
+        old_component = cart.findAdded(new_component);
         if(old_component != nullptr) {
             cart.remove(old_component);
         }
@@ -43,13 +47,18 @@ namespace Engine {
         return *this;
     }
 
+    const Component::AbstractComponent* ShoppingCart::getAdded(const Component::AbstractComponent* old_component) {
+        return cart.findAdded(old_component);
+    }
+
     bool ShoppingCart::areCompatible(const Component::AbstractComponent* comp1, const Component::AbstractComponent* comp2) const {
         if( typeid(*comp1) == typeid(Component::MotherBoard) && 
             typeid(*comp2) == typeid(Component::CPU)) {
             
                 const Component::MotherBoard* mb = dynamic_cast<const Component::MotherBoard*>(comp1);
                 const Component::CPU* cpu = dynamic_cast<const Component::CPU*>(comp2);
-
+                if(mb->getChipset() == "<default>" || cpu->getChipset() == "<default>") 
+                    return true;
                 return (mb->getChipset() == cpu->getChipset());
 
         } else if(  typeid(*comp1) == typeid(Component::MotherBoard) && 
@@ -57,7 +66,8 @@ namespace Engine {
 
                         const Component::MotherBoard* mb = dynamic_cast<const Component::MotherBoard*>(comp1);
                         const Component::RAM* ram = dynamic_cast<const Component::RAM*>(comp2);
-
+                        if(mb->getGeneration() == "<default>" || ram->getGeneration() == "<default>") 
+                            return true;
                         return (mb->getGeneration() == ram->getGeneration());          
         } 
         return true;            // se il check è tra 2 componenti che non siano MB-CPU o MB-RAM, true perchè non ci sono problemi di compatibilità

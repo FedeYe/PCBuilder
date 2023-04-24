@@ -115,7 +115,7 @@ namespace Service
             return *this;
         }
 
-        T checkAdded(T newChoice) const
+        T findAdded(T newChoice) const
         {
             Node *n = head;
             while (n != nullptr)

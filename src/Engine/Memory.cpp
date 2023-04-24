@@ -6,20 +6,25 @@ namespace Engine {
 
     Memory::Memory() {
     }
+
     Memory::~Memory() {
     }
+
     Memory& Memory::add(const Component::AbstractComponent* component) {
         catalog.add(component);
         return *this;
     }
+
     Memory& Memory::remove(const Component::AbstractComponent* component) {
         catalog.remove(component);
         return *this;
     }
+
     Memory& Memory::clear() {
         catalog.clear();
         return *this;
     }
+    
     ResultSet Memory::search(const Query& query) const { 
 
         FilterVisitor filterV(query);

@@ -31,7 +31,10 @@ SOURCES += \
     Service/Logger/AbstractLogger.cpp\
     Service/Logger/Singleton.cpp\
     \
+    View/CartRenderer/Grid.cpp\
+    \
     View/ComponentEditor/AbstractComponentEditor.cpp\
+    View/ComponentEditor/ComponentInjector.cpp\
     View/ComponentEditor/CPUEditor.cpp\
     View/ComponentEditor/GPUEditor.cpp\
     View/ComponentEditor/MotherBoardEditor.cpp\
@@ -49,6 +52,7 @@ SOURCES += \
     View/ResultsWidget.cpp\
     View/ShoppingCartWidget.cpp\
     View/EditWidget.cpp\
+    View/TypeIdentifier.cpp\
     View/TypeSelector.cpp\
     View/WidgetLookup.cpp\
     \
@@ -88,7 +92,11 @@ HEADERS += \
     \
     Service/Container.h\
     \
+    View/CartRenderer/ICartRenderer.h\
+    View/CartRenderer/Grid.h\
+    \
     View/ComponentEditor/AbstractComponentEditor.h\
+    View/ComponentEditor/ComponentInjector.h\
     View/ComponentEditor/CPUEditor.h\
     View/ComponentEditor/GPUEditor.h\
     View/ComponentEditor/MotherBoardEditor.h\
@@ -108,6 +116,7 @@ HEADERS += \
     View/ResultsWidget.h\
     View/ShoppingCartWidget.h\
     View/EditWidget.h\
+    View/TypeIdentifier.h\
     View/TypeSelector.h\
     View/WidgetLookup.h
 

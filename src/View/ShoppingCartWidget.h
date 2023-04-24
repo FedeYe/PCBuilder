@@ -5,12 +5,12 @@
 #include <QLabel>
 #include <QGridLayout>
 #include <QVector>
+#include <Qstring>
 //#include <>
 
 #include "../Engine/Query.h"
 #include "../Engine/ShoppingCart.h"             // per il metodo get totale costo degli items in carrello
-#include "BuildWidget.h"
-#include "ResultRenderer/IResultRenderer.h"
+#include "CartRenderer/ICartRenderer.h"
 #include "WidgetLookup.h"
 
 namespace View {
@@ -22,37 +22,29 @@ namespace View {
             Engine::ShoppingCart& shop_cart;
             QVector<WidgetLookup> lookup;
             QGridLayout* grid;
-            ResultRenderer::IResultRenderer* renderer;
+            CartRenderer::ICartRenderer* renderer;
         public:
-            explicit ShoppingCartWidget(Engine::Query cQuery, QWidget* parent = 0);
+            explicit ShoppingCartWidget(Engine::Query cQuery, Engine::ShoppingCart& default_cart, QWidget* parent = 0);
+            void addToCart(const Component::AbstractComponent* new_component);  
+            void errorMessage(QString error_msg);
+            void refreshTotalCost();
+
             Engine::Query getCurrentQuery() const;
             Engine::ShoppingCart& getCart() const;
 
         signals:
             void search_event(Engine::Query query);
-            void compatibility_error_event(Qstring error_msg);                              // sbuca messaggio di errore compatibilità
-            void addedToCart_event(Component::AbstractComponent* new_component);            // causa il refresh della griglia-carrello e della label costo totale
             
             
         public slots:
-
+            void showCart();
             void prevComponent();             // modifico la query (-1 al type) ed emetto nuovamente il signal search_event(query) 
             void nextComponent();             // modifico la query (+1 al type) ecc...
-
             void tryAddComponentToCart(const Component::AbstractComponent* new_component);
-            void addToCart();                                               // aggiunge oggetto e emette segnale addedToCart_event
-            
-            // void componentSelected(Component::AbstractComponent* component);         // search viene schiacciato -> crea/aggiorna la currentQuery 
+                                                         // aggiunge oggetto e emette segnale addedToCart_event
+            void componentSelected(Component::AbstractComponent* component);         // search viene schiacciato -> crea/aggiorna la currentQuery 
             void search();                                                              // cerca gli oggetti che soddisfano la query
-            // void removeFromCart(Component::AbstractComponent* component);            // toglie e chiama la funzione che resetta lo slot della griglia-carrello a default
-            
-
-            // void showCart(Engine::Query query);      forse non serve
-            // void refreshGrid(Component::AbstractComponent* component)
-            
-                    
-            void refreshTotalCost();
-            void ErrorMessage(Qstring error_msg);
+            void removeFromCart(Component::AbstractComponent* component);            // toglie e chiama la funzione che resetta lo slot della griglia-carrello a default
             void orderMessageBox();
             
     };

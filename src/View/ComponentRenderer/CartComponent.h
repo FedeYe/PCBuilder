@@ -8,6 +8,8 @@ namespace ComponentRenderer {
 
     class CartComponent : public IComponentRenderer {
         private:
+            int type_comp;                              // varia in base alla classe della Componente e serve a visualizzare le componenti nella griglia di ShoppingCartWidget
+                                                        // mantenendo lo stesso ordine 
             QWidget* widget;
             QPushButton* view_button;
             QPushButton* edit_button;
@@ -17,7 +19,7 @@ namespace ComponentRenderer {
             QPushButton* search_button;
 
         public:
-            CartComponent();
+            CartComponent(const int type_c = -1);
         
             virtual void visit(const Component::MotherBoard& mother_board);
             virtual void visit(const Component::CPU& cpu);
@@ -25,6 +27,7 @@ namespace ComponentRenderer {
             virtual void visit(const Component::PSU& psu);
             virtual void visit(const Component::RAM& ram);
 
+            virtual int getTypeComp() const;
             virtual QWidget* getWidget() const;
             virtual QPushButton* getViewButton() const;         // non serve
             virtual QPushButton* getEditButton() const;         // non serve
