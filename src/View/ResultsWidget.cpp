@@ -30,18 +30,21 @@ namespace View
         hbox->addWidget(results_total);
 
         hbox->addStretch();
+        QHBoxLayout* price_order_buttons = new QHBoxLayout();
+        price_order_buttons->setAlignment(Qt::AlignRight | Qt::AlignTop);
+        hbox->addLayout(price_order_buttons);
 
         QPushButton* order_ascendent = new QPushButton(
-            QIcon(QPixmap((":/Assets/icons/priceasc.png"))),
-            "Prezzo crescente"
+            QIcon(QPixmap((":/Assets/icons/priceasc.png")),"Prezzo crescente"),
+            ""
         );
-        hbox->addWidget(order_ascendent);
+        price_order_buttons->addWidget(order_ascendent);
 
         QPushButton* order_descendent = new QPushButton(
-            QIcon(QPixmap((":/Assets/icons/pricedesc.png"))), 
-            "Prezzo decrescente"
+            QIcon(QPixmap((":/Assets/icons/pricedesc.png"))"Prezzo decrescente"), 
+            ""
         );
-        hbox->addWidget(order_descendent);
+        price_order_buttons->addWidget(order_descendent);
 
         grid = new QGridLayout();
         grid->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
@@ -61,11 +64,11 @@ namespace View
         hbox2->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
         vbox->addLayout(hbox2); 
 
-        prev_component = new QPushButton(QIcon(QPixmap((":/Assets/icons/previous.svg"))), "Componente Precedente");
+        prev_component = new QPushButton("Componente Precedente");
         prev_component->setEnabled(false);
         hbox2->addWidget(prev_component);
 
-        next_component = new QPushButton(QIcon(QPixmap((":/Assets/icons/next.svg"))), "Componente Successiva");
+        next_component = new QPushButton("Componente Successiva");
         next_component->setEnabled(false);
         hbox2->addWidget(next_component); 
 

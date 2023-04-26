@@ -45,10 +45,7 @@ namespace View {
         total_cost->setAlignment(Qt::AlignCenter);
         summary->addWidget(total_cost);
 
-        QPushButton* order_input = new QPushButton(
-            QIcon(QPixmap((":/Assets/icons/order.png"))),
-            "Ordina"
-        );
+        QPushButton* order_input = new QPushButton(QIcon(QPixmap((":/Assets/icons/order.png"))),"Ordina");
         summary->addWidget(order_input);
 
         summary->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
