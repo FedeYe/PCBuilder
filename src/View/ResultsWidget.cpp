@@ -35,13 +35,13 @@ namespace View
         hbox->addLayout(price_order_buttons);
 
         QPushButton* order_ascendent = new QPushButton(
-            QIcon(QPixmap((":/Assets/icons/priceasc.png")),"Prezzo crescente"),
+            QIcon(QPixmap(":/Assets/icons/priceasc.png")),
             ""
         );
         price_order_buttons->addWidget(order_ascendent);
 
         QPushButton* order_descendent = new QPushButton(
-            QIcon(QPixmap((":/Assets/icons/pricedesc.png"))"Prezzo decrescente"), 
+            QIcon(QPixmap(":/Assets/icons/pricedesc.png")), 
             ""
         );
         price_order_buttons->addWidget(order_descendent);
