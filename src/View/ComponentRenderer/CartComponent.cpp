@@ -40,7 +40,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
         hbox->addWidget(image);
 
         //pannello informazioni prodotto
@@ -102,7 +102,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
         hbox->addWidget(image);
 
         //pannello informazioni prodotto
@@ -163,7 +163,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
         hbox->addWidget(image);
 
         //pannello informazioni prodotto
@@ -223,7 +223,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
         hbox->addWidget(image);
 
         //pannello informazioni prodotto
@@ -283,7 +283,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
         hbox->addWidget(image);
 
         //pannello informazioni prodotto
