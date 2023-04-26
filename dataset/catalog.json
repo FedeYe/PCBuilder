@@ -83,7 +83,7 @@
         "name": "Intel Core i5-11400 6-Core 2.6GHz",
         "price": "164.99",
         "brand": "Intel",
-        "image_path": "images/inteli5cpu.webp",
+        "image_path": "Images/inteli5cpu.webp",
         "chipset": "Intel",
         "numCores": "6",
         "threads": "12",
