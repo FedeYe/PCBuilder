@@ -55,6 +55,8 @@ namespace View {
         vbox->addLayout(summary);
 
         //connect        
+        connect(this, &ShoppingCartWidget::removedFromCart_event, this, &ShoppingCartWidget::removeFromCart);
+        connect(this, &ShoppingCartWidget::componentSelected_event, this, &ShoppingCartWidget::componentSelected);
         connect(order_input, &QPushButton::clicked, this, &ShoppingCartWidget::orderMessageBox);                // click su tasto ORDER -> messagge box "ordine effettuato"
     }
 
@@ -101,10 +103,10 @@ namespace View {
                 it++
         ) {
             if (it->getRemoveButton()) {
-                connect(it->getRemoveButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::removeFromCart, it->getComponent()));
+                connect(it->getRemoveButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::removedFromCart_event, this, it->getComponent()));
             }
             if (it->getSearchButton()) {
-                connect(it->getSearchButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::componentSelected, it->getComponent()));
+                connect(it->getSearchButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::componentSelected_event, this, it->getComponent()));
             }
         }
     }
@@ -170,7 +172,7 @@ namespace View {
         addToCart(new_component);
     }   
 
-    void ShoppingCartWidget::componentSelected(Component::AbstractComponent* component) {
+    void ShoppingCartWidget::componentSelected(const Component::AbstractComponent* component) {
         TypeIdentifier typeId;
         component->accept(typeId);
         Engine::Query query(typeId.getCompType());
@@ -182,7 +184,7 @@ namespace View {
         emit search_event(currentQuery);
     }    
 
-    void ShoppingCartWidget::removeFromCart(Component::AbstractComponent* component) {
+    void ShoppingCartWidget::removeFromCart(const Component::AbstractComponent* component) {
         shop_cart.remove(component);
         showCart();
         refreshTotalCost();
