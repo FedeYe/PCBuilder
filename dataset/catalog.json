@@ -1,13 +1,11 @@
-//:...................................................
-components: [
-    //MOTHERBOARD 1-6
+[
     {
         "type": "MotherBoard",
         "Identifier": "1",
         "name": "ASUS Prime Z690-P WIFI DDR4",
         "price": "239.99",
         "brand": "ASUS",
-        "image_path": "Images/asus primez690.webp",
+        "image_path": "Images/asusprimez690.webp",
         "socket": "LGA 1700",
         "chipset": "Intel Z590",
         "generation": "DDR4",
@@ -20,7 +18,7 @@ components: [
         "name": "NZXT N7 Z590",
         "price": "279.99",
         "brand": "NZXT",
-        "image_path": "Images/nzxt moth.webp",
+        "image_path": "Images/nzxtmoth.webp",
         "socket": "LGA 1200",
         "chipset": "Intel Z590",
         "generation": "DDR4",
@@ -33,7 +31,7 @@ components: [
         "name": "ASUS ROG Maximus Z690 Hero (Wi-Fi) DDR5",
         "price": "619.99",
         "brand": "ASUS",
-        "image_path": "Images/asus rog.webp",
+        "image_path": "Images/asusrog.webp",
         "socket": "LGA 1700",
         "chipset": "Intel Z690",
         "generation": "DDR5",
@@ -46,7 +44,7 @@ components: [
         "name": "ASUS TUF Gaming X570-Plus (Wi-Fi)",
         "price": "249.99",
         "brand": "ASUS",
-        "image_path": "Images/asus amd motherboard.webp",
+        "image_path": "Images/asusamdmotherboard.webp",
         "socket": "AM4",
         "chipset": "AMD X570",
         "generation": "DDR4",
@@ -59,9 +57,9 @@ components: [
         "name": "MSI MAG B550 Tomahawk",
         "price": "185.99",
         "brand": "MSI",
-        "image_path": "Images/msi mag mother.webp",
+        "image_path": "Images/msimagmother.webp",
         "socket": "AM4",
-        "chipset": "B550", //è amd
+        "chipset": "B550", 
         "generation": "DDR4",
         "numRAM": "2",
         "numSSD": "1"
@@ -72,21 +70,20 @@ components: [
         "name": "AMD N7 B650E Motherboard DDR5 (Black Cover)",
         "price": "379.99",
         "brand": "AMD",
-        "image_path": "Images/amd n7 moth.webp",
+        "image_path": "Images/amdn7moth.webp",
         "socket": "AM5",
         "chipset": "AMD B650E",
         "generation": "DDR5",
         "numRAM": "4",
         "numSSD": "3"
     },
-    //CPU 7-12
     {
         "type": "CPU",
         "Identifier": "7",
         "name": "Intel Core i5-11400 6-Core 2.6GHz",
         "price": "164.99",
         "brand": "Intel",
-        "image_path": "images/intel i5 cpu.webp",
+        "image_path": "images/inteli5cpu.webp",
         "chipset": "Intel",
         "numCores": "6",
         "threads": "12",
@@ -100,7 +97,7 @@ components: [
         "name": "Intel Core i7-12700K 12-Core 3.6GHz",
         "price": "374.99",
         "brand": "Intel",
-        "image_path": "Images/intel i7 cpu.webp",
+        "image_path": "Images/inteli7cpu.webp",
         "chipset": "Intel",
         "numCores": "12",
         "threads": "20",
@@ -114,7 +111,7 @@ components: [
         "name": "Intel Core i9-13900K 24-Core 3.0 GHz",
         "price": "654.99",
         "brand": "Intel",
-        "image_path": "Images/intel i9 cpu.webp",
+        "image_path": "Images/inteli9cpu.webp",
         "chipset": "Intel",
         "numCores": "24",
         "threads": "32",
@@ -128,7 +125,7 @@ components: [
         "name": "AMD Ryzen 5 7600X 6-Cores 4.7GHz",
         "price": "254.99",
         "brand": "AMD",
-        "image_path": "Images/amd ryzen cpu.webp", // (uguale per tutte amd)
+        "image_path": "Images/amdryzencpu.webp", 
         "chipset": "AMD",
         "numCores": "6",
         "threads": "12",
@@ -142,7 +139,7 @@ components: [
         "name": "AMD Ryzen 7 7700X 8-Cores 4.5GHz",
         "price": "364.99",
         "brand": "AMD",
-        "image_path": "Images/amd ryzen cpu.webp",
+        "image_path": "Images/amdryzencpu.webp",
         "chipset": "AMD",
         "numCores": "8",
         "threads": "16",
@@ -156,7 +153,7 @@ components: [
         "name": "AMD Ryzen 9 7900X3D 12-Cores 4.4GHz",
         "price": "659.99",
         "brand": "AMD",
-        "image_path": "Images/amd ryzen cpu.webp",
+        "image_path": "Images/amdryzencpu.webp",
         "chipset": "AMD",
         "numCores": "12",
         "threads": "24",
@@ -164,14 +161,13 @@ components: [
         "boostclock": "5.6",
         "cache": "128"
     },
-    //GPU 13-16
     {
         "type": "GPU",
         "Identifier": "13",
         "name": "ASUS TUF Gaming GeForce GTX 1660 SUPER OC",
         "price": "265.99",
         "brand": "ASUS",
-        "image_path": "Images/asus tuf gpu.webp",
+        "image_path": "Images/asustufgpu.webp",
         "numPorte": "2",
         "numCores": "12",
         "numVentole": "2",
@@ -180,7 +176,7 @@ components: [
     {
         "type": "GPU",
         "Identifier": "14",
-        "name": "Gigabyte GeForce RTX­­ 4070 GAMING OC 12G",
+        "name": "Gigabyte GeForce RTX 4070 GAMING OC 12G",
         "price": "789.99",
         "brand": "MSI",
         "image_path": "Images/4070.webp",
@@ -213,14 +209,13 @@ components: [
         "numVentole": "3",
         "availability": "false"
     },
-    //PSU 17-20
     {
         "type": "PSU",
         "Identifier": "17",
         "name": "NZXT C650 650W Gold (2022)",
         "price": "79.99",
         "brand": "NZXT",
-        "image_path": "Images/nzxt c650 psu.webp",
+        "image_path": "Images/nzxtc650psu.webp",
         "suppliedWatt": "650",
         "efficiency": "90",
         "modular": "false"
@@ -231,7 +226,7 @@ components: [
         "name": "NZXT C750 750W Gold (2022)",
         "price": "94.99",
         "brand": "NZXT",
-        "image_path": "Images/nzxt 750psu.webp",
+        "image_path": "Images/nzxt750psu.webp",
         "suppliedWatt": "750",
         "efficiency": "90",
         "modular": "true"
@@ -242,7 +237,7 @@ components: [
         "name": "Seasonic Focus GX 850W Gold",
         "price": "164.99",
         "brand": "Focus",
-        "image_path": "Images/focus psu.webp",
+        "image_path": "Images/focuspsu.webp",
         "suppliedWatt": "850",
         "efficiency": "90",
         "modular": "true"
@@ -253,19 +248,18 @@ components: [
         "name": "BeQuiet! Pure Power 12M 1000W ATX3.0",
         "price": "174.99",
         "brand": "BeQuiet!",
-        "image_path": "Images/bequiet psu.webp",
+        "image_path": "Images/bequietpsu.webp",
         "suppliedWatt": "1000",
         "efficiency": "80",
         "modular": "true"
     },
-    //RAM 21-24
     {
         "type": "RAM",
         "Identifier": "21",
         "name": "Team T-FORCE Vulcan Z 16GB (2 x 8GB) 3200MHz DDR4",
         "price": "59.99",
         "brand": "T-FORCE",
-        "image_path": "Images/tforce 3200 ram.webp",
+        "image_path": "Images/tforce3200ram.webp",
         "capacity": "2 x 8GB",
         "stockSpeed": "2400",
         "maxSpeed": "3200",
@@ -277,7 +271,7 @@ components: [
         "name": "TeamGroup T-Force VULCAN a Black 32GB DDR5 5600MHz EXPO",
         "price": "189.99",
         "brand": "T-FORCE",
-        "image_path": "Images/tforce 5600 ram.webp",
+        "image_path": "Images/tforce5600ram.webp",
         "capacity": "2 x 16GB",
         "stockSpeed": "5600",
         "maxSpeed": "5600",
@@ -289,7 +283,7 @@ components: [
         "name": "Kingston FURY Beast RGB 3200MHz 16GB (2x8GB) DDR4",
         "price": "189.99",
         "brand": "Kingston",
-        "image_path": "Images/kingston ram.webp",
+        "image_path": "Images/kingstonram.webp",
         "capacity": "2 x 8GB",
         "stockSpeed": "3200",
         "maxSpeed": "3200",
@@ -301,10 +295,10 @@ components: [
         "name": "G.SKILL TRIDENTZ NEO RGB 3600MHz 32GB (2 x 16GB) DDR4",
         "price": "109.99",
         "brand": "G.SKILL",
-        "image_path": "Images/gskill ram.webp",
+        "image_path": "Images/gskillram.webp",
         "capacity": "2 x 16GB",
         "stockSpeed": "3600",
         "maxSpeed": "3600",
         "generation": "DDR4"
-    },
+    }
 ]

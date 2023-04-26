@@ -46,7 +46,7 @@ namespace View {
         summary->addWidget(total_cost);
 
         QPushButton* order_input = new QPushButton(
-            QIcon(QPixmap((":/assets/icons/order.png"))),
+            QIcon(QPixmap((":/Assets/icons/order.png"))),
             "Ordina"
         );
         summary->addWidget(order_input);

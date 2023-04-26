@@ -19,21 +19,28 @@ namespace View
         QVBoxLayout* vbox = new QVBoxLayout(this);
         vbox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
 
+        component_name = new QLabel();
+        vbox->addWidget(component_name);
+
         QHBoxLayout* hbox = new QHBoxLayout();
         hbox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
         vbox->addLayout(hbox);
 
-        component_name = new QLabel();
-        hbox->addWidget(component_name);
         results_total = new QLabel();
         hbox->addWidget(results_total);
 
         hbox->addStretch();
 
-        QPushButton* order_ascendent = new QPushButton(QIcon(QPixmap(":/Assets/icons/priceasc.png")), "Prezzo crescente");
+        QPushButton* order_ascendent = new QPushButton(
+            QIcon(QPixmap((":/Assets/icons/priceasc.png"))),
+            "Prezzo crescente"
+        );
         hbox->addWidget(order_ascendent);
 
-        QPushButton* order_descendent = new QPushButton(QIcon(QPixmap(":/Assets/icons/pricedesc.png")), "Prezzo decrescente");
+        QPushButton* order_descendent = new QPushButton(
+            QIcon(QPixmap((":/Assets/icons/pricedesc.png"))), 
+            "Prezzo decrescente"
+        );
         hbox->addWidget(order_descendent);
 
         grid = new QGridLayout();
@@ -54,11 +61,11 @@ namespace View
         hbox2->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
         vbox->addLayout(hbox2); 
 
-        prev_component = new QPushButton(QIcon(QPixmap(":/Assets/icons/previous.svg")), "Componente Precedente");
+        prev_component = new QPushButton(QIcon(QPixmap((":/Assets/icons/previous.svg"))), "Componente Precedente");
         prev_component->setEnabled(false);
         hbox2->addWidget(prev_component);
 
-        next_component = new QPushButton(QIcon(QPixmap(":/Assets/icons/next.svg")), "Componente Successiva");
+        next_component = new QPushButton(QIcon(QPixmap((":/Assets/icons/next.svg"))), "Componente Successiva");
         next_component->setEnabled(false);
         hbox2->addWidget(next_component); 
 
@@ -80,7 +87,7 @@ namespace View
 
         switch(query.getType()) {
             case 1:
-            component_name->setText("MotherBoard"); break;
+            component_name->setText("MOTHERBOARD"); break;
             case 2:
             component_name->setText("CPU"); break;
             case 3:
