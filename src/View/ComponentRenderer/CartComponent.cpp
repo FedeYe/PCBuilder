@@ -34,7 +34,10 @@ namespace ComponentRenderer {
 
         QPixmap image_object(mother_board.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/placeholder.png");
+        	if(mother_board.getIdentifier() == 0)
+                image_object = QPixmap(":/Assets/icons/defaultMB.svg");
+            else
+        	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -53,7 +56,7 @@ namespace ComponentRenderer {
         QLabel* price = new QLabel("Price: " + QString::number(mother_board.getPrice()) + "€");
         price->setObjectName("Price");
         if(mother_board.getIdentifier() == 0)
-            price->setText("");
+            price->setText("Scegli un prodotto");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -63,14 +66,15 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
-        remove_button->setObjectName("remove-button");
-        if(mother_board.getIdentifier() == 0)
-            remove_button->setDown(true);
-        buttonsbox->addWidget(remove_button);
+        if(mother_board.getIdentifier() != 0) {
 
-        buttonsbox->addStretch();
+            remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+            remove_button->setObjectName("remove-button");
+            buttonsbox->addWidget(remove_button);
 
+            buttonsbox->addStretch();
+        }
+        
         search_button = new QPushButton("Cambia");
         search_button->setObjectName("search_button");
         buttonsbox->addWidget(search_button);
@@ -92,7 +96,10 @@ namespace ComponentRenderer {
 
         QPixmap image_object(cpu.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/placeholder.png");
+        	if(cpu.getIdentifier() == 0)
+                image_object = QPixmap(":/Assets/icons/defaultCPU.svg");
+            else
+        	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -111,7 +118,7 @@ namespace ComponentRenderer {
         QLabel* price = new QLabel("Price: " + QString::number(cpu.getPrice()) + "€");
         price->setObjectName("Price");
         if(cpu.getIdentifier() == 0)
-            price->setText("");
+            price->setText("Scegli un prodotto");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -121,18 +128,18 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
-        remove_button->setObjectName("remove-button");
-        if(cpu.getIdentifier() == 0)
-            remove_button->setDown(true);
-        buttonsbox->addWidget(remove_button);
-
-        buttonsbox->addStretch();
+        if(cpu.getIdentifier() != 0) {          
+            remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+            remove_button->setObjectName("remove-button");
+            buttonsbox->addWidget(remove_button);
+            buttonsbox->addStretch();
+        }
 
         search_button = new QPushButton("Cambia");
         search_button->setObjectName("search_button");
         buttonsbox->addWidget(search_button);
     }
+    
     
     void CartComponent::visit(const Component::GPU& gpu) {
         type_comp = 2;
@@ -150,7 +157,10 @@ namespace ComponentRenderer {
 
         QPixmap image_object(gpu.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/placeholder.png");
+            if(gpu.getIdentifier() == 0)
+                image_object = QPixmap(":/Assets/icons/defaultGPU.svg");
+            else
+        	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -169,7 +179,7 @@ namespace ComponentRenderer {
         QLabel* price = new QLabel("Price: " + QString::number(gpu.getPrice()) + "€");
         price->setObjectName("Price");
         if(gpu.getIdentifier() == 0)
-            price->setText("");
+            price->setText("Scegli un prodotto");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -179,13 +189,12 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
-        remove_button->setObjectName("remove-button");
-        if(gpu.getIdentifier() == 0)
-            remove_button->setDown(true);
-        buttonsbox->addWidget(remove_button);
-
-        buttonsbox->addStretch();
+        if(gpu.getIdentifier() != 0) {          
+            remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+            remove_button->setObjectName("remove-button");
+            buttonsbox->addWidget(remove_button);
+            buttonsbox->addStretch();
+        }
 
         search_button = new QPushButton("Cambia");
         search_button->setObjectName("search_button");
@@ -208,7 +217,10 @@ namespace ComponentRenderer {
 
         QPixmap image_object(psu.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/placeholder.png");
+        	if(psu.getIdentifier() == 0)
+                image_object = QPixmap(":/Assets/icons/defaultPSU.svg");
+            else
+        	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -227,7 +239,7 @@ namespace ComponentRenderer {
         QLabel* price = new QLabel("Price: " + QString::number(psu.getPrice()) + "€");
         price->setObjectName("Price");
         if(psu.getIdentifier() == 0)
-            price->setText("");
+            price->setText("Scegli un prodotto");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -237,13 +249,12 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
-        remove_button->setObjectName("remove-button");
-        if(psu.getIdentifier() == 0)
-            remove_button->setDown(true);
-        buttonsbox->addWidget(remove_button);
-
-        buttonsbox->addStretch();
+        if(psu.getIdentifier() != 0) {          
+            remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+            remove_button->setObjectName("remove-button");
+            buttonsbox->addWidget(remove_button);
+            buttonsbox->addStretch();
+        }
 
         search_button = new QPushButton("Cambia");
         search_button->setObjectName("search_button");
@@ -266,7 +277,10 @@ namespace ComponentRenderer {
 
         QPixmap image_object(ram.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/placeholder.png");
+        	if(ram.getIdentifier() == 0)
+                image_object = QPixmap(":/Assets/icons/defaultRAM.svg");
+            else
+        	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -285,7 +299,7 @@ namespace ComponentRenderer {
         QLabel* capacity = new QLabel("Capacity: " + QString::fromStdString(ram.getCapacity()));
         capacity->setObjectName("Capacity");
         if(ram.getIdentifier() == 0)
-            capacity->setText("");
+            capacity->setText("Scegli un prodotto");
         infobox->addWidget(capacity);
 
         QLabel* price = new QLabel("Price: " + QString::number(ram.getPrice()) + "€");
@@ -301,13 +315,12 @@ namespace ComponentRenderer {
         buttonsbox->setAlignment(Qt::AlignRight | Qt::AlignBottom);
         hbox->addLayout(buttonsbox);
 
-        remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
-        remove_button->setObjectName("remove-button");
-        if(ram.getIdentifier() == 0)
-            remove_button->setDown(true);
-        buttonsbox->addWidget(remove_button);
-
-        buttonsbox->addStretch();
+        if(ram.getIdentifier() != 0) {          
+            remove_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/removeFromCart.png")), "");
+            remove_button->setObjectName("remove-button");
+            buttonsbox->addWidget(remove_button);
+            buttonsbox->addStretch();
+        }
 
         search_button = new QPushButton("Cambia");
         search_button->setObjectName("search_button");

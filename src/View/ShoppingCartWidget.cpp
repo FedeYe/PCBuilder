@@ -101,10 +101,10 @@ namespace View {
                 it++
         ) {
             if (it->getRemoveButton()) {
-                connect(it->getRemoveButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::removeFromCart, this, it->getComponent()));
+                connect(it->getRemoveButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::removeFromCart, it->getComponent()));
             }
             if (it->getSearchButton()) {
-                connect(it->getSearchButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::componentSelected, this, it->getComponent()));
+                connect(it->getSearchButton(), &QPushButton::clicked, std::bind(&ShoppingCartWidget::componentSelected, it->getComponent()));
             }
         }
     }

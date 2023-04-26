@@ -5,7 +5,7 @@
 #include <QLabel>
 #include <QGridLayout>
 #include <QVector>
-#include <Qstring>
+#include <QString>
 //#include <>
 
 #include "../Engine/Query.h"
