@@ -34,7 +34,7 @@ namespace ComponentRenderer {
 
         QHBoxLayout* productbox = new QHBoxLayout(widget);
         productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-        hbox->addWidget(productbox);
+        hbox->addLayout(productbox);
 
 
         QPixmap image_object(mother_board.getImagePath().c_str());
@@ -101,7 +101,7 @@ namespace ComponentRenderer {
 
         QHBoxLayout* productbox = new QHBoxLayout(widget);
         productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-        hbox->addWidget(productbox);
+        hbox->addLayout(productbox);
 
         QPixmap image_object(cpu.getImagePath().c_str());
         if (!image_object) {
@@ -166,7 +166,7 @@ namespace ComponentRenderer {
 
         QHBoxLayout* productbox = new QHBoxLayout(widget);
         productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-        hbox->addWidget(productbox);
+        hbox->addLayout(productbox);
 
         QPixmap image_object(gpu.getImagePath().c_str());
         if (!image_object) {
@@ -230,7 +230,7 @@ namespace ComponentRenderer {
 
         QHBoxLayout* productbox = new QHBoxLayout(widget);
         productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-        hbox->addWidget(productbox);
+        hbox->addLayout(productbox);
 
         QPixmap image_object(psu.getImagePath().c_str());
         if (!image_object) {
@@ -294,7 +294,7 @@ namespace ComponentRenderer {
 
         QHBoxLayout* productbox = new QHBoxLayout(widget);
         productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-        hbox->addWidget(productbox);
+        hbox->addLayout(productbox);
 
         QPixmap image_object(ram.getImagePath().c_str());
         if (!image_object) {
