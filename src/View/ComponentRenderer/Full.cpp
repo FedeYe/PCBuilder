@@ -44,7 +44,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
+        details->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();
@@ -173,7 +173,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
+        details->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();
@@ -291,7 +291,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
+        details->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();
@@ -401,7 +401,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
+        details->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();
@@ -500,7 +500,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
+        details->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();
