@@ -34,7 +34,7 @@ namespace ComponentRenderer {
         	image_object = QPixmap(":/Assets/icons/defaultMB.svg");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(150, 150, Qt::AspectRatioMode::KeepAspectRatio));
         vbox->addWidget(image);
 
         QLabel* name = new QLabel(QString::fromStdString(mother_board.getName()));
@@ -44,7 +44,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();
@@ -163,7 +163,7 @@ namespace ComponentRenderer {
         	image_object = QPixmap(":/Assets/icons/defaultCPU.svg");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(150, 150, Qt::AspectRatioMode::KeepAspectRatio));
         vbox->addWidget(image);
 
         QLabel* name = new QLabel(QString::fromStdString(cpu.getName()));
@@ -173,7 +173,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();
@@ -281,7 +281,7 @@ namespace ComponentRenderer {
         	image_object = QPixmap(":/Assets/icons/defaultGPU.svg");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(150, 150, Qt::AspectRatioMode::KeepAspectRatio));
         vbox->addWidget(image);
 
         QLabel* name = new QLabel(QString::fromStdString(gpu.getName()));
@@ -291,7 +291,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();
@@ -391,7 +391,7 @@ namespace ComponentRenderer {
         	image_object = QPixmap(":/Assets/icons/defaultPSU.svg");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(150, 150, Qt::AspectRatioMode::KeepAspectRatio));
         vbox->addWidget(image);
 
         QLabel* name = new QLabel(QString::fromStdString(psu.getName()));
@@ -401,7 +401,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();
@@ -490,7 +490,7 @@ namespace ComponentRenderer {
         	image_object = QPixmap(":/Assets/icons/defaultRAM.svg");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(512, 512, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(150, 150, Qt::AspectRatioMode::KeepAspectRatio));
         vbox->addWidget(image);
 
         QLabel* name = new QLabel(QString::fromStdString(ram.getName()));
@@ -500,7 +500,7 @@ namespace ComponentRenderer {
 
         //pannello informazioni prodotto
         QVBoxLayout* details = new QVBoxLayout();
-        details->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+        details->setAlignment(Qt::AligHCenter | Qt::AlignTop);
         vbox->addLayout(details);
 
         QHBoxLayout* identifierBox = new QHBoxLayout();

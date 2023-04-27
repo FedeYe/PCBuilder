@@ -32,6 +32,11 @@ namespace ComponentRenderer {
         QHBoxLayout* hbox = new QHBoxLayout(widget);
         hbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
+        QHBoxLayout* productbox = new QHBoxLayout(widget);
+        productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        hbox->addWidget(productbox);
+
+
         QPixmap image_object(mother_board.getImagePath().c_str());
         if (!image_object) {
         	if(mother_board.getIdentifier() == 0)
@@ -41,12 +46,12 @@ namespace ComponentRenderer {
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
-        hbox->addWidget(image);
+        productbox->addWidget(image);
 
         //pannello informazioni prodotto
         QVBoxLayout* infobox = new QVBoxLayout();
         infobox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-        hbox->addLayout(infobox);
+        productbox->addLayout(infobox);
 
         QLabel* name = new QLabel(QString::fromStdString(mother_board.getName()));
         name->setObjectName("Name");
@@ -94,6 +99,10 @@ namespace ComponentRenderer {
         QHBoxLayout* hbox = new QHBoxLayout(widget);
         hbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
+        QHBoxLayout* productbox = new QHBoxLayout(widget);
+        productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        hbox->addWidget(productbox);
+
         QPixmap image_object(cpu.getImagePath().c_str());
         if (!image_object) {
         	if(cpu.getIdentifier() == 0)
@@ -103,12 +112,12 @@ namespace ComponentRenderer {
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
-        hbox->addWidget(image);
+        productbox->addWidget(image);
 
         //pannello informazioni prodotto
         QVBoxLayout* infobox = new QVBoxLayout();
         infobox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-        hbox->addLayout(infobox);
+        productbox->addLayout(infobox);
 
         QLabel* name = new QLabel(QString::fromStdString(cpu.getName()));
         name->setObjectName("Name");
@@ -155,6 +164,10 @@ namespace ComponentRenderer {
         QHBoxLayout* hbox = new QHBoxLayout(widget);
         hbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
+        QHBoxLayout* productbox = new QHBoxLayout(widget);
+        productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        hbox->addWidget(productbox);
+
         QPixmap image_object(gpu.getImagePath().c_str());
         if (!image_object) {
             if(gpu.getIdentifier() == 0)
@@ -164,12 +177,12 @@ namespace ComponentRenderer {
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
-        hbox->addWidget(image);
+        productbox->addWidget(image);
 
         //pannello informazioni prodotto
         QVBoxLayout* infobox = new QVBoxLayout();
         infobox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-        hbox->addLayout(infobox);
+        productbox->addLayout(infobox);
 
         QLabel* name = new QLabel(QString::fromStdString(gpu.getName()));
         name->setObjectName("Name");
@@ -215,6 +228,10 @@ namespace ComponentRenderer {
         QHBoxLayout* hbox = new QHBoxLayout(widget);
         hbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
+        QHBoxLayout* productbox = new QHBoxLayout(widget);
+        productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        hbox->addWidget(productbox);
+
         QPixmap image_object(psu.getImagePath().c_str());
         if (!image_object) {
         	if(psu.getIdentifier() == 0)
@@ -224,12 +241,12 @@ namespace ComponentRenderer {
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
-        hbox->addWidget(image);
+        productbox->addWidget(image);
 
         //pannello informazioni prodotto
         QVBoxLayout* infobox = new QVBoxLayout();
         infobox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-        hbox->addLayout(infobox);
+        productbox->addLayout(infobox);
 
         QLabel* name = new QLabel(QString::fromStdString(psu.getName()));
         name->setObjectName("Name");
@@ -275,6 +292,10 @@ namespace ComponentRenderer {
         QHBoxLayout* hbox = new QHBoxLayout(widget);
         hbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
+        QHBoxLayout* productbox = new QHBoxLayout(widget);
+        productbox->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        hbox->addWidget(productbox);
+
         QPixmap image_object(ram.getImagePath().c_str());
         if (!image_object) {
         	if(ram.getIdentifier() == 0)
@@ -284,12 +305,12 @@ namespace ComponentRenderer {
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
-        hbox->addWidget(image);
+        productbox->addWidget(image);
 
         //pannello informazioni prodotto
         QVBoxLayout* infobox = new QVBoxLayout();
         infobox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-        hbox->addLayout(infobox);
+        productbox->addLayout(infobox);
 
         QLabel* name = new QLabel(QString::fromStdString(ram.getName()));
         name->setObjectName("Name");
