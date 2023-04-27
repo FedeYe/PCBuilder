@@ -42,8 +42,7 @@ namespace Engine {
 
         ResultSet shownComponents(matchedComponents.size());
         for (auto it = matchedComponents.begin(); it != matchedComponents.end(); it++) {
-            if (matchedComponents.size() <= 1) 
-                break;
+            
             shownComponents.add(*it);
         }
         shownComponents.priceASort(); //ordino i prodotti in base al prezzo in modo crescente (di deafult)

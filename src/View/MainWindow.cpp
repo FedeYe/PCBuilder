@@ -32,11 +32,11 @@ namespace View
     {
         // Actions
         QAction* create = new QAction(
-            QIcon(QPixmap((":/Assets/icons/new.svg"))),
+            QIcon(QPixmap((":/Assets/icons/new.png"))),
             "New");
         create->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_N));
         QAction* open = new QAction(
-            QIcon(QPixmap((":/Assets/icons/open.svg"))),
+            QIcon(QPixmap((":/Assets/icons/open.png"))),
             "Open");
         open->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_O));
         QAction* save = new QAction(
@@ -49,9 +49,9 @@ namespace View
         save_as->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_S));
         QAction* close = new QAction(
             QIcon(QPixmap((":/Assets/icons/close.svg"))),
-            "Close");
+            "Close Application");
         close->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q));
-        QAction* togge_toolbar = new QAction("Toolbar");
+        QAction* toggle_toolbar = new QAction("Toolbar");
         create_item = new QAction(
             QIcon(QPixmap((":/Assets/icons/new_product.svg"))),
             "Add to catalog");
@@ -71,7 +71,7 @@ namespace View
         item_menu->addAction(create_item);
 
         QMenu* view = menuBar()->addMenu("&View");
-        view->addAction(togge_toolbar);   // serve a rendere visibile/non visibile la toolbar
+        view->addAction(toggle_toolbar);   // serve a rendere visibile/non visibile la toolbar
 
         // toolbar
         toolbar = addToolBar("File Toolbar");
@@ -86,17 +86,17 @@ namespace View
         QSplitter* splitter = new QSplitter(this);
         setCentralWidget(splitter);
 
-        Engine::Query defaultQuery;
-        Engine::ShoppingCart default_cart;
-        Engine::ShoppingCart& Rdefault_cart = default_cart;
-        shopping_cart_widget = new ShoppingCartWidget(defaultQuery,Rdefault_cart);
-        splitter->addWidget(shopping_cart_widget);
-
         stacked_widget = new QStackedWidget(this);
         splitter->addWidget(stacked_widget);
 
         result_widget = new ResultsWidget();
         stacked_widget->addWidget(result_widget);
+
+        Engine::Query defaultQuery;
+        Engine::ShoppingCart default_cart;
+        Engine::ShoppingCart& Rdefault_cart = default_cart;
+        shopping_cart_widget = new ShoppingCartWidget(defaultQuery,Rdefault_cart);
+        splitter->addWidget(shopping_cart_widget);
 
         splitter->setSizes(QList<int>() << 2000 << 2000);
 
@@ -106,7 +106,7 @@ namespace View
         connect(save, &QAction::triggered, this, &MainWindow::saveDataset);
         connect(save_as, &QAction::triggered, this, &MainWindow::saveAsDataset);
         connect(close, &QAction::triggered, this, &MainWindow::close);
-        connect(togge_toolbar, &QAction::triggered, this, &MainWindow::toggleToolbar);
+        connect(toggle_toolbar, &QAction::triggered, this, &MainWindow::toggleToolbar);
 
         connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::search); 
 

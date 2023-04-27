@@ -347,7 +347,7 @@ namespace ComponentRenderer {
 
         QPixmap image_object(ram.getImagePath().c_str());
         if (!image_object) {
-        	image_object = QPixmap(":/Assets/icons/defaultPSU.svg");
+        	image_object = QPixmap(":/Assets/icons/defaultRAM.svg");
         }
         QLabel* image = new QLabel();
         image->setPixmap(image_object.scaled(96, 96, Qt::AspectRatioMode::KeepAspectRatio));
@@ -399,7 +399,7 @@ namespace ComponentRenderer {
             controlsbox->addWidget(delete_button);
         }
         
-        controlsbox->addStretch();
+        buttonsbox->addStretch();
 
         add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
         add_button->setObjectName("add-button");

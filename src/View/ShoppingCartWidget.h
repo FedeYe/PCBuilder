@@ -5,7 +5,7 @@
 #include <QLabel>
 #include <QGridLayout>
 #include <QVector>
-#include <Qstring>
+#include <QString>
 //#include <>
 
 #include "../Engine/Query.h"
@@ -34,6 +34,8 @@ namespace View {
 
         signals:
             void search_event(Engine::Query query);
+            void removedFromCart_event(const Component::AbstractComponent *component);
+            void componentSelected_event(const Component::AbstractComponent *component);
             
             
         public slots:
@@ -42,9 +44,9 @@ namespace View {
             void nextComponent();             // modifico la query (+1 al type) ecc...
             void tryAddComponentToCart(const Component::AbstractComponent* new_component);
                                                          // aggiunge oggetto e emette segnale addedToCart_event
-            void componentSelected(Component::AbstractComponent* component);         // search viene schiacciato -> crea/aggiorna la currentQuery 
+            void componentSelected(const Component::AbstractComponent* component);         // search viene schiacciato -> crea/aggiorna la currentQuery 
             void search();                                                              // cerca gli oggetti che soddisfano la query
-            void removeFromCart(Component::AbstractComponent* component);            // toglie e chiama la funzione che resetta lo slot della griglia-carrello a default
+            void removeFromCart(const Component::AbstractComponent* component);            // toglie e chiama la funzione che resetta lo slot della griglia-carrello a default
             void orderMessageBox();
             
     };

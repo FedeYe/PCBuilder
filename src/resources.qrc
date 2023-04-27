@@ -4,22 +4,20 @@
     <file>Assets/placeholder.png</file>
     <file>Assets/icons/close.svg</file>
     <file>Assets/icons/defaultCPU.svg</file>
-    <file>Assets/icons/defaultCase.svg</file>
-    <file>Assets/icons/defaultCooling.svg</file>
     <file>Assets/icons/defaultGPU.svg</file>
     <file>Assets/icons/defaultMB.svg</file>
     <file>Assets/icons/defaultPSU.svg</file>
     <file>Assets/icons/defaultRAM.svg</file>
-    <file>Assets/icons/defaultStorage.svg</file>
     <file>Assets/icons/delete.png</file>
     <file>Assets/icons/edit.png</file>
     <file>Assets/icons/info.png</file>
     <file>Assets/icons/addToCart.png</file>
     <file>Assets/icons/removeFromCart.png</file>
     <file>Assets/icons/notAvailable.png</file>
-    <file>Assets/icons/new.svg</file>
+    <file>Assets/icons/new.png</file>
     <file>Assets/icons/new_product.svg</file>
-    <file>Assets/icons/open.svg</file>
+    <file>Assets/icons/open.png</file>
+    <file>Assets/icons/order.png</file>
     <file>Assets/icons/save.svg</file>
     <file>Assets/icons/save_as.svg</file>
     <file>Assets/icons/priceasc.png</file>
