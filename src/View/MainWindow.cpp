@@ -117,6 +117,8 @@ namespace View
         connect(result_widget, &ResultsWidget::nextComponentType, shopping_cart_widget, &ShoppingCartWidget::nextComponent);
 
         connect(result_widget, &ResultsWidget::addComponentToCart, shopping_cart_widget, &ShoppingCartWidget::tryAddComponentToCart);
+        connect(result_widget, &ResultsWidget::addComponentToCart, this, &MainWindow::addToCart);
+
         connect(result_widget, &ResultsWidget::showComponent, this, &MainWindow::showComponent);
         connect(create_item, &QAction::triggered, this, &MainWindow::createComponent);
         connect(result_widget, &ResultsWidget::editComponent, this, &MainWindow::editComponent);
@@ -259,6 +261,10 @@ namespace View
 
     void MainWindow::changeOfOrder() {
         showStatus("Changed the Order of display of currently selected components");
+    }
+
+    void MainWindow::addToCart() {
+        showStatus("Attempting to add chosen component to Cart");
     }
 
     void MainWindow::createComponent()

@@ -50,7 +50,7 @@ namespace Engine {
         return *this;
     }
 
-    const Component::AbstractComponent* ShoppingCart::getAdded(const Component::AbstractComponent* old_component) {
+    const Component::AbstractComponent* ShoppingCart::getAdded(const Component::AbstractComponent* old_component) const {
         return cart.findAdded(old_component);
     }
 

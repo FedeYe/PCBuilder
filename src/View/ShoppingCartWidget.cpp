@@ -58,7 +58,7 @@ namespace View {
     }
 
     void ShoppingCartWidget::addToCart(const Component::AbstractComponent* new_component) {
-        shop_cart.add(new_component);
+        shop_cart = shop_cart.add(new_component);
         showCart();
         refreshTotalCost();
     }
@@ -128,10 +128,11 @@ namespace View {
     }     
 
     void ShoppingCartWidget::tryAddComponentToCart(const Component::AbstractComponent* new_component) {
+        /*
         QString error_msg = "No Errors corrently";
         TypeIdentifier typeId;
         new_component->accept(typeId);
-        
+
         if(typeId.getCompType() != 3 && typeId.getCompType() != 4) {
             // new_component è MB-CPU-RAM
             if(typeId.getCompType() == 1) {
@@ -170,6 +171,7 @@ namespace View {
             }
         } // new_component è GPU-PSU oppure non ci sono problemi di compatibilità tra MB-CPU-RAM
         addToCart(new_component);
+        */
     }   
 
     void ShoppingCartWidget::componentSelected(const Component::AbstractComponent* component) {
