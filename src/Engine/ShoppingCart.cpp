@@ -28,21 +28,24 @@ namespace Engine {
         const Component::AbstractComponent* old_component = nullptr;
         old_component = cart.findAdded(new_component);
         if(old_component != nullptr) {
-            cart.remove(old_component);
+            cart = cart.remove(old_component);
+            cart = cart.add(new_component);
+            calculateTotalCost();
+            return *this;
+        } else {
+            return *this;
         }
-        cart.add(new_component);
-        calculateTotalCost();
-        return *this;
+        
     }
 
     ShoppingCart& ShoppingCart::remove(const Component::AbstractComponent* component) {
-        cart.remove(component);
+        cart = cart.remove(component);
         calculateTotalCost();
         return *this;
     }
         
     ShoppingCart& ShoppingCart::clear() {
-        cart.clear();
+        cart = cart.clear();
         total_cost = 0;
         return *this;
     }
