@@ -29,7 +29,7 @@ namespace View
         ComponentRenderer::Full full_renderer;
 
     public:
-        MainWindow(Engine::IEngine& ricerca, QWidget* parent = nullptr);
+        explicit MainWindow(Engine::IEngine& ricerca, QWidget* parent = nullptr);
         Component::Repository::JsonRepository* getRepository();
         Engine::IEngine& getEngine();
         MainWindow& reloadData();
