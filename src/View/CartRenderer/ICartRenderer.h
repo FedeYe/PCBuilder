@@ -15,7 +15,7 @@ namespace View
         {
         public:
             virtual ~ICartRenderer() = default;
-            virtual void render(QGridLayout *grid, Engine::ShoppingCart &shop_cart, QVector<WidgetLookup> *lookup) = 0;
+            virtual void render(QGridLayout *grid, Engine::ShoppingCart& shop_cart, QVector<WidgetLookup> *lookup) = 0;
         };
 
     }

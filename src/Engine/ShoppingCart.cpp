@@ -12,11 +12,23 @@
 namespace Engine {
 
     ShoppingCart::ShoppingCart() {
-        cart = cart.add(new Component::RAM);
-        cart = cart.add(new Component::PSU);
-        cart = cart.add(new Component::GPU);
-        cart = cart.add(new Component::CPU);
-        cart = cart.add(new Component::MotherBoard);
+        const Component::MotherBoard mb;
+        const Component::CPU cpu;
+        const Component::GPU gpu;
+        const Component::PSU psu;
+        const Component::RAM ram;
+
+        const Component::MotherBoard* p_mb = &mb;
+        const Component::CPU* p_cpu = &cpu;
+        const Component::GPU* p_gpu = &gpu;
+        const Component::PSU* p_psu = &psu;
+        const Component::RAM* p_ram = &ram;
+
+        cart.add(p_mb);
+        cart.add(p_cpu);
+        cart.add(p_gpu);
+        cart.add(p_psu);
+        cart.add(p_ram);
     }
 
     Service::Container<const Component::AbstractComponent*>::Node* ShoppingCart::getCartHead() const {
@@ -26,10 +38,10 @@ namespace Engine {
     ShoppingCart& ShoppingCart::add(const Component::AbstractComponent* new_component) {
 
         const Component::AbstractComponent* old_component = nullptr;
-        old_component = cart.findAdded(new_component);
+        old_component = &*cart.findAdded(new_component);
         if(old_component != nullptr) {
-            cart = cart.remove(old_component);
-            cart = cart.add(new_component);
+            cart.remove(old_component);
+            cart.add(new_component);
             calculateTotalCost();
             return *this;
         } else {
@@ -39,13 +51,13 @@ namespace Engine {
     }
 
     ShoppingCart& ShoppingCart::remove(const Component::AbstractComponent* component) {
-        cart = cart.remove(component);
+        cart.remove(component);
         calculateTotalCost();
         return *this;
     }
         
     ShoppingCart& ShoppingCart::clear() {
-        cart = cart.clear();
+        cart.clear();
         total_cost = 0;
         return *this;
     }

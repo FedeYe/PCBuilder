@@ -193,7 +193,7 @@ namespace View
     {
         QString path = QFileDialog::getOpenFileName(
             this,
-            "Creates new Dataset",
+            "Open an already existing Dataset",
             "./",
             "JSON files *.json");
         if (path.isEmpty())
@@ -263,8 +263,8 @@ namespace View
         showStatus("Changed the Order of display of currently selected components");
     }
 
-    void MainWindow::addToCart() {
-        showStatus("Attempting to add chosen component to Cart");
+    void MainWindow::addToCart(const Component::AbstractComponent* new_component) {
+        showStatus("Attempting to add chosen component " + QString::fromStdString(new_component->getName()) + " to Cart");
     }
 
     void MainWindow::createComponent()

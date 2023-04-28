@@ -248,7 +248,7 @@ namespace ComponentRenderer {
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
         if(!gpu.isAvailable()) {
-            add_button->setDown(true);
+            add_button->setEnabled(false);
             add_button->setIcon(QIcon(QPixmap(":/Assets/icons/notAvailable.png")));
             add_button->setText("Not Available");
         }  

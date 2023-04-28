@@ -47,7 +47,7 @@ namespace View
         void showStatus(QString message);
         void search(Engine::Query query);
         void changeOfOrder(); 
-        void addToCart();
+        void addToCart(const Component::AbstractComponent* new_component);
         void createComponent();
         void showComponent(const Component::AbstractComponent *component);
         void editComponent(const Component::AbstractComponent *component);

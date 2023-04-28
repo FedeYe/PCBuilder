@@ -26,6 +26,7 @@ namespace View {
         public:
             explicit ShoppingCartWidget(Engine::Query cQuery, Engine::ShoppingCart& default_cart, QWidget* parent = 0);
             void addToCart(const Component::AbstractComponent* new_component);  
+            void showCart();
             void errorMessage(QString error_msg);
             void refreshTotalCost();
 
@@ -39,7 +40,6 @@ namespace View {
             
             
         public slots:
-            void showCart();
             void prevComponent();             // modifico la query (-1 al type) ed emetto nuovamente il signal search_event(query) 
             void nextComponent();             // modifico la query (+1 al type) ecc...
             void tryAddComponentToCart(const Component::AbstractComponent* new_component);
