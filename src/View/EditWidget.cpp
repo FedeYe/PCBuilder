@@ -112,6 +112,9 @@ namespace View
             subject->accept(type_selector);
         }
         form->addRow("type", type_input);
+            
+        stacked_editor = new QStackedLayout();
+        vbox->addLayout(stacked_editor);
 
         ComponentEditor::MotherBoardEditor *mother_board_editor = new ComponentEditor::MotherBoardEditor();
         stacked_editor->addWidget(mother_board_editor);
