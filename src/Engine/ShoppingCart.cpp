@@ -69,9 +69,9 @@ namespace Engine {
                         if(mb->getGeneration() == "<default>" || ram->getGeneration() == "<default>") 
                             return true;
                         return (mb->getGeneration() == ram->getGeneration());          
-        } 
-        return true;            // se il check è tra 2 componenti che non siano MB-CPU o MB-RAM, true perchè non ci sono problemi di compatibilità
-        
+        } else {
+            return true;            // se il check è tra 2 componenti che non siano MB-CPU o MB-RAM, true perchè non ci sono problemi di compatibilità
+        }       
     }
 
     double ShoppingCart::getTotalCost() const {

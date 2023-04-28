@@ -111,11 +111,12 @@ namespace View
         connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::search); 
 
         connect(result_widget, &ResultsWidget::refreshResults, shopping_cart_widget, &ShoppingCartWidget::search);
+        connect(result_widget, &ResultsWidget::refreshResults, this, &MainWindow::changeOfOrder);
+
         connect(result_widget, &ResultsWidget::prevComponentType, shopping_cart_widget, &ShoppingCartWidget::prevComponent);
         connect(result_widget, &ResultsWidget::nextComponentType, shopping_cart_widget, &ShoppingCartWidget::nextComponent);
 
         connect(result_widget, &ResultsWidget::addComponentToCart, shopping_cart_widget, &ShoppingCartWidget::tryAddComponentToCart);
-
         connect(result_widget, &ResultsWidget::showComponent, this, &MainWindow::showComponent);
         connect(create_item, &QAction::triggered, this, &MainWindow::createComponent);
         connect(result_widget, &ResultsWidget::editComponent, this, &MainWindow::editComponent);
@@ -254,6 +255,10 @@ namespace View
         result_widget->showResults(query, ricerca.search(query));
         stacked_widget->setCurrentIndex(0);
         clearStack();
+    }
+
+    void MainWindow::changeOfOrder() {
+        showStatus("Changed the Order of display of currently selected components");
     }
 
     void MainWindow::createComponent()

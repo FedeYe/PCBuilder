@@ -84,7 +84,7 @@ namespace ComponentRenderer {
         socketBox->addWidget(socketValue);
         
         QHBoxLayout* chipsetBox = new QHBoxLayout();
-        socketBox->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        chipsetBox->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
         details->addLayout(chipsetBox);
         QLabel* chipsetLabel = new QLabel("Chipset: ");
         chipsetLabel->setObjectName("Chipset Label");

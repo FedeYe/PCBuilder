@@ -45,7 +45,8 @@ namespace View
         void saveAsDataset();
         void toggleToolbar();
         void showStatus(QString message);
-        void search(Engine::Query query); 
+        void search(Engine::Query query);
+        void changeOfOrder(); 
         void createComponent();
         void showComponent(const Component::AbstractComponent *component);
         void editComponent(const Component::AbstractComponent *component);

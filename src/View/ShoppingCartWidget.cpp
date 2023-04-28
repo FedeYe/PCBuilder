@@ -71,7 +71,7 @@ namespace View {
     }
 
     void ShoppingCartWidget::refreshTotalCost() {
-        total_cost->setText("Costo Totale : \"" + QString::number(shop_cart.getTotalCost()));
+        total_cost->setText("Costo Totale : " + QString::number(shop_cart.getTotalCost()));
     }
 
 
@@ -129,9 +129,12 @@ namespace View {
 
     void ShoppingCartWidget::tryAddComponentToCart(const Component::AbstractComponent* new_component) {
         QString error_msg = "No Errors corrently";
-        if(typeid(*new_component) != typeid(const Component::GPU) && typeid(*new_component) != typeid(const Component::PSU)) {
+        TypeIdentifier typeId;
+        new_component->accept(typeId);
+        
+        if(typeId.getCompType() != 3 && typeId.getCompType() != 4) {
             // new_component è MB-CPU-RAM
-            if(typeid(*new_component) == typeid(Component::MotherBoard)) {
+            if(typeId.getCompType() == 1) {
                 // new_component è MB
                 const Component::CPU* p_cpu = new Component::CPU();
                 const Component::AbstractComponent* old_cpu = shop_cart.getAdded(p_cpu);
@@ -139,12 +142,12 @@ namespace View {
                 const Component::RAM* p_ram = new Component::RAM();
                 const Component::AbstractComponent* old_ram = shop_cart.getAdded(p_ram);
                 
-                if(old_cpu && !shop_cart.areCompatible(new_component, old_cpu)) {
+                if(!shop_cart.areCompatible(new_component, old_cpu)) {
                     QString error_msg = "Errore di compatibilità tra motherboard e CPU scelte";
                     errorMessage(error_msg);
                     return;
                 }
-                if(old_ram && !shop_cart.areCompatible(new_component, old_ram)) {
+                if(!shop_cart.areCompatible(new_component, old_ram)) {
                     QString error_msg = "Errore di compatibilità tra motherboard e RAM scelte";
                     errorMessage(error_msg);
                     return;
@@ -153,8 +156,8 @@ namespace View {
                 // new_component è CPU o RAM
                 const Component::MotherBoard* p_mb = new Component::MotherBoard();
                 const Component::AbstractComponent* old_mb = shop_cart.getAdded(p_mb);
-                if(old_mb && !shop_cart.areCompatible(old_mb, new_component)) {
-                    if(typeid(*new_component) == typeid(Component::CPU)) {
+                if(!shop_cart.areCompatible(old_mb, new_component)) {
+                    if(typeId.getCompType() == 2) {
                         // new_component è CPU
                         QString error_msg = "Errore di compatibilità tra motherboard e CPU scelte";
                     } else {
