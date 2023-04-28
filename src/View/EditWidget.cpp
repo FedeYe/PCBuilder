@@ -42,7 +42,7 @@ namespace View
         // aggiungo riga per identifier a form
         identifier_input = new QSpinBox();
         identifier_input->setObjectName("identifier-input");
-        identifier_input->setMinimum(1);
+        identifier_input->setMinimum(0);
         identifier_input->setMaximum(INT_MAX);
         if (subject != nullptr)
         {
