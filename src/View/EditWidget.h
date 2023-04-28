@@ -23,7 +23,7 @@ namespace View
         Q_OBJECT
     private:
         MainWindow* main_window;
-        const Component::AbstractComponent *subject;
+        const Component::AbstractComponent* subject;
         QSpinBox* identifier_input;
         QLineEdit* name_input;
         QDoubleSpinBox* price_input;
