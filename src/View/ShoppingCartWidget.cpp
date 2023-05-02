@@ -58,7 +58,7 @@ namespace View {
     }
 
     void ShoppingCartWidget::addToCart(const Component::AbstractComponent* new_component) {
-        shop_cart = shop_cart.add(new_component);
+        shop_cart.add(new_component);
         showCart();
         refreshTotalCost();
     }

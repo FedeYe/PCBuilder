@@ -57,7 +57,7 @@ namespace Component
                 gpu_object.insert("brand", QJsonValue::fromVariant(gpu.getBrand().c_str()));
                 gpu_object.insert("imagePath", QJsonValue::fromVariant(gpu.getImagePath().c_str()));
                 gpu_object.insert("numPorte", QJsonValue::fromVariant(gpu.getNumPorte()));
-                gpu_object.insert("numVRam", QJsonValue::fromVariant(gpu.getNumVRam()));
+                gpu_object.insert("numVRAM", QJsonValue::fromVariant(gpu.getNumVRam()));
                 gpu_object.insert("numVentole", QJsonValue::fromVariant(gpu.getNumVentole()));
                 gpu_object.insert("availability", QJsonValue::fromVariant(gpu.isAvailable()));
                 object = gpu_object;

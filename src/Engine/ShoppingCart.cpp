@@ -13,11 +13,11 @@ namespace Engine {
 
     ShoppingCart::ShoppingCart() {
 
-        const Component::MotherBoard* p_mb = new const Component::MotherBoard();
-        const Component::CPU* p_cpu = new const Component::CPU();
-        const Component::GPU* p_gpu = new const Component::GPU();
-        const Component::PSU* p_psu = new const Component::PSU();
-        const Component::RAM* p_ram = new const Component::RAM();
+        const Component::AbstractComponent* p_mb = new const Component::MotherBoard();
+        const Component::AbstractComponent* p_cpu = new const Component::CPU();
+        const Component::AbstractComponent* p_gpu = new const Component::GPU();
+        const Component::AbstractComponent* p_psu = new const Component::PSU();
+        const Component::AbstractComponent* p_ram = new const Component::RAM();
 
         cart.add(p_mb);
         cart.add(p_cpu);
