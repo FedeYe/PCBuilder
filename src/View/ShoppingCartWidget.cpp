@@ -24,8 +24,6 @@ namespace View {
         QVBoxLayout* vbox = new QVBoxLayout(this);
         vbox->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
 
-        vbox->addStretch();
-
         // griglia che rappresenta il carrello
         grid = new QGridLayout();
         grid->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
@@ -34,8 +32,6 @@ namespace View {
         vbox->addWidget(container);
 
         renderer = new CartRenderer::Grid();  
-
-        vbox->addStretch();
 
         QHBoxLayout* summary = new QHBoxLayout();
 

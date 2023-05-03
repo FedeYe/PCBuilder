@@ -39,7 +39,6 @@ namespace View {
         public slots:
             void prevComponent();             // modifico la query (-1 al type) ed emetto nuovamente il signal search_event(query) 
             void nextComponent();             // modifico la query (+1 al type) ecc...
-            void tryAddComponentToCart(const Component::AbstractComponent* new_component, Engine::ShoppingCart& shop_cart);
             void componentSelected(const Component::AbstractComponent* component);         // search viene schiacciato -> crea/aggiorna la currentQuery 
             void search();                                                              // cerca gli oggetti che soddisfano la query
                      
