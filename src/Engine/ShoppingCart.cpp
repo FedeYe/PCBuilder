@@ -50,24 +50,22 @@ namespace Engine {
     ShoppingCart& ShoppingCart::remove(const Component::AbstractComponent* component) {
         TypeDefiner typeId;
         component->accept(typeId);
-        cart.remove(component);
+        
+        const Component::AbstractComponent* p_cmp;
         switch(typeId.getCompType()) {
             case 1:
-            const Component::AbstractComponent* p_cmp = new const Component::MotherBoard();
-            cart.add(p_cmp);
+            p_cmp = new const Component::MotherBoard(); break;
             case 2:
-            const Component::AbstractComponent* p_cmp = new const Component::CPU();
-            cart.add(p_cmp);
+            p_cmp = new const Component::CPU(); break;
             case 3:
-            const Component::AbstractComponent* p_cmp = new const Component::GPU();
-            cart.add(p_cmp);
+            p_cmp = new const Component::GPU(); break;
             case 4:
-            const Component::AbstractComponent* p_cmp = new const Component::PSU();
-            cart.add(p_cmp);
+            p_cmp = new const Component::PSU(); break;
             case 5:
-            const Component::AbstractComponent* p_cmp = new const Component::RAM();
-            cart.add(p_cmp);
+            p_cmp = new const Component::RAM(); break;
         } 
+        cart.remove(component);
+        cart.add(p_cmp);
         return *this;
     }
         
