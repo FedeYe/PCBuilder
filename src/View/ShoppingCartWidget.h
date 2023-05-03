@@ -19,34 +19,30 @@ namespace View {
         private:
             QLabel* total_cost;                     // mostra il prezzo totale di tutte le componenti
             Engine::Query currentQuery;             // salvo l'ultima query usata dal search( quindi quella usata per i prodotti attualmente presenti in ResultSet)
-            Engine::ShoppingCart& shop_cart;
             QVector<WidgetLookup> lookup;
             QGridLayout* grid;
             CartRenderer::ICartRenderer* renderer;
         public:
-            explicit ShoppingCartWidget(Engine::Query cQuery, Engine::ShoppingCart& default_cart, QWidget* parent = 0);
-            void addToCart(const Component::AbstractComponent* new_component);  
-            void showCart();
+            explicit ShoppingCartWidget(Engine::Query cQuery, QWidget* parent = 0);
+            void addToCart(const Component::AbstractComponent* new_component, Engine::ShoppingCart& shop_cart); 
+            void showCart(Engine::ShoppingCart& shop_cart);
             void errorMessage(QString error_msg);
-            void refreshTotalCost();
+            void refreshTotalCost(Engine::ShoppingCart& shop_cart);
 
             Engine::Query getCurrentQuery() const;
-            Engine::ShoppingCart& getCart() const;
 
         signals:
             void search_event(Engine::Query query);
-            void removedFromCart_event(const Component::AbstractComponent *component);
+            void removeFromCart_event(const Component::AbstractComponent *component);
             void componentSelected_event(const Component::AbstractComponent *component);
-            
-            
+               
         public slots:
             void prevComponent();             // modifico la query (-1 al type) ed emetto nuovamente il signal search_event(query) 
             void nextComponent();             // modifico la query (+1 al type) ecc...
-            void tryAddComponentToCart(const Component::AbstractComponent* new_component);
-                                                         // aggiunge oggetto e emette segnale addedToCart_event
+            void tryAddComponentToCart(const Component::AbstractComponent* new_component, Engine::ShoppingCart& shop_cart);
             void componentSelected(const Component::AbstractComponent* component);         // search viene schiacciato -> crea/aggiorna la currentQuery 
             void search();                                                              // cerca gli oggetti che soddisfano la query
-            void removeFromCart(const Component::AbstractComponent* component);            // toglie e chiama la funzione che resetta lo slot della griglia-carrello a default
+                     
             void orderMessageBox();
             
     };

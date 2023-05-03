@@ -22,7 +22,7 @@ namespace Engine {
             ShoppingCart& add(const Component::AbstractComponent* component);
             ShoppingCart& remove(const Component::AbstractComponent* component);
             ShoppingCart& clear();
-            const Component::AbstractComponent* getAdded(const Component::AbstractComponent* old_component) const;
+            bool tryAddComponentToCart(const Component::AbstractComponent* new_component, std::string& error_msg);
             bool areCompatible(const Component::AbstractComponent* comp1, const Component::AbstractComponent* comp2) const;    // metodo che controlla la compatibilità
 
             double getTotalCost() const;            

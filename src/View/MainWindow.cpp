@@ -24,10 +24,11 @@
 namespace View
 {
 
-    MainWindow::MainWindow(Engine::IEngine& ricerca, QWidget *parent)
+    MainWindow::MainWindow(Engine::IEngine& ricerca, Engine::ShoppingCart& default_cart, QWidget *parent)
         : QMainWindow(parent),
           has_unsaved_changes(false),
           ricerca(ricerca),
+          shop_cart(default_cart),
           repo(nullptr)
     {
         // Actions
@@ -93,9 +94,9 @@ namespace View
         stacked_widget->addWidget(result_widget);
 
         Engine::Query defaultQuery;
-        Engine::ShoppingCart default_cart;
-        Engine::ShoppingCart& Rdefault_cart = default_cart;
-        shopping_cart_widget = new ShoppingCartWidget(defaultQuery,Rdefault_cart);
+        shopping_cart_widget = new ShoppingCartWidget(defaultQuery);
+        shopping_cart_widget->showCart(shop_cart);
+
         splitter->addWidget(shopping_cart_widget);
 
         splitter->setSizes(QList<int>() << 2000 << 2000);
@@ -116,8 +117,9 @@ namespace View
         connect(result_widget, &ResultsWidget::prevComponentType, shopping_cart_widget, &ShoppingCartWidget::prevComponent);
         connect(result_widget, &ResultsWidget::nextComponentType, shopping_cart_widget, &ShoppingCartWidget::nextComponent);
 
-        connect(result_widget, &ResultsWidget::addComponentToCart, shopping_cart_widget, &ShoppingCartWidget::tryAddComponentToCart);
+        //connect(result_widget, &ResultsWidget::addComponentToCart, shopping_cart_widget, &ShoppingCartWidget::tryAddComponentToCart);
         connect(result_widget, &ResultsWidget::addComponentToCart, this, &MainWindow::addToCart);
+        connect(shopping_cart_widget, &ShoppingCartWidget::removeFromCart_event, this, &MainWindow::removeFromCart);
 
         connect(result_widget, &ResultsWidget::showComponent, this, &MainWindow::showComponent);
         connect(create_item, &QAction::triggered, this, &MainWindow::createComponent);
@@ -264,7 +266,25 @@ namespace View
     }
 
     void MainWindow::addToCart(const Component::AbstractComponent* new_component) {
-        showStatus("Attempting to add chosen component " + QString::fromStdString(new_component->getName()) + " to Cart");
+        std::string error_msg = "There are no problems";
+
+        if(!shop_cart.tryAddComponentToCart(new_component,error_msg)) {
+            QMessageBox errorMessage;
+            errorMessage.setText(QString::fromStdString(error_msg));
+            errorMessage.exec();
+            showStatus("Failed to add chosen component to Cart");
+        } else {
+            shop_cart.add(new_component);
+            shopping_cart_widget->showCart(shop_cart);
+            showStatus("Added chosen component " + QString::fromStdString(new_component->getName()) + " to Cart");
+        }
+        
+    }
+
+    void MainWindow::removeFromCart(const Component::AbstractComponent* rm_this_component) {
+        shop_cart.remove(rm_this_component);
+        shopping_cart_widget->showCart(shop_cart);
+        showStatus("Removed chosen component " + QString::fromStdString(rm_this_component->getName()) + " from Cart");
     }
 
     void MainWindow::createComponent()
