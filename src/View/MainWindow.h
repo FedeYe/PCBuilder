@@ -22,6 +22,7 @@ namespace View
         QAction* create_item;
         QToolBar* toolbar;
         Engine::IEngine& ricerca;
+        Engine::ShoppingCart& shop_cart;
         Component::Repository::JsonRepository* repo;
         ResultsWidget* result_widget;
         ShoppingCartWidget* shopping_cart_widget;
@@ -29,7 +30,7 @@ namespace View
         ComponentRenderer::Full full_renderer;
 
     public:
-        explicit MainWindow(Engine::IEngine& ricerca, QWidget* parent = nullptr);
+        explicit MainWindow(Engine::IEngine& ricerca, Engine::ShoppingCart& default_cart, QWidget* parent = nullptr);
         Component::Repository::JsonRepository* getRepository();
         Engine::IEngine& getEngine();
         MainWindow& reloadData();
@@ -45,7 +46,10 @@ namespace View
         void saveAsDataset();
         void toggleToolbar();
         void showStatus(QString message);
-        void search(Engine::Query query); 
+        void search(Engine::Query query);
+        void changeOfOrder(); 
+        void addToCart(const Component::AbstractComponent* new_component);
+        void removeFromCart(const Component::AbstractComponent* new_component);
         void createComponent();
         void showComponent(const Component::AbstractComponent *component);
         void editComponent(const Component::AbstractComponent *component);

@@ -50,7 +50,7 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
-        QLabel* brand = new QLabel(QString::fromStdString(mother_board.getBrand()));
+        QLabel* brand = new QLabel("Brand: " + QString::fromStdString(mother_board.getBrand()));
         brand->setObjectName("Brand");
         infobox->addWidget(brand);
 
@@ -93,7 +93,6 @@ namespace ComponentRenderer {
         buttonsbox->addWidget(add_button);
     }
 
-
     void ListComponent::visit(const Component::CPU& cpu) {
 
         widget = new QWidget();
@@ -126,7 +125,7 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
-        QLabel* brand = new QLabel(QString::fromStdString(cpu.getBrand()));
+        QLabel* brand = new QLabel("Brand: " + QString::fromStdString(cpu.getBrand()));
         brand->setObjectName("Brand");
         infobox->addWidget(brand);
 
@@ -169,7 +168,6 @@ namespace ComponentRenderer {
         buttonsbox->addWidget(add_button);
     }
 
-
     void ListComponent::visit(const Component::GPU& gpu) {
         
         widget = new QWidget();
@@ -202,7 +200,7 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
-        QLabel* brand = new QLabel(QString::fromStdString(gpu.getBrand()));
+        QLabel* brand = new QLabel("Brand: " + QString::fromStdString(gpu.getBrand()));
         brand->setObjectName("Brand");
         infobox->addWidget(brand);
 
@@ -250,7 +248,7 @@ namespace ComponentRenderer {
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
         if(!gpu.isAvailable()) {
-            add_button->setDown(true);
+            add_button->setEnabled(false);
             add_button->setIcon(QIcon(QPixmap(":/Assets/icons/notAvailable.png")));
             add_button->setText("Not Available");
         }  
@@ -288,7 +286,7 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
-        QLabel* brand = new QLabel(QString::fromStdString(psu.getBrand()));
+        QLabel* brand = new QLabel("Brand: " + QString::fromStdString(psu.getBrand()));
         brand->setObjectName("Brand");
         infobox->addWidget(brand);
 
@@ -363,7 +361,7 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
-        QLabel* brand = new QLabel(QString::fromStdString(ram.getBrand()));
+        QLabel* brand = new QLabel("Brand: " + QString::fromStdString(ram.getBrand()));
         brand->setObjectName("Brand");
         infobox->addWidget(brand);
 

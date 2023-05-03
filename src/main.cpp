@@ -2,6 +2,7 @@
 #include <QFile>
 
 #include "Engine/Memory.h"
+#include "Engine/ShoppingCart.h"
 #include "View/MainWindow.h"
 
 int main(int argc, char *argv[]) {
@@ -14,7 +15,8 @@ int main(int argc, char *argv[]) {
     //app.setStyleSheet(QLatin1String(stylesheet.readAll()));
 
     Engine::Memory catalog;
-    View::MainWindow w(catalog);
+    Engine::ShoppingCart default_cart;
+    View::MainWindow w(catalog, default_cart);
     //w.resize();       //da aggiustare in seguito
     w.show();
     

@@ -45,7 +45,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(80, 80, Qt::AspectRatioMode::KeepAspectRatio));
         productbox->addWidget(image);
 
         //pannello informazioni prodotto
@@ -111,7 +111,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(80, 80, Qt::AspectRatioMode::KeepAspectRatio));
         productbox->addWidget(image);
 
         //pannello informazioni prodotto
@@ -149,7 +149,6 @@ namespace ComponentRenderer {
         buttonsbox->addWidget(search_button);
     }
     
-    
     void CartComponent::visit(const Component::GPU& gpu) {
         type_comp = 2;
         widget = new QWidget();
@@ -176,7 +175,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(80, 80, Qt::AspectRatioMode::KeepAspectRatio));
         productbox->addWidget(image);
 
         //pannello informazioni prodotto
@@ -240,7 +239,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(80, 80, Qt::AspectRatioMode::KeepAspectRatio));
         productbox->addWidget(image);
 
         //pannello informazioni prodotto
@@ -304,7 +303,7 @@ namespace ComponentRenderer {
         	    image_object = QPixmap(":/Assets/placeholder.png");
         }
         QLabel* image = new QLabel();
-        image->setPixmap(image_object.scaled(69, 69, Qt::AspectRatioMode::KeepAspectRatio));
+        image->setPixmap(image_object.scaled(80, 80, Qt::AspectRatioMode::KeepAspectRatio));
         productbox->addWidget(image);
 
         //pannello informazioni prodotto
@@ -379,6 +378,5 @@ namespace ComponentRenderer {
     QPushButton* CartComponent::getSearchButton() const {
         return search_button;
     }    
-
 }
 }

@@ -27,6 +27,7 @@ SOURCES += \
     Engine/Query.cpp\
     Engine/ResultSet.cpp\
     Engine/ShoppingCart.cpp\
+    Engine/TypeDefiner.cpp\
     \
     Service/Logger/AbstractLogger.cpp\
     Service/Logger/Singleton.cpp\
@@ -85,6 +86,7 @@ HEADERS += \
     Engine/Query.h\
     Engine/ResultSet.h\
     Engine/ShoppingCart.h\
+    Engine/TypeDefiner.h\
     \
     Service/Logger/Level.h\
     Service/Logger/AbstractLogger.h\
