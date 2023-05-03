@@ -149,7 +149,6 @@ namespace ComponentRenderer {
         buttonsbox->addWidget(search_button);
     }
     
-    
     void CartComponent::visit(const Component::GPU& gpu) {
         type_comp = 2;
         widget = new QWidget();
@@ -379,6 +378,5 @@ namespace ComponentRenderer {
     QPushButton* CartComponent::getSearchButton() const {
         return search_button;
     }    
-
 }
 }

@@ -259,7 +259,6 @@ namespace ComponentRenderer {
         priceValue->setObjectName("Price Value");
         priceValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         priceBox->addWidget(priceValue);
-        
     }
     
     void Full::visit(const Component::GPU& gpu) {
@@ -574,7 +573,6 @@ namespace ComponentRenderer {
         priceValue->setObjectName("Price Value");
         priceValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         priceBox->addWidget(priceValue);
-
     }    
 
     QWidget* Full::getWidget() const{
@@ -604,7 +602,6 @@ namespace ComponentRenderer {
     QPushButton* Full::getSearchButton() const {
         return search_button;
     }
-
 
 }
 }
