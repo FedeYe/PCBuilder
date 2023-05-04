@@ -31,7 +31,6 @@ namespace View
 
     public:
         explicit MainWindow(Engine::IEngine& ricerca, Engine::ShoppingCart& default_cart, QWidget* parent = nullptr);
-        Component::Repository::JsonRepository* getRepository();
         Engine::IEngine& getEngine();
         MainWindow& reloadData();
         ShoppingCartWidget* getShoppingCartWidget();
