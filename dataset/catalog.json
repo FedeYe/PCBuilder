@@ -292,7 +292,7 @@
     {
         "type": "RAM",
         "id": 24,
-        "name": "Kingston FURY Beast RGB 16GB 3200MHz DDR4",
+        "name": "Kingston FURY Beast RGB 16GB 3200MHz DDR5",
         "price": 189.99,
         "brand": "Kingston",
         "imagePath": "../dataset/Images/kingstonram.jpeg",
