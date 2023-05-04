@@ -37,8 +37,8 @@ namespace View
             /* QUELLO PER AVAILABILITY */
             availability_input = new QComboBox();
             availability_input->setObjectName("availability-input");
-            availability_input->addItem("Not available");                               // index 1
-            availability_input->addItem("Available");                                   // index 2     -> per la conversione in bool necessita quindi -1
+            availability_input->addItem("Available");                               // index 1
+            availability_input->addItem("Not available");                                   // index 2     -> per la conversione in bool necessita quindi -1
             form->addRow("is Available", availability_input);
 
         }
