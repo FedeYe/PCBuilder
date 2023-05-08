@@ -1,103 +1,67 @@
 * {
     font-family: "Helvetica", "Calibri", "Impact Condensed", "monospace";
+    background-color: rgb(99, 99, 99);
+    color: white;
 }
 
-#list-item-web-page,
-#list-item-simple,
-#list-item-virtual,
-#list-item-bundle {
-    background-color: #EEE;
-    border: 1px solid #CCC;
-    border-right: 2px solid #999;
-    border-bottom: 2px solid #999;
+#results-widget {
+    background-color: rgb(3, 3, 3);
+}
+
+#list-component-mother-board,
+#list-component-cpu,
+#list-component-gpu,
+#list-component-psu,
+#list-component-ram {
+    background-color: rgb(99, 99, 99);
+    border: 1px solid rgb(41, 41, 41);
+    border-right: 2px solid rgb(41, 41, 41);
+    border-bottom: 2px solid rgb(41, 41, 41);
     border-radius: 10%;
 }
 
-#list-item-web-page:hover,
-#list-item-simple:hover,
-#list-item-virtual:hover,
-#list-item-bundle:hover,
-#card-web-page:hover {
-    background-color: #CCC;
-    border: 1px solid #333;
-    border-right: 2px solid #333;
-    border-bottom: 2px solid #333;
+#list-component-mother-board:hover,
+#list-component-cpu:hover,
+#list-component-gpu:hover,
+#list-component-psu:hover,
+#list-component-ram:hover {
+    background-color: rgb(99, 99, 99);
+    border: 1px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
     border-radius: 0%;
 }
 
-#card-web-page,
-#card-simple,
-#card-virtual,
-#card-bundle {
+#shopping-cart-widget {
+    background-color: rgb(24, 24, 24);
+}
+
+#cart-component-mother-board,
+#cart-component-cpu,
+#cart-component-gpu,
+#cart-component-psu,
+#cart-component-ram {
     background-color: #EEE;
     border: 1px solid #CCC;
     border-right: 2px solid #999;
     border-bottom: 2px solid #999;
     border-radius: 20%;
-}
-
-#card-web-page:hover,
-#card-simple:hover,
-#card-virtual:hover,
-#card-bundle:hover {
-    background-color: #CCC;
-    border: 1px solid #333;
-    border-right: 2px solid #333;
-    border-bottom: 2px solid #333;
-    border-radius: 20%;
-}
-
-#teaser-web-page,
-#teaser-simple,
-#teaser-virtual,
-#teaser-bundle {
-    background-color: #EEE;
-    border: 1px solid #CCC;
-    border-right: 3px solid #999;
-    border-bottom: 3px solid #999;
-    border-radius: 20%;
-}
-
-#teaser-web-page:hover,
-#teaser-simple:hover,
-#teaser-virtual:hover,
-#teaser-bundle:hover {
-    background-color: #CCC;
-    border: 1px solid #333;
-    border-right: 3px solid #333;
-    border-bottom: 3px solid #333;
 }
 
 #name {
     font-weight: bold;
 }
 
-#teaser-web-page #name,
-#teaser-simple #name,
-#teaser-virtual #name,
-#teaser-bundle #name {
-    font-size: 32px;
-    font-weight: bold;
-}
-
-#full-web-page #name,
-#full-simple #name,
-#full-virtual #name,
-#full-bundle #name {
+#full-mother-board #name,
+#full-cpu #name,
+#full-gpu #name,
+#full-psu #name,
+#full-ram #name {
     width: 100%;
     font-size: 48px;
     font-weight: bold;
 }
 
-#full-bundle #list-item-simple #name,
-#full-bundle #list-item-virtual #name {
-    font-size: 24px;
-}
-
-#sku,
-#count {
-    color: #444;
-}
 
 #availability {
     font-style: italic;
@@ -121,12 +85,51 @@
     background-color: #F66;
 }
 
-#products {
+#remove-button {
+    background-color: #C33;
+}
+
+#remove-button:hover {
+    background-color: #F66;
+}
+
+#add-button {
+    background-color: rgb(99, 99, 99);
+    border: 1px solid rgb(114, 63, 196);
+    color:rgb(114, 63, 196);
+}
+
+#add-button:hover {
+    background-color: rgb(99, 99, 99);
+    border: 1px solid rgb(103, 101, 233);
+    color:rgb(103, 101, 233);
     font-weight: bold;
 }
 
-View--SearchWidget #title,
-View--EditWidget #title {
+#search-button {
+    background-color: rgb(99, 99, 99);
+    border: 1px solid rgb(114, 63, 196);
+    color:rgb(114, 63, 196);
+}
+
+#search-button:hover {
+    background-color: rgb(99, 99, 99);
+    border: 1px solid rgb(103, 101, 233);
+    color:rgb(103, 101, 233);
+    font-weight: bold;
+}
+
+View--ResultsWidget #component-name {
     font-size: 24px;
     font-weight: bold;
+}
+
+#prev-component,
+#next-component {
+    background-color: rgb(114, 63, 196);
+}
+
+#prev-component,
+#next-component {
+    background-color: rgb(103, 101, 233);
 }
