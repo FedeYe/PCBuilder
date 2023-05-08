@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
     app.setWindowIcon(QIcon(":Assets/appIcon.jpeg"));        
 
     QFile stylesheet(":/Assets/stylesheet.qss");       //da aggiustare in seguito
-    styleshhet.open(QFile::ReadOnly);
+    stylesheet.open(QFile::ReadOnly);
     app.setStyleSheet(QLatin1String(stylesheet.readAll()));
 
     Engine::Memory catalog;

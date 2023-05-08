@@ -2,6 +2,7 @@
 <qresource>
     <file>Assets/appIcon.jpeg</file>
     <file>Assets/placeholder.png</file>
+    <file>Assets/stylesheet.qss</file>
     <file>Assets/icons/close.svg</file>
     <file>Assets/icons/defaultCPU.svg</file>
     <file>Assets/icons/defaultGPU.svg</file>
