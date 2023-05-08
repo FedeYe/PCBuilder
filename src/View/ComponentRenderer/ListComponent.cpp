@@ -88,7 +88,7 @@ namespace ComponentRenderer {
         
         buttonsbox->addStretch();
 
-        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "ADD");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
     }
@@ -163,7 +163,7 @@ namespace ComponentRenderer {
         
         buttonsbox->addStretch();
 
-        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "ADD");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
     }
@@ -244,7 +244,7 @@ namespace ComponentRenderer {
         
         buttonsbox->addStretch();
 
-        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "ADD");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
         if(!gpu.isAvailable()) {
@@ -324,7 +324,7 @@ namespace ComponentRenderer {
         
         buttonsbox->addStretch();
 
-        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "ADD");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
     }
@@ -399,7 +399,7 @@ namespace ComponentRenderer {
         
         buttonsbox->addStretch();
 
-        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "AddToCart");
+        add_button = new QPushButton(QIcon(QPixmap(":/Assets/icons/addToCart.png")), "ADD");
         add_button->setObjectName("add-button");
         buttonsbox->addWidget(add_button);
     }

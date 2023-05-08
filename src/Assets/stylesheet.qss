@@ -4,35 +4,35 @@
     color: white;
 }
 
-#results-widget {
+View--ResultsWidget {
     background-color: rgb(3, 3, 3);
 }
 
-#list-component-mother-board,
+#list-component-motherboard,
 #list-component-cpu,
 #list-component-gpu,
 #list-component-psu,
 #list-component-ram {
-    background-color: rgb(99, 99, 99);
+    background-color: rgb(46, 46, 46);
     border: 1px solid rgb(41, 41, 41);
     border-right: 2px solid rgb(41, 41, 41);
     border-bottom: 2px solid rgb(41, 41, 41);
     border-radius: 10%;
 }
 
-#list-component-mother-board:hover,
+#list-component-motherboard:hover,
 #list-component-cpu:hover,
 #list-component-gpu:hover,
 #list-component-psu:hover,
 #list-component-ram:hover {
-    background-color: rgb(99, 99, 99);
-    border: 1px solid rgb(255, 255, 255);
-    border-right: 2px solid rgb(255, 255, 255);
-    border-bottom: 2px solid rgb(255, 255, 255);
+    background-color: rgb(66, 66, 66);
+    border: 1px solid rgb(70, 67, 235);
+    border-right: 2px solid rgb(70, 67, 235);
+    border-bottom: 2px solid rgb(70, 67, 235);
     border-radius: 0%;
 }
 
-#shopping-cart-widget {
+View--ShoppingCartWidget {
     background-color: rgb(24, 24, 24);
 }
 
@@ -41,14 +41,20 @@
 #cart-component-gpu,
 #cart-component-psu,
 #cart-component-ram {
-    background-color: #EEE;
-    border: 1px solid #CCC;
-    border-right: 2px solid #999;
-    border-bottom: 2px solid #999;
-    border-radius: 20%;
+    background-color: rgb(46, 46, 46);
+    border: 1px solid rgb(41, 41, 41);
 }
 
-#name {
+#cart-component-mother-board:hover,
+#cart-component-cpu:hover,
+#cart-component-gpu:hover,
+#cart-component-psu:hover,
+#cart-component-ram:hover {
+    background-color: rgb(66, 66, 66);
+    border: 1px solid rgb(70, 67, 235);
+}
+
+#Name {
     font-weight: bold;
 }
 
@@ -94,42 +100,46 @@
 }
 
 #add-button {
-    background-color: rgb(99, 99, 99);
+    background-color: rgb(46, 46, 46);
     border: 1px solid rgb(114, 63, 196);
     color:rgb(114, 63, 196);
 }
 
 #add-button:hover {
-    background-color: rgb(99, 99, 99);
-    border: 1px solid rgb(103, 101, 233);
+    background-color: rgb(46, 46, 46);
+    border: 1px solid rgb(70, 67, 235);
     color:rgb(103, 101, 233);
     font-weight: bold;
 }
 
 #search-button {
-    background-color: rgb(99, 99, 99);
+    background-color: rgb(46, 46, 46);
     border: 1px solid rgb(114, 63, 196);
     color:rgb(114, 63, 196);
 }
 
 #search-button:hover {
-    background-color: rgb(99, 99, 99);
-    border: 1px solid rgb(103, 101, 233);
+    background-color: rgb(46, 46, 46);
+    border: 1px solid rgb(70, 67, 235);
     color:rgb(103, 101, 233);
     font-weight: bold;
 }
 
-View--ResultsWidget #component-name {
+View--ResultsWidget #Title {
     font-size: 24px;
     font-weight: bold;
 }
 
-#prev-component,
-#next-component {
+View--ResultsWidget #prev-component,
+View--ResultsWidget #next-component {
     background-color: rgb(114, 63, 196);
 }
 
-#prev-component,
-#next-component {
-    background-color: rgb(103, 101, 233);
+View--ResultsWidget #prev-component,
+View--ResultsWidget #next-component {
+    background-color: rgb(70, 67, 235);
+}
+
+#total {
+    font-weight: bold;
 }

@@ -40,7 +40,7 @@ namespace View {
         QHBoxLayout* summary = new QHBoxLayout();
 
         total_cost = new QLabel("Costo Totale :    ");
-        total_cost->setObjectName("costo totale");
+        total_cost->setObjectName("Total");
         total_cost->setAlignment(Qt::AlignCenter);
         summary->addWidget(total_cost);
 

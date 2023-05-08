@@ -20,6 +20,7 @@ namespace View
         vbox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
 
         component_name = new QLabel();
+        component_name->setObjectName("Title");
         vbox->addWidget(component_name);
 
         QHBoxLayout* hbox = new QHBoxLayout();
@@ -65,10 +66,12 @@ namespace View
         vbox->addLayout(hbox2); 
 
         prev_component = new QPushButton("Componente Precedente");
+        prev_component->setObjectName("prev-component");
         prev_component->setEnabled(false);
         hbox2->addWidget(prev_component);
 
         next_component = new QPushButton("Componente Successiva");
+        next_component->setObjectName("next-component");
         next_component->setEnabled(false);
         hbox2->addWidget(next_component); 
 
