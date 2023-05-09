@@ -88,19 +88,18 @@ namespace View
         QSplitter* splitter = new QSplitter(this);
         setCentralWidget(splitter);
 
+        Engine::Query defaultQuery;
+        shopping_cart_widget = new ShoppingCartWidget(defaultQuery);
+        shopping_cart_widget->setObjectName("shoppingCartWidget");
+        shopping_cart_widget->showCart(shop_cart);
+        splitter->addWidget(shopping_cart_widget);
+        
         stacked_widget = new QStackedWidget(this);
         splitter->addWidget(stacked_widget);
 
         result_widget = new ResultsWidget();
         result_widget->setObjectName("resultsWidget");
         stacked_widget->addWidget(result_widget);
-
-        Engine::Query defaultQuery;
-        shopping_cart_widget = new ShoppingCartWidget(defaultQuery);
-        shopping_cart_widget->setObjectName("shoppingCartWidget");
-        shopping_cart_widget->showCart(shop_cart);
-
-        splitter->addWidget(shopping_cart_widget);
 
         splitter->setSizes(QList<int>() << 2000 << 2000);
 
@@ -258,7 +257,22 @@ namespace View
 
     void MainWindow::search(Engine::Query query)
     {
-        showStatus("Running query for component \"" + QString::number(query.getType()) + "\".");
+        QString text = "<blank>";
+        switch(query.getType()) {
+            case 1:
+            text = "MOTHERBOARD"; break;
+            case 2:
+            text = "CPU"; break;
+            case 3:
+            text = "GPU"; break;
+            case 4:
+            text = "PSU"; break;
+            case 5:
+            text = "RAM"; break;
+            default:
+            text = "<blank>"; break;
+        }
+        showStatus("Running query for component " + text + ".");
         result_widget->showResults(query, ricerca.search(query));
         stacked_widget->setCurrentIndex(0);
         clearStack();

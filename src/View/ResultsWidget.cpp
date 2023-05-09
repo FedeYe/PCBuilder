@@ -53,7 +53,6 @@ namespace View
         QWidget* container = new QWidget();
         container->setLayout(grid);
         QScrollArea* scroll_area = new QScrollArea();
-        scroll_area->setObjectName("results-area");
         scroll_area->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setWidgetResizable(true);
@@ -113,11 +112,11 @@ namespace View
         // Shows new data
         if (results.getSize() > 0)
         {
-            results_total->setText(QString::number(results.getSize()) + " results for component \"" + QString::number(query.getType()) + "\":");        // aggiungendo una stringa text è possibile mostrare nome della componente
+            results_total->setText("Found " + QString::number(results.getSize()) + " " + component_name->text() + ".");        // aggiungendo una stringa text è possibile mostrare nome della componente
         }
         else
         {
-            results_total->setText("No results for component \"" + QString::number(query.getType()) + "\".");
+            results_total->setText("No results for " + component_name->text() + ".");
         }
         prev_component->setEnabled(true);
         next_component->setEnabled(true);
