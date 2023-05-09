@@ -25,8 +25,8 @@ namespace View {
         vbox->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
 
         QLabel* AppName = new QLabel("PCBuilder");
-        name->setObjectName("AppName");
-        infobox->addWidget(name);
+        AppName->setObjectName("AppName");
+        vbox->addWidget(name);
 
         vbox->addStretch();
 
