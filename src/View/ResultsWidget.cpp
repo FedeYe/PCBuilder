@@ -47,7 +47,7 @@ namespace View
             QIcon(QPixmap(":/Assets/icons/pricedesc.png")), 
             ""
         );
-        order_ascendent->setObjectName("ascendent-button");
+        order_descendent->setObjectName("ascendent-button");
         price_order_buttons->addWidget(order_descendent);
 
         grid = new QGridLayout();
