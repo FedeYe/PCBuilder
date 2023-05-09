@@ -151,16 +151,22 @@ View--ShoppingCartWidget #order-button:hover {
 
 #search-button {
     background-color: rgb(46, 46, 46);
-    border: 3px solid rgb(114, 63, 196);
+    border: 2px solid rgb(114, 63, 196);
     color:rgb(114, 63, 196);
     font-weight: bold;
 }
 
 #search-button:hover {
     background-color: rgb(46, 46, 46);
-    border: 3px solid rgb(70, 67, 235);
+    border: 2px solid rgb(70, 67, 235);
     color: rgb(70, 67, 235);
     font-weight: bold;
+}
+
+View--ShoppingCartWidget #AppName {
+    font-size: 32px;
+    font-weight: bold;
+    color:rgb(70, 67, 235);
 }
 
 View--ResultsWidget #Title {

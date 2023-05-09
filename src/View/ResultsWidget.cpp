@@ -66,14 +66,14 @@ namespace View
         hbox2->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
         vbox->addLayout(hbox2); 
 
-        prev_component = new QPushButton("Componente Precedente");
+        prev_component = new QPushButton("Previous Component");
         prev_component->setObjectName("prev-component");
         prev_component->setEnabled(false);
         hbox2->addWidget(prev_component);
 
         hbox2->addStretch();
 
-        next_component = new QPushButton("Componente Successiva");
+        next_component = new QPushButton("Next Component");
         next_component->setObjectName("next-component");
         next_component->setEnabled(false);
         hbox2->addWidget(next_component); 
