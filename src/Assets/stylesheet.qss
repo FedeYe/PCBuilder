@@ -1,21 +1,19 @@
 * {
     font-family: "Helvetica", "Calibri", "Impact Condensed", "monospace";
-    color: white;
+    background-color: rgb(54, 54, 54);
+    color:white;
 }
 
 QMainWindow,
+QScrollArea,
 QAction,
 View--MainWindow #Toolbar,
 View--ResultsWidget #results-area {
     background-color: rgb(54, 54, 54);
 }
 
-View--ShoppingCartWidget #summary {
-    background-color: rgb(29, 29, 29);
-}
-
-ResultsWidget {
-    background-color: rgb(3, 3, 3);
+QLabel  {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #list-component-motherboard,
@@ -154,15 +152,14 @@ View--ShoppingCartWidget #order-button:hover {
 #search-button {
     background-color: rgb(46, 46, 46);
     border: 3px solid rgb(114, 63, 196);
-    border-radius: 10%;
     color:rgb(114, 63, 196);
+    font-weight: bold;
 }
 
 #search-button:hover {
     background-color: rgb(46, 46, 46);
     border: 3px solid rgb(70, 67, 235);
-    border-radius: 10%;
-    color:rgb(103, 101, 233);
+    color: rgb(70, 67, 235);
     font-weight: bold;
 }
 
@@ -186,5 +183,5 @@ View--ShoppingCartWidget #Total {
 }
 
 View--ResultsWidget #resultsTotal {
-    font-weight: italic;
+    font-style: italic;
 }
