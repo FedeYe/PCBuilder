@@ -61,7 +61,7 @@ namespace ComponentRenderer {
         QLabel* price = new QLabel("Price: " + QString::number(mother_board.getPrice()) + "€");
         price->setObjectName("Price");
         if(mother_board.getIdentifier() == 0)
-            price->setText("Scegli un prodotto");
+            price->setText("Choose a product");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -80,8 +80,10 @@ namespace ComponentRenderer {
             buttonsbox->addStretch();
         }
         
-        search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button = new QPushButton("Search");
+        search_button->setObjectName("search-button");
+        if(mother_board.getIdentifier() != 0)
+            search_button->setText("Change");
         buttonsbox->addWidget(search_button);
     }
     
@@ -127,7 +129,7 @@ namespace ComponentRenderer {
         QLabel* price = new QLabel("Price: " + QString::number(cpu.getPrice()) + "€");
         price->setObjectName("Price");
         if(cpu.getIdentifier() == 0)
-            price->setText("Scegli un prodotto");
+            price->setText("Choose a product");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -144,8 +146,10 @@ namespace ComponentRenderer {
             buttonsbox->addStretch();
         }
 
-        search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button = new QPushButton("Search");
+        search_button->setObjectName("search-button");
+        if(cpu.getIdentifier() != 0)
+            search_button->setText("Change");
         buttonsbox->addWidget(search_button);
     }
     
@@ -191,7 +195,7 @@ namespace ComponentRenderer {
         QLabel* price = new QLabel("Price: " + QString::number(gpu.getPrice()) + "€");
         price->setObjectName("Price");
         if(gpu.getIdentifier() == 0)
-            price->setText("Scegli un prodotto");
+            price->setText("Choose a product");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -208,8 +212,10 @@ namespace ComponentRenderer {
             buttonsbox->addStretch();
         }
 
-        search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button = new QPushButton("Search");
+        search_button->setObjectName("search-button");
+        if(gpu.getIdentifier() != 0)
+            search_button->setText("Change");
         buttonsbox->addWidget(search_button);
     }
     
@@ -255,7 +261,7 @@ namespace ComponentRenderer {
         QLabel* price = new QLabel("Price: " + QString::number(psu.getPrice()) + "€");
         price->setObjectName("Price");
         if(psu.getIdentifier() == 0)
-            price->setText("Scegli un prodotto");
+            price->setText("Choose a product");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -272,8 +278,10 @@ namespace ComponentRenderer {
             buttonsbox->addStretch();
         }
 
-        search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button = new QPushButton("Search");
+        search_button->setObjectName("search-button");
+        if(psu.getIdentifier() != 0)
+            search_button->setText("Change");
         buttonsbox->addWidget(search_button);
     }
     
@@ -319,7 +327,7 @@ namespace ComponentRenderer {
         QLabel* capacity = new QLabel("Capacity: " + QString::fromStdString(ram.getCapacity()));
         capacity->setObjectName("Capacity");
         if(ram.getIdentifier() == 0)
-            capacity->setText("Scegli un prodotto");
+            capacity->setText("Choose a product");
         infobox->addWidget(capacity);
 
         QLabel* price = new QLabel("Price: " + QString::number(ram.getPrice()) + "€");
@@ -342,8 +350,10 @@ namespace ComponentRenderer {
             buttonsbox->addStretch();
         }
 
-        search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button = new QPushButton("Search");
+        search_button->setObjectName("search-button");
+        if(ram.getIdentifier() != 0)
+            search_button->setText("Change");
         buttonsbox->addWidget(search_button);
     }
 

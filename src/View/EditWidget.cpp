@@ -26,6 +26,8 @@ namespace View
         const Component::AbstractComponent *subject)
         : main_window(main_window), subject(subject)
     {
+        (void)repository;
+
         QVBoxLayout *vbox = new QVBoxLayout(this);
         vbox->setObjectName("widget-edit");
         vbox->setAlignment(Qt::AlignLeft | Qt::AlignTop);

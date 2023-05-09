@@ -24,6 +24,10 @@ namespace View {
         QVBoxLayout* vbox = new QVBoxLayout(this);
         vbox->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
 
+        QLabel* AppName = new QLabel("PCBuilder");
+        AppName->setObjectName("AppName");
+        vbox->addWidget(AppName);
+
         vbox->addStretch();
 
         // griglia che rappresenta il carrello
@@ -40,11 +44,12 @@ namespace View {
         QHBoxLayout* summary = new QHBoxLayout();
 
         total_cost = new QLabel("Costo Totale :    ");
-        total_cost->setObjectName("costo totale");
+        total_cost->setObjectName("Total");
         total_cost->setAlignment(Qt::AlignCenter);
         summary->addWidget(total_cost);
 
-        QPushButton* order_input = new QPushButton(QIcon(QPixmap((":/Assets/icons/order.png"))),"Ordina");
+        QPushButton* order_input = new QPushButton(QIcon(QPixmap((":/Assets/icons/order.png"))),"Order");
+        order_input->setObjectName("order-button");
         summary->addWidget(order_input);
 
         summary->setAlignment(Qt::AlignRight | Qt::AlignVCenter);

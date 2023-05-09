@@ -20,6 +20,7 @@ namespace View
         vbox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
 
         component_name = new QLabel();
+        component_name->setObjectName("Title");
         vbox->addWidget(component_name);
 
         QHBoxLayout* hbox = new QHBoxLayout();
@@ -27,6 +28,7 @@ namespace View
         vbox->addLayout(hbox);
 
         results_total = new QLabel();
+        results_total->setObjectName("resultsTotal");
         hbox->addWidget(results_total);
 
         hbox->addStretch();
@@ -64,11 +66,15 @@ namespace View
         hbox2->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
         vbox->addLayout(hbox2); 
 
-        prev_component = new QPushButton("Componente Precedente");
+        prev_component = new QPushButton("Previous Component");
+        prev_component->setObjectName("prev-component");
         prev_component->setEnabled(false);
         hbox2->addWidget(prev_component);
 
-        next_component = new QPushButton("Componente Successiva");
+        hbox2->addStretch();
+
+        next_component = new QPushButton("Next Component");
+        next_component->setObjectName("next-component");
         next_component->setEnabled(false);
         hbox2->addWidget(next_component); 
 
@@ -106,11 +112,11 @@ namespace View
         // Shows new data
         if (results.getSize() > 0)
         {
-            results_total->setText(QString::number(results.getSize()) + " results for component \"" + QString::number(query.getType()) + "\":");        // aggiungendo una stringa text è possibile mostrare nome della componente
+            results_total->setText("Found " + QString::number(results.getSize()) + " " + component_name->text() + ".");        // aggiungendo una stringa text è possibile mostrare nome della componente
         }
         else
         {
-            results_total->setText("No results for component \"" + QString::number(query.getType()) + "\".");
+            results_total->setText("No results for " + component_name->text() + ".");
         }
         prev_component->setEnabled(true);
         next_component->setEnabled(true);
