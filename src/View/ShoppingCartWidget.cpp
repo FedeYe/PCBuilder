@@ -38,7 +38,7 @@ namespace View {
         vbox->addStretch();
 
         QHBoxLayout* summary = new QHBoxLayout();
-        summary->->setObjectName("summary");
+        summary->setObjectName("summary");
 
         total_cost = new QLabel("Costo Totale :    ");
         total_cost->setObjectName("Total");
