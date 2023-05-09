@@ -3,7 +3,11 @@
     color: white;
 }
 
-#resultsWidget {
+View--MainWindow #Toolbar {
+    background-color: rgb(17, 17, 17);
+}
+
+View--MainWindow #resultsWidget {
     background-color: rgb(3, 3, 3);
 }
 
@@ -31,7 +35,7 @@
     border-radius: 0%;
 }
 
-#shoppingCartWidget {
+View--MainWindow #shoppingCartWidget {
     background-color: rgb(24, 24, 24);
 }
 
@@ -164,10 +168,10 @@ View--ResultsWidget #next-component {
     background-color: rgb(70, 67, 235);
 }
 
-#Total {
+View--ShoppingCartWidget #Total {
     font-weight: bold;
 }
 
-#resultsTotal {
+View--ResultsWidget #resultsTotal {
     font-weight: italic;
 }

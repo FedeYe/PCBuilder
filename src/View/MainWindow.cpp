@@ -76,6 +76,7 @@ namespace View
 
         // toolbar
         toolbar = addToolBar("File Toolbar");
+        toolbar->setObjectName("Toolbar");
         toolbar->addAction(create);
         toolbar->addAction(open);
         toolbar->addAction(save);
