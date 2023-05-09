@@ -40,12 +40,14 @@ namespace View
             QIcon(QPixmap(":/Assets/icons/priceasc.png")),
             ""
         );
+        order_ascendent->setObjectName("descendent-button");
         price_order_buttons->addWidget(order_ascendent);
 
         QPushButton* order_descendent = new QPushButton(
             QIcon(QPixmap(":/Assets/icons/pricedesc.png")), 
             ""
         );
+        order_ascendent->setObjectName("ascendent-button");
         price_order_buttons->addWidget(order_descendent);
 
         grid = new QGridLayout();
