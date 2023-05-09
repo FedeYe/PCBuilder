@@ -3,11 +3,18 @@
     color: white;
 }
 
-View--MainWindow #Toolbar {
-    background-color: rgb(17, 17, 17);
+QMainWindow,
+QAction,
+View--MainWindow #Toolbar,
+View--ResultsWidget #results-area {
+    background-color: rgb(54, 54, 54);
 }
 
-View--MainWindow #resultsWidget {
+View--ShoppingCartWidget #summary {
+    background-color: rgb(29, 29, 29);
+}
+
+ResultsWidget {
     background-color: rgb(3, 3, 3);
 }
 
@@ -126,29 +133,35 @@ View--MainWindow #shoppingCartWidget {
     background-color: #F66;
 }
 
-#add-button {
+#add-button,
+View--ShoppingCartWidget #order-button {
     background-color: rgb(46, 46, 46);
-    border: 1px solid rgb(114, 63, 196);
+    border: 3px solid rgb(114, 63, 196);
+    border-radius: 10%;
     color:rgb(114, 63, 196);
     font-weight: bold;
 }
 
-#add-button:hover {
+#add-button:hover,
+View--ShoppingCartWidget #order-button:hover {
     background-color: rgb(46, 46, 46);
-    border: 1px solid rgb(70, 67, 235);
+    border: 3px solid rgb(70, 67, 235);
+    border-radius: 10%;
     color:rgb(103, 101, 233);
     font-weight: bold;
 }
 
 #search-button {
     background-color: rgb(46, 46, 46);
-    border: 1px solid rgb(114, 63, 196);
+    border: 3px solid rgb(114, 63, 196);
+    border-radius: 10%;
     color:rgb(114, 63, 196);
 }
 
 #search-button:hover {
     background-color: rgb(46, 46, 46);
-    border: 1px solid rgb(70, 67, 235);
+    border: 3px solid rgb(70, 67, 235);
+    border-radius: 10%;
     color:rgb(103, 101, 233);
     font-weight: bold;
 }

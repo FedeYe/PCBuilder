@@ -38,6 +38,7 @@ namespace View {
         vbox->addStretch();
 
         QHBoxLayout* summary = new QHBoxLayout();
+        summary->->setObjectName("summary");
 
         total_cost = new QLabel("Costo Totale :    ");
         total_cost->setObjectName("Total");
@@ -45,6 +46,7 @@ namespace View {
         summary->addWidget(total_cost);
 
         QPushButton* order_input = new QPushButton(QIcon(QPixmap((":/Assets/icons/order.png"))),"Ordina");
+        order_input->setObjectName("order-button");
         summary->addWidget(order_input);
 
         summary->setAlignment(Qt::AlignRight | Qt::AlignVCenter);

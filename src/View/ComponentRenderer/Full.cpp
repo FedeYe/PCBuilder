@@ -173,11 +173,10 @@ namespace ComponentRenderer {
         details->addLayout(identifierBox);
         QLabel* identifierLabel = new QLabel("Identifier: ");
         identifierLabel->setObjectName("Identifier-Label");
-        identifierLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         identifierBox->addWidget(identifierLabel);
+        identifierBox->addStretch();
         QLabel* identifierValue = new QLabel(QString::number(cpu.getIdentifier()));
         identifierValue->setObjectName("Identifier Value");
-        identifierValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         identifierBox->addWidget(identifierValue);
 
         QHBoxLayout* chipsetBox = new QHBoxLayout();
@@ -185,11 +184,10 @@ namespace ComponentRenderer {
         details->addLayout(chipsetBox);
         QLabel* chipsetLabel = new QLabel("Chipset: ");
         chipsetLabel->setObjectName("Chipset-Label");
-        chipsetLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         chipsetBox->addWidget(chipsetLabel);
+        chipsetBox->addStretch();
         QLabel* chipsetValue = new QLabel(QString::fromStdString(cpu.getChipset()));
         chipsetValue->setObjectName("Chipset Value");
-        chipsetValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         chipsetBox->addWidget(chipsetValue);
 
         QHBoxLayout* numCoresBox = new QHBoxLayout();
@@ -197,11 +195,10 @@ namespace ComponentRenderer {
         details->addLayout(numCoresBox);
         QLabel* numCoresLabel = new QLabel("Number of Cores: ");
         numCoresLabel->setObjectName("NumCores-Label");
-        numCoresLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         numCoresBox->addWidget(numCoresLabel);
+        numCoresBox->addStretch();
         QLabel* numCoresValue = new QLabel(QString::number(cpu.getNumCores()));
         numCoresValue->setObjectName("NumCores Value");
-        numCoresValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         numCoresBox->addWidget(numCoresValue);
 
         QHBoxLayout* threadsBox = new QHBoxLayout();
@@ -209,11 +206,10 @@ namespace ComponentRenderer {
         details->addLayout(threadsBox);
         QLabel* threadsLabel = new QLabel("Threads: ");
         threadsLabel->setObjectName("Threads-Label");
-        threadsLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         threadsBox->addWidget(threadsLabel);
+        threadsBox->addStretch();
         QLabel* threadsValue = new QLabel(QString::number(cpu.getThreads()));
         threadsValue->setObjectName("Threads Value");
-        threadsValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         threadsBox->addWidget(threadsValue);
 
         QHBoxLayout* coreClockBox = new QHBoxLayout();
@@ -221,11 +217,10 @@ namespace ComponentRenderer {
         details->addLayout(coreClockBox);
         QLabel* coreClockLabel = new QLabel("Core Clock: ");
         coreClockLabel->setObjectName("CoreClock-Label");
-        coreClockLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         coreClockBox->addWidget(coreClockLabel);
+        coreClockBox->addStretch();
         QLabel* coreClockValue = new QLabel(QString::number(cpu.getCoreclock()) + " GHz");
         coreClockValue->setObjectName("CoreClock Value");
-        coreClockValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         coreClockBox->addWidget(coreClockValue);
 
         QHBoxLayout* boostClockBox = new QHBoxLayout();
@@ -233,11 +228,10 @@ namespace ComponentRenderer {
         details->addLayout(boostClockBox);
         QLabel* boostClockLabel = new QLabel("Boost Clock: ");
         boostClockLabel->setObjectName("BoostClock-Label");
-        boostClockLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         boostClockBox->addWidget(boostClockLabel);
+        boostClockBox->addStretch();
         QLabel* boostClockValue = new QLabel(QString::number(cpu.getBoostclock()) + " GHz");
         boostClockValue->setObjectName("BoostClock Value");
-        boostClockValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         boostClockBox->addWidget(boostClockValue);
 
         QHBoxLayout* priceBox = new QHBoxLayout();
@@ -245,11 +239,10 @@ namespace ComponentRenderer {
         details->addLayout(priceBox);
         QLabel* priceLabel = new QLabel("Price: ");
         priceLabel->setObjectName("Price-Label");
-        priceLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         priceBox->addWidget(priceLabel);
+        priceBox->addStretch();
         QLabel* priceValue = new QLabel(QString::number(cpu.getPrice()) + "€");
         priceValue->setObjectName("Price Value");
-        priceValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         priceBox->addWidget(priceValue);
     }
     
@@ -290,11 +283,10 @@ namespace ComponentRenderer {
         details->addLayout(identifierBox);
         QLabel* identifierLabel = new QLabel("Identifier: ");
         identifierLabel->setObjectName("Identifier-Label");
-        identifierLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         identifierBox->addWidget(identifierLabel);
+        identifierBox->addStretch();
         QLabel* identifierValue = new QLabel(QString::number(gpu.getIdentifier()));
         identifierValue->setObjectName("Identifier Value");
-        identifierValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         identifierBox->addWidget(identifierValue);
 
         QHBoxLayout* numPorteBox = new QHBoxLayout();
@@ -302,11 +294,10 @@ namespace ComponentRenderer {
         details->addLayout(numPorteBox);
         QLabel* numPorteLabel = new QLabel("Number of HDMI/Display Ports: ");
         numPorteLabel->setObjectName("NumPorte-Label");
-        numPorteLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         numPorteBox->addWidget(numPorteLabel);
+        numPorteBox->addStretch();
         QLabel* numPorteValue = new QLabel(QString::number(gpu.getNumPorte()));
         numPorteValue->setObjectName("NumPorte Value");
-        numPorteValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         numPorteBox->addWidget(numPorteValue);
 
         QHBoxLayout* numVRAMBox = new QHBoxLayout();
@@ -314,11 +305,10 @@ namespace ComponentRenderer {
         details->addLayout(numVRAMBox);
         QLabel* numVRAMLabel = new QLabel("Number of VRAM: ");
         numVRAMLabel->setObjectName("NumVRAM-Label");
-        numVRAMLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         numVRAMBox->addWidget(numVRAMLabel);
+        numVRAMBox->addStretch();
         QLabel* numVRAMValue = new QLabel(QString::number(gpu.getNumVRam()) + " GB");
         numVRAMValue->setObjectName("NumVRAM Value");
-        numVRAMValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         numVRAMBox->addWidget(numVRAMValue);
 
         QHBoxLayout* numVentoleBox = new QHBoxLayout();
@@ -326,11 +316,10 @@ namespace ComponentRenderer {
         details->addLayout(numVentoleBox);
         QLabel* numVentoleLabel = new QLabel("Number of Vents: ");
         numVentoleLabel->setObjectName("NumVentole-Label");
-        numVentoleLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         numVentoleBox->addWidget(numVentoleLabel);
+        numVentoleBox->addStretch();
         QLabel* numVentoleValue = new QLabel(QString::number(gpu.getNumVentole()));
         numVentoleValue->setObjectName("NumVentole Value");
-        numVentoleValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         numVentoleBox->addWidget(numVentoleValue);
 
         std::string availabilityString = "<default>";
@@ -343,11 +332,10 @@ namespace ComponentRenderer {
         details->addLayout(availabilityBox);
         QLabel* availabilityLabel = new QLabel("Availability: ");
         availabilityLabel->setObjectName("Availability-Label");
-        availabilityLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         availabilityBox->addWidget(availabilityLabel);
+        availabilityBox->addStretch();
         QLabel* availabilityValue = new QLabel(QString::fromStdString(availabilityString));
         availabilityValue->setObjectName("Availability Value");
-        availabilityValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         availabilityBox->addWidget(availabilityValue);
 
         QHBoxLayout* priceBox = new QHBoxLayout();
@@ -355,11 +343,10 @@ namespace ComponentRenderer {
         details->addLayout(priceBox);
         QLabel* priceLabel = new QLabel("Price: ");
         priceLabel->setObjectName("Price-Label");
-        priceLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         priceBox->addWidget(priceLabel);
+        priceBox->addStretch();
         QLabel* priceValue = new QLabel(QString::number(gpu.getPrice()) + "€");
         priceValue->setObjectName("Price Value");
-        priceValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         priceBox->addWidget(priceValue);
     }
     
@@ -400,11 +387,10 @@ namespace ComponentRenderer {
         details->addLayout(identifierBox);
         QLabel* identifierLabel = new QLabel("Identifier: ");
         identifierLabel->setObjectName("Identifier-Label");
-        identifierLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         identifierBox->addWidget(identifierLabel);
+        identifierBox->addStretch();
         QLabel* identifierValue = new QLabel(QString::number(psu.getIdentifier()));
         identifierValue->setObjectName("Identifier Value");
-        identifierValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         identifierBox->addWidget(identifierValue);
 
         QHBoxLayout* suppliedWattBox = new QHBoxLayout();
@@ -412,11 +398,10 @@ namespace ComponentRenderer {
         details->addLayout(suppliedWattBox);
         QLabel* suppliedWattLabel = new QLabel("Supplied Wattage: ");
         suppliedWattLabel->setObjectName("Supplied-Watt-Label");
-        suppliedWattLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         suppliedWattBox->addWidget(suppliedWattLabel);
+        suppliedWattBox->addStretch();
         QLabel* suppliedWattValue = new QLabel(QString::number(psu.getSuppWatt()));
         suppliedWattValue->setObjectName("Supplied Watt Value");
-        suppliedWattValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         suppliedWattBox->addWidget(suppliedWattValue);
 
         QHBoxLayout* efficiencyBox = new QHBoxLayout();
@@ -424,11 +409,10 @@ namespace ComponentRenderer {
         details->addLayout(efficiencyBox);
         QLabel* efficiencyLabel = new QLabel("Efficiency: ");
         efficiencyLabel->setObjectName("Efficiency-Label");
-        efficiencyLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         efficiencyBox->addWidget(efficiencyLabel);
+        efficiencyBox->addStretch();
         QLabel* efficiencyValue = new QLabel(QString::number(psu.getSuppWatt()));
         efficiencyValue->setObjectName("Efficiency Value");
-        efficiencyValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         efficiencyBox->addWidget(efficiencyValue);
 
         std::string modularString = "<default>";
@@ -441,11 +425,10 @@ namespace ComponentRenderer {
         details->addLayout(modularBox);
         QLabel* modularLabel = new QLabel("Type: ");
         modularLabel->setObjectName("Modular-Label");
-        modularLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         modularBox->addWidget(modularLabel);
+        modularBox->addStretch();
         QLabel* modularValue = new QLabel(QString::fromStdString(modularString));
         modularValue->setObjectName("Modular Value");
-        modularValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         modularBox->addWidget(modularValue);
 
         QHBoxLayout* priceBox = new QHBoxLayout();
@@ -453,11 +436,10 @@ namespace ComponentRenderer {
         details->addLayout(priceBox);
         QLabel* priceLabel = new QLabel("Price: ");
         priceLabel->setObjectName("Price-Label");
-        priceLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         priceBox->addWidget(priceLabel);
+        priceBox->addStretch();
         QLabel* priceValue = new QLabel(QString::number(psu.getPrice()) + "€");
         priceValue->setObjectName("Price Value");
-        priceValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         priceBox->addWidget(priceValue);
 
     }
@@ -499,11 +481,10 @@ namespace ComponentRenderer {
         details->addLayout(identifierBox);
         QLabel* identifierLabel = new QLabel("Identifier: ");
         identifierLabel->setObjectName("Identifier-Label");
-        identifierLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         identifierBox->addWidget(identifierLabel);
+        identifierBox->addStretch();
         QLabel* identifierValue = new QLabel(QString::number(ram.getIdentifier()));
         identifierValue->setObjectName("Identifier Value");
-        identifierValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         identifierBox->addWidget(identifierValue);
 
         QHBoxLayout* capacityBox = new QHBoxLayout();
@@ -511,11 +492,10 @@ namespace ComponentRenderer {
         details->addLayout(capacityBox);
         QLabel* capacityLabel = new QLabel("Capacity: ");
         capacityLabel->setObjectName("Capacity-Label");
-        capacityLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         capacityBox->addWidget(capacityLabel);
+        capacityBox->addStretch();
         QLabel* capacityValue = new QLabel(QString::fromStdString(ram.getCapacity()));
         capacityValue->setObjectName("Capacity Value");
-        capacityValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         capacityBox->addWidget(capacityValue);
 
         QHBoxLayout* stockSpeedBox = new QHBoxLayout();
@@ -523,11 +503,10 @@ namespace ComponentRenderer {
         details->addLayout(stockSpeedBox);
         QLabel* stockSpeedLabel = new QLabel("Stock Speed: ");
         stockSpeedLabel->setObjectName("StockSpeed-Label");
-        stockSpeedLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         stockSpeedBox->addWidget(stockSpeedLabel);
+        stockSpeedBox->addStretch();
         QLabel* stockSpeedValue = new QLabel(QString::number(ram.getStockSpeed()) + " MHz");
         stockSpeedValue->setObjectName("StockSpeed Value");
-        stockSpeedValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         stockSpeedBox->addWidget(stockSpeedValue);
 
         QHBoxLayout* maxSpeedBox = new QHBoxLayout();
@@ -535,11 +514,10 @@ namespace ComponentRenderer {
         details->addLayout(maxSpeedBox);
         QLabel* maxSpeedLabel = new QLabel("Max Speed: ");
         maxSpeedLabel->setObjectName("MaxSpeed-Label");
-        maxSpeedLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         maxSpeedBox->addWidget(maxSpeedLabel);
+        maxSpeedBox->addStretch();
         QLabel* maxSpeedValue = new QLabel(QString::number(ram.getMaxSpeed()) + " MHz");
         maxSpeedValue->setObjectName("MaxSpeed Value");
-        maxSpeedValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         maxSpeedBox->addWidget(maxSpeedValue);
 
         QHBoxLayout* generationBox = new QHBoxLayout();
@@ -547,11 +525,10 @@ namespace ComponentRenderer {
         details->addLayout(generationBox);
         QLabel* generationLabel = new QLabel("Generation: ");
         generationLabel->setObjectName("Generation-Label");
-        generationLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         generationBox->addWidget(generationLabel);
+        generationBox->addStretch();
         QLabel* generationValue = new QLabel(QString::fromStdString(ram.getGeneration()));
         generationValue->setObjectName("Generation Value");
-        generationValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         generationBox->addWidget(generationValue);
 
         QHBoxLayout* priceBox = new QHBoxLayout();
@@ -559,11 +536,10 @@ namespace ComponentRenderer {
         details->addLayout(priceBox);
         QLabel* priceLabel = new QLabel("Price: ");
         priceLabel->setObjectName("Price-Label");
-        priceLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         priceBox->addWidget(priceLabel);
+        priceBox->addStretch();
         QLabel* priceValue = new QLabel(QString::number(ram.getPrice()) + "€");
         priceValue->setObjectName("Price Value");
-        priceValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         priceBox->addWidget(priceValue);
     }    
 

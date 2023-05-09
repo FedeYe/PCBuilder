@@ -53,6 +53,7 @@ namespace View
         QWidget* container = new QWidget();
         container->setLayout(grid);
         QScrollArea* scroll_area = new QScrollArea();
+        scroll_area->setObjectName("results-area");
         scroll_area->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setWidgetResizable(true);

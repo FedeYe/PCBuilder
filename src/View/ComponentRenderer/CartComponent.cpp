@@ -81,7 +81,7 @@ namespace ComponentRenderer {
         }
         
         search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button->setObjectName("search-button");
         buttonsbox->addWidget(search_button);
     }
     
@@ -145,7 +145,7 @@ namespace ComponentRenderer {
         }
 
         search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button->setObjectName("search-button");
         buttonsbox->addWidget(search_button);
     }
     
@@ -209,7 +209,7 @@ namespace ComponentRenderer {
         }
 
         search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button->setObjectName("search-button");
         buttonsbox->addWidget(search_button);
     }
     
@@ -273,7 +273,7 @@ namespace ComponentRenderer {
         }
 
         search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button->setObjectName("search-button");
         buttonsbox->addWidget(search_button);
     }
     
@@ -343,7 +343,7 @@ namespace ComponentRenderer {
         }
 
         search_button = new QPushButton("Cambia");
-        search_button->setObjectName("search_button");
+        search_button->setObjectName("search-button");
         buttonsbox->addWidget(search_button);
     }
 
