@@ -26,7 +26,7 @@ namespace View {
 
         QLabel* AppName = new QLabel("PCBuilder");
         AppName->setObjectName("AppName");
-        vbox->addWidget(name);
+        vbox->addWidget(AppName);
 
         vbox->addStretch();
 
