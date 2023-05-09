@@ -1,10 +1,9 @@
 * {
     font-family: "Helvetica", "Calibri", "Impact Condensed", "monospace";
-    background-color: rgb(99, 99, 99);
     color: white;
 }
 
-View--ResultsWidget {
+#resultsWidget {
     background-color: rgb(3, 3, 3);
 }
 
@@ -32,7 +31,7 @@ View--ResultsWidget {
     border-radius: 0%;
 }
 
-View--ShoppingCartWidget {
+#shoppingCartWidget {
     background-color: rgb(24, 24, 24);
 }
 
@@ -68,6 +67,30 @@ View--ShoppingCartWidget {
     font-weight: bold;
 }
 
+#Identifier-Label,
+#Brand-Label,
+#Socket-Label,
+#Chipset-Label,
+#Generation-Label,
+#numRAM-Label,
+#NumSSD-Label,
+#Price-Label,
+#NumCores-Label,
+#Threads-Label
+#CoreClock-Label
+#BoostClock-Label,
+#NumPorte-Label,
+#NumVRAM-Label,
+#NumVentole-Label,
+#Availability-Label,
+#Supplied-Watt-Label,
+#Efficiency-Label,
+#Modular-Label,
+#Capacity-Label,
+#StockSpeed-Label,
+#MaxSpeed-Label {
+    font-weight: bold;
+}
 
 #availability {
     font-style: italic;
@@ -103,6 +126,7 @@ View--ShoppingCartWidget {
     background-color: rgb(46, 46, 46);
     border: 1px solid rgb(114, 63, 196);
     color:rgb(114, 63, 196);
+    font-weight: bold;
 }
 
 #add-button:hover {
@@ -140,6 +164,10 @@ View--ResultsWidget #next-component {
     background-color: rgb(70, 67, 235);
 }
 
-#total {
+#Total {
     font-weight: bold;
+}
+
+#resultsTotal {
+    font-weight: italic;
 }

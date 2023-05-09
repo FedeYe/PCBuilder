@@ -91,10 +91,12 @@ namespace View
         splitter->addWidget(stacked_widget);
 
         result_widget = new ResultsWidget();
+        result_widget->setObjectName("resultsWidget");
         stacked_widget->addWidget(result_widget);
 
         Engine::Query defaultQuery;
         shopping_cart_widget = new ShoppingCartWidget(defaultQuery);
+        shopping_cart_widget->setObjectName("shoppingCartWidget");
         shopping_cart_widget->showCart(shop_cart);
 
         splitter->addWidget(shopping_cart_widget);

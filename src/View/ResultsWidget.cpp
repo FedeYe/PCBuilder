@@ -28,6 +28,7 @@ namespace View
         vbox->addLayout(hbox);
 
         results_total = new QLabel();
+        results_total->setObjectName("resultsTotal");
         hbox->addWidget(results_total);
 
         hbox->addStretch();
@@ -69,6 +70,8 @@ namespace View
         prev_component->setObjectName("prev-component");
         prev_component->setEnabled(false);
         hbox2->addWidget(prev_component);
+
+        hbox2->addStretch();
 
         next_component = new QPushButton("Componente Successiva");
         next_component->setObjectName("next-component");

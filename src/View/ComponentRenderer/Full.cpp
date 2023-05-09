@@ -52,11 +52,10 @@ namespace ComponentRenderer {
         details->addLayout(identifierBox);
         QLabel* identifierLabel = new QLabel("Identifier: ");
         identifierLabel->setObjectName("Identifier Label");
-        identifierLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         identifierBox->addWidget(identifierLabel);
+        identifierBox->addStretch();
         QLabel* identifierValue = new QLabel(QString::number(mother_board.getIdentifier()));
         identifierValue->setObjectName("Identifier Value");
-        identifierValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         identifierBox->addWidget(identifierValue);
 
         QHBoxLayout* brandBox = new QHBoxLayout();
@@ -64,11 +63,10 @@ namespace ComponentRenderer {
         details->addLayout(brandBox);
         QLabel* brandLabel = new QLabel("Brand: ");
         brandLabel->setObjectName("Brand Label");
-        brandLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         brandBox->addWidget(brandLabel);
+        brandBox->addStretch();
         QLabel* brandValue = new QLabel(QString::fromStdString(mother_board.getBrand()));
         brandValue->setObjectName("Brand Value");
-        brandValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         brandBox->addWidget(brandValue);
 
         QHBoxLayout* socketBox = new QHBoxLayout();
@@ -76,11 +74,10 @@ namespace ComponentRenderer {
         details->addLayout(socketBox);
         QLabel* socketLabel = new QLabel("Socket: ");
         socketLabel->setObjectName("Socket Label");
-        socketLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         socketBox->addWidget(socketLabel);
+        socketBox->addStretch();
         QLabel* socketValue = new QLabel(QString::fromStdString(mother_board.getSocket()));
         socketValue->setObjectName("Socket Value");
-        socketValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         socketBox->addWidget(socketValue);
         
         QHBoxLayout* chipsetBox = new QHBoxLayout();
@@ -88,11 +85,10 @@ namespace ComponentRenderer {
         details->addLayout(chipsetBox);
         QLabel* chipsetLabel = new QLabel("Chipset: ");
         chipsetLabel->setObjectName("Chipset Label");
-        chipsetLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         chipsetBox->addWidget(chipsetLabel);
+        chipsetBox->addStretch();
         QLabel* chipsetValue = new QLabel(QString::fromStdString(mother_board.getChipset()));
         chipsetValue->setObjectName("Chipset Value");
-        chipsetValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         chipsetBox->addWidget(chipsetValue);
 
         QHBoxLayout* generationBox = new QHBoxLayout();
@@ -100,11 +96,10 @@ namespace ComponentRenderer {
         details->addLayout(generationBox);
         QLabel* generationLabel = new QLabel("Generation: ");
         generationLabel->setObjectName("Generation Label");
-        generationLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         generationBox->addWidget(generationLabel);
+        generationBox->addStretch();
         QLabel* generationValue = new QLabel(QString::fromStdString(mother_board.getGeneration()));
         generationValue->setObjectName("Generation Value");
-        generationValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         generationBox->addWidget(generationValue);
 
         QHBoxLayout* numRAMBox = new QHBoxLayout();
@@ -112,11 +107,10 @@ namespace ComponentRenderer {
         details->addLayout(numRAMBox);
         QLabel* numRAMLabel = new QLabel("Number of RAM slots: ");
         numRAMLabel->setObjectName("NumRAM Label");
-        numRAMLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         numRAMBox->addWidget(numRAMLabel);
+        numRAMBox->addStretch();
         QLabel* numRAMValue = new QLabel(QString::number(mother_board.getNumRAM()));
         numRAMValue->setObjectName("NumRAM Value");
-        numRAMValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         numRAMBox->addWidget(numRAMValue);
 
         QHBoxLayout* numSSDBox = new QHBoxLayout();
@@ -124,11 +118,10 @@ namespace ComponentRenderer {
         details->addLayout(numSSDBox);
         QLabel* numSSDLabel = new QLabel("Number of SSD slots: ");
         numSSDLabel->setObjectName("NumSSD Label");
-        numSSDLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         numSSDBox->addWidget(numSSDLabel);
+        numSSDBox->addStretch();
         QLabel* numSSDValue = new QLabel(QString::number(mother_board.getNumSSD()));
         numSSDValue->setObjectName("NumSSD Value");
-        numSSDValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         numSSDBox->addWidget(numSSDValue);
 
         QHBoxLayout* priceBox = new QHBoxLayout();
@@ -136,11 +129,10 @@ namespace ComponentRenderer {
         details->addLayout(priceBox);
         QLabel* priceLabel = new QLabel("Price: ");
         priceLabel->setObjectName("Price Label");
-        priceLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         priceBox->addWidget(priceLabel);
+        priceBox->addStretch();
         QLabel* priceValue = new QLabel(QString::number(mother_board.getPrice()) + "€");
         priceValue->setObjectName("Price Value");
-        priceValue->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         priceBox->addWidget(priceValue);
     }
     
