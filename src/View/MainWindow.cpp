@@ -109,6 +109,7 @@ namespace View
         connect(save, &QAction::triggered, this, &MainWindow::saveDataset);
         connect(save_as, &QAction::triggered, this, &MainWindow::saveAsDataset);
         connect(close, &QAction::triggered, this, &MainWindow::close);
+        connect(this, , this, &MainWindow::close);
         connect(toggle_toolbar, &QAction::triggered, this, &MainWindow::toggleToolbar);
 
         connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::search); 
@@ -354,6 +355,10 @@ namespace View
         ricerca.remove(component);
         has_unsaved_changes = true;
         shopping_cart_widget->search();
+    }
+
+    void closeEvent(QCloseEvent *event) {
+        close();
     }
 
     void MainWindow::close()

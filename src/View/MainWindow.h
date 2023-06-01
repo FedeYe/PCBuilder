@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
+#include <QCloseEvent>
 
 #include "../Component/Repository/JsonRepository.h"
 #include "../Engine/IEngine.h"
@@ -54,6 +55,7 @@ namespace View
         void showComponent(const Component::AbstractComponent *component);
         void editComponent(const Component::AbstractComponent *component);
         void deleteComponent(const Component::AbstractComponent *component);
+        virtual void closeEvent(QCloseEvent *event);
         void close();
     };
 }
