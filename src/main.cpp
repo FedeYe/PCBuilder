@@ -16,8 +16,7 @@ int main(int argc, char *argv[]) {
 
     Engine::Memory catalog;
     Engine::ShoppingCart default_cart;
-    View::MainWindow w(catalog, default_cart);
-    w.showFullScreen();       
+    View::MainWindow w(catalog, default_cart);      
     w.show();
     
     return app.exec();
