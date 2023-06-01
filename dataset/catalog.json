@@ -7,7 +7,7 @@
         "brand": "ASUS",
         "imagePath": "../dataset/Images/asusprimez690.jpeg",
         "socket": "LGA 1700",
-        "chipset": "Intel Z590",
+        "chipset": "Intel Z690",
         "generation": "DDR4",
         "numRAM": 2,
         "numSSD": 1
