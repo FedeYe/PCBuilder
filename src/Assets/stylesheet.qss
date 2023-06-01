@@ -154,6 +154,7 @@ View--ShoppingCartWidget #order-button:hover {
     border: 2px solid rgb(114, 63, 196);
     color:rgb(114, 63, 196);
     font-weight: bold;
+    padding: 0px, 2px, 0px,  ;
 }
 
 #search-button:hover {
@@ -189,8 +190,8 @@ View--ResultsWidget #next-component {
     background-color: rgb(114, 63, 196);
 }
 
-View--ResultsWidget #prev-component,
-View--ResultsWidget #next-component {
+View--ResultsWidget #prev-component:hover,
+View--ResultsWidget #next-component:hover {
     background-color: rgb(70, 67, 235);
 }
 

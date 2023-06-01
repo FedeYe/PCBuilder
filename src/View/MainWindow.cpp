@@ -119,7 +119,6 @@ namespace View
         connect(result_widget, &ResultsWidget::prevComponentType, shopping_cart_widget, &ShoppingCartWidget::prevComponent);
         connect(result_widget, &ResultsWidget::nextComponentType, shopping_cart_widget, &ShoppingCartWidget::nextComponent);
 
-        //connect(result_widget, &ResultsWidget::addComponentToCart, shopping_cart_widget, &ShoppingCartWidget::tryAddComponentToCart);
         connect(result_widget, &ResultsWidget::addComponentToCart, this, &MainWindow::addToCart);
         connect(shopping_cart_widget, &ShoppingCartWidget::removeFromCart_event, this, &MainWindow::removeFromCart);
 
@@ -336,6 +335,7 @@ namespace View
     void MainWindow::editComponent(const Component::AbstractComponent *component)
     {
         clearStack();
+        has_unsaved_changes = true;
         QScrollArea* scroll_area = new QScrollArea();
         scroll_area->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scroll_area->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
@@ -344,7 +344,6 @@ namespace View
         scroll_area->setWidget(edit_widget);
         stacked_widget->addWidget(scroll_area);
         stacked_widget->setCurrentIndex(1);
-        has_unsaved_changes = true;
         showStatus("Editing component " + QString::fromStdString(component->getName()) + ".");
     }
 
@@ -353,8 +352,8 @@ namespace View
         showStatus("Component " + QString::fromStdString(component->getName()) + " removed.");
         repo->remove(component->getIdentifier());
         ricerca.remove(component);
-        shopping_cart_widget->search();
         has_unsaved_changes = true;
+        shopping_cart_widget->search();
     }
 
     void MainWindow::close()

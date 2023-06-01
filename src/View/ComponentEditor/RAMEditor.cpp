@@ -16,14 +16,6 @@ namespace View
             form->setObjectName("ram-form");
             form->setLabelAlignment(Qt::AlignRight | Qt::AlignTop);
 
-            /*
-            capacity_input = new QSpinBox();
-            capacity_input->setObjectName("capacity-input");
-            capacity_input->setMinimum(0);
-            capacity_input->setMaximum(INT_MAX);
-            form->addRow("Capacity", capacity_input);
-            */
-
             capacity_input = new QLineEdit("examples: 2x8GB/4x8GB/2x16GB/4x16GB");
             capacity_input->setObjectName("capacity-input");
             form->addRow("Capacity", capacity_input);
