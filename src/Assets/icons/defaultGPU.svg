@@ -1,0 +1,46 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="99.5547421%" id="b">
+      <stop stop-color="#CDC2DC" offset="0%"/>
+      <stop stop-color="#AFA5BE" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="50%" y1="99.5547421%" x2="50%" y2="3.03576608e-15%" id="f">
+      <stop stop-color="#796299" offset="0%"/>
+      <stop stop-color="#8877A1" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="50%" y1="99.5547421%" x2="50%" y2="3.03576608e-15%" id="h">
+      <stop stop-color="#796299" offset="0%"/>
+      <stop stop-color="#8877A1" offset="100%"/>
+    </linearGradient>
+    <ellipse id="e" cx="23.43" cy="23.99" rx="7.74" ry="12.9"/>
+    <ellipse id="g" cx="38.91" cy="27.57" rx="6.192" ry="10.32"/>
+    <path id="a" d="M32 11.73H35V13.73H32z"/>
+    <path id="c" d="M14.26 4.5L12 38.5 46 41 47 16 34.833992 11.7266618 33.5545062 12.2772395 32.117426 11.7724618 31.132347 10.4264505z"/>
+    <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="104.285714%" gradientTransform="translate(0.500000,0.000000),scale(1.000000,0.958904),rotate(-90.000000),translate(-0.500000,-0.000000)" id="d">
+      <stop stop-color="#FFF" offset="0%"/>
+      <stop stop-color="#FFF" stop-opacity="0" offset="100%"/>
+    </radialGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#FFF" xlink:href="#a"/>
+    <use fill-opacity="0.5" fill="url(#b)" xlink:href="#a"/>
+    <path fill="#796399" opacity="0.971512278" d="M16 41.5L16 36.5 30 37.5 31 42.5zM11 38L11 41 15 41.5 13.69 36.61 11.11 36.18z"/>
+    <path fill="#9883B4" opacity="0.971512278" d="M12 41L15 41.5 15 38 12 38.5zM17 41.5L17 36.5 31 37.5 31 42.5z"/>
+    <use fill="#CAC1D5" xlink:href="#c"/>
+    <use fill-opacity="0.6" fill="url(#d)" xlink:href="#c"/>
+    <g opacity="0.600000024">
+      <use fill="#FFF" xlink:href="#e"/>
+      <use fill="url(#f)" xlink:href="#e"/>
+    </g>
+    <g opacity="0.600000024">
+      <use fill="#FFF" xlink:href="#g"/>
+      <use fill="url(#h)" xlink:href="#g"/>
+    </g>
+    <ellipse fill="#FFF" opacity="0.300000012" cx="23.83" cy="23.99" rx="3" ry="6"/>
+    <ellipse fill="#FFF" opacity="0.300000012" cx="39" cy="27.57" rx="2" ry="4"/>
+    <path fill="#9883B4" opacity="0.971512278" d="M12 38.5L3 37.5 5.23 6.22 14.69 4.5z"/>
+    <path fill="#796399" opacity="0.971512278" d="M5 7L13.11 6.66 10.5 41 9.21 42.29 9.21 44.44 7 44 7 41.75 6 40 4.94 41.49 4.94 43.64 3 43 3 41 2 39.5z"/>
+    <path fill="#796399" opacity="0.971512278" d="M4.94 7.09L1.5 5.5 10.53 4.94 13.11 6.66z"/>
+    <path d="M7.99733372,31.0729756 L8.28923628,27.0836407 L6.29456883,26.9376895 L6.00266628,30.9270244 L7.99733372,31.0729756 Z M8.58113883,23.0943058 L8.87304138,19.104971 L6.87837394,18.9590197 L6.58647138,22.9483546 L8.58113883,23.0943058 Z M9.16494394,15.1156361 L9.45684649,11.1263012 L7.46217904,10.9803499 L7.17027649,14.9696848 L9.16494394,15.1156361 Z" fill="#FFF" fill-rule="nonzero" opacity="0.400000006"/>
+  </g>
+</svg>

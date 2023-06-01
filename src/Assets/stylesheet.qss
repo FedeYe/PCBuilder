@@ -1,0 +1,205 @@
+* {
+    font-family: "Helvetica", "Calibri", "Impact Condensed", "monospace";
+    background-color: rgb(54, 54, 54);
+    color:white;
+}
+
+QMainWindow,
+QScrollArea,
+QAction,
+View--MainWindow #Toolbar,
+View--ResultsWidget #results-area {
+    background-color: rgb(54, 54, 54);
+}
+
+QLabel  {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#list-component-motherboard,
+#list-component-cpu,
+#list-component-gpu,
+#list-component-psu,
+#list-component-ram {
+    background-color: rgb(46, 46, 46);
+    border: 1px solid rgb(41, 41, 41);
+    border-right: 2px solid rgb(41, 41, 41);
+    border-bottom: 2px solid rgb(41, 41, 41);
+    border-radius: 10%;
+}
+
+#list-component-motherboard:hover,
+#list-component-cpu:hover,
+#list-component-gpu:hover,
+#list-component-psu:hover,
+#list-component-ram:hover {
+    background-color: rgb(66, 66, 66);
+    border: 1px solid rgb(70, 67, 235);
+    border-right: 2px solid rgb(70, 67, 235);
+    border-bottom: 2px solid rgb(70, 67, 235);
+    border-radius: 0%;
+}
+
+View--MainWindow #shoppingCartWidget {
+    background-color: rgb(24, 24, 24);
+}
+
+#cart-component-mother-board,
+#cart-component-cpu,
+#cart-component-gpu,
+#cart-component-psu,
+#cart-component-ram {
+    background-color: rgb(46, 46, 46);
+    border: 1px solid rgb(41, 41, 41);
+}
+
+#cart-component-mother-board:hover,
+#cart-component-cpu:hover,
+#cart-component-gpu:hover,
+#cart-component-psu:hover,
+#cart-component-ram:hover {
+    background-color: rgb(66, 66, 66);
+    border: 1px solid rgb(70, 67, 235);
+}
+
+#Name {
+    font-weight: bold;
+}
+
+#full-mother-board #name,
+#full-cpu #name,
+#full-gpu #name,
+#full-psu #name,
+#full-ram #name {
+    width: 100%;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#Identifier-Label,
+#Brand-Label,
+#Socket-Label,
+#Chipset-Label,
+#Generation-Label,
+#numRAM-Label,
+#NumSSD-Label,
+#Price-Label,
+#NumCores-Label,
+#Threads-Label
+#CoreClock-Label
+#BoostClock-Label,
+#NumPorte-Label,
+#NumVRAM-Label,
+#NumVentole-Label,
+#Availability-Label,
+#Supplied-Watt-Label,
+#Efficiency-Label,
+#Modular-Label,
+#Capacity-Label,
+#StockSpeed-Label,
+#MaxSpeed-Label {
+    font-weight: bold;
+}
+
+#availability {
+    font-style: italic;
+}
+
+#view-button,
+#edit-button {
+    background-color: #CCC;
+}
+
+#view-button:hover,
+#edit-button:hover {
+    background-color: #999;
+}
+
+#delete-button {
+    background-color: #C33;
+}
+
+#delete-button:hover {
+    background-color: #F66;
+}
+
+#remove-button {
+    background-color: #C33;
+}
+
+#remove-button:hover {
+    background-color: #F66;
+}
+
+#add-button,
+View--ShoppingCartWidget #order-button {
+    background-color: rgb(46, 46, 46);
+    border: 3px solid rgb(114, 63, 196);
+    border-radius: 10%;
+    color:rgb(114, 63, 196);
+    font-weight: bold;
+}
+
+#add-button:hover,
+View--ShoppingCartWidget #order-button:hover {
+    background-color: rgb(46, 46, 46);
+    border: 3px solid rgb(70, 67, 235);
+    border-radius: 10%;
+    color:rgb(103, 101, 233);
+    font-weight: bold;
+}
+
+#search-button {
+    background-color: rgb(46, 46, 46);
+    border: 2px solid rgb(114, 63, 196);
+    color:rgb(114, 63, 196);
+    font-weight: bold;
+    padding-left: 2px; 
+    padding-right: 2px;
+}
+
+#search-button:hover {
+    background-color: rgb(46, 46, 46);
+    border: 2px solid rgb(70, 67, 235);
+    color: rgb(70, 67, 235);
+    font-weight: bold;
+}
+
+View--ShoppingCartWidget #AppName {
+    font-size: 32px;
+    font-weight: bold;
+    color:rgb(70, 67, 235);
+}
+
+View--ResultsWidget #Title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+View--ResultsWidget #ascendent-button,
+View--ResultsWidget #descendent-button {
+    background-color: rgb(211, 211, 191);
+}
+
+View--ResultsWidget #ascendent-button:hover,
+View--ResultsWidget #descendent-button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+View--ResultsWidget #prev-component,
+View--ResultsWidget #next-component {
+    background-color: rgb(114, 63, 196);
+}
+
+View--ResultsWidget #prev-component:hover,
+View--ResultsWidget #next-component:hover {
+    background-color: rgb(70, 67, 235);
+}
+
+View--ShoppingCartWidget #Total {
+    font-weight: bold;
+}
+
+View--ResultsWidget #resultsTotal {
+    font-style: italic;
+}
