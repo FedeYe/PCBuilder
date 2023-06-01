@@ -154,7 +154,8 @@ View--ShoppingCartWidget #order-button:hover {
     border: 2px solid rgb(114, 63, 196);
     color:rgb(114, 63, 196);
     font-weight: bold;
-    padding: 0px, 2px, 0px, 2px;
+    padding-left: 2px; 
+    padding-right: 2px;
 }
 
 #search-button:hover {

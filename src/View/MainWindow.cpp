@@ -109,7 +109,6 @@ namespace View
         connect(save, &QAction::triggered, this, &MainWindow::saveDataset);
         connect(save_as, &QAction::triggered, this, &MainWindow::saveAsDataset);
         connect(close, &QAction::triggered, this, &MainWindow::close);
-        connect(this, , this, &MainWindow::close);
         connect(toggle_toolbar, &QAction::triggered, this, &MainWindow::toggleToolbar);
 
         connect(shopping_cart_widget, &ShoppingCartWidget::search_event, this, &MainWindow::search); 
@@ -357,8 +356,29 @@ namespace View
         shopping_cart_widget->search();
     }
 
-    void closeEvent(QCloseEvent *event) {
-        close();
+    void MainWindow::closeEvent(QCloseEvent *event) {
+         if (has_unsaved_changes)
+        {
+            QMessageBox::StandardButton confirmation;
+            confirmation = QMessageBox::question(
+                this,
+                "Quit?",
+                "There are unsaved changes.\nDo you really want to quit?",
+                QMessageBox::Yes | QMessageBox::No);
+            if (confirmation == QMessageBox::Yes)
+            {
+                QApplication::quit();
+            }
+            if (confirmation == QMessageBox::No)
+            {
+                event->ignore();
+                showStatus("You tried to close with unsaved changes.");
+            }
+        }
+        else
+        {
+            QApplication::quit();
+        }
     }
 
     void MainWindow::close()
@@ -374,6 +394,10 @@ namespace View
             if (confirmation == QMessageBox::Yes)
             {
                 QApplication::quit();
+            }
+            if (confirmation == QMessageBox::No)
+            {
+                showStatus("You tried to close with unsaved changes.");
             }
         }
         else
