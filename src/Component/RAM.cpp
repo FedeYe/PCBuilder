@@ -15,7 +15,7 @@ namespace Component{
     ) : AbstractComponent(identifier, name, price, brand, image_path), 
         capacity(capacity), stockSpeed(stockSpeed), maxSpeed(maxSpeed), generation(generation) {}
 
-    std::string RAM::getCapacity() const {
+    const std::string RAM::getCapacity() const {
         return capacity;
     }
     RAM& RAM::setCapacity(const std::string capacity) {

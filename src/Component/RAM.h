@@ -24,7 +24,7 @@ class RAM : public AbstractComponent {
             const std::string generation = "<default>"
         );
 
-        std::string getCapacity() const;
+        const std::string getCapacity() const;
         RAM& setCapacity(const std::string capacity);
 
         unsigned int getStockSpeed() const;
