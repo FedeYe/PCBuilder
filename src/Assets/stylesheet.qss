@@ -85,8 +85,8 @@ View--MainWindow #shoppingCartWidget {
 #NumSSD-Label,
 #Price-Label,
 #NumCores-Label,
-#Threads-Label
-#CoreClock-Label
+#Threads-Label,
+#CoreClock-Label,
 #BoostClock-Label,
 #NumPorte-Label,
 #NumVRAM-Label,

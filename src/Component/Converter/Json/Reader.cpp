@@ -109,7 +109,7 @@ namespace Component
                     object.value("brand").toString().toStdString(),
                     object.value("imagePath").toString().toStdString(),
                     object.value("numPorte").toInt(),
-                    object.value("numVRam").toInt(),
+                    object.value("numVRAM").toInt(),
                     object.value("numVentole").toInt(),
                     object.value("availability").toBool());
             }

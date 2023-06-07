@@ -58,10 +58,22 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
+        QLabel* chipset = new QLabel("Chipset: " + QString::fromStdString(mother_board.getChipset()));
+        chipset->setObjectName("Chipset");
+        if(mother_board.getIdentifier() == 0)
+            chipset->setText("Choose a product");
+        infobox->addWidget(chipset);
+
+        QLabel* generation = new QLabel("Generation: " + QString::fromStdString(mother_board.getGeneration()));
+        generation->setObjectName("Generation");
+        if(mother_board.getIdentifier() == 0)
+            generation->setText("");
+        infobox->addWidget(generation);
+
         QLabel* price = new QLabel("Price: " + QString::number(mother_board.getPrice()) + "€");
         price->setObjectName("Price");
         if(mother_board.getIdentifier() == 0)
-            price->setText("Choose a product");
+            price->setText("");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -126,10 +138,16 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
+        QLabel* chipset = new QLabel("Chipset: " + QString::fromStdString(cpu.getChipset()));
+        chipset->setObjectName("Chipset");
+        if(cpu.getIdentifier() == 0)
+            chipset->setText("Choose a product");
+        infobox->addWidget(chipset);
+
         QLabel* price = new QLabel("Price: " + QString::number(cpu.getPrice()) + "€");
         price->setObjectName("Price");
         if(cpu.getIdentifier() == 0)
-            price->setText("Choose a product");
+            price->setText("");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -192,10 +210,16 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
+        QLabel* VRAM = new QLabel("VRAM: " + QString::number(gpu.getNumVRam())+ " GB");
+        VRAM->setObjectName("VRAM");
+        if(gpu.getIdentifier() == 0)
+            VRAM->setText("Choose a product");
+        infobox->addWidget(VRAM);
+
         QLabel* price = new QLabel("Price: " + QString::number(gpu.getPrice()) + "€");
         price->setObjectName("Price");
         if(gpu.getIdentifier() == 0)
-            price->setText("Choose a product");
+            price->setText("");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -258,10 +282,16 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
+        QLabel* wattage = new QLabel("Wattage: " + QString::number(psu.getSuppWatt())+ "WATT");
+        wattage->setObjectName("Wattage");
+        if(psu.getIdentifier() == 0)
+            wattage->setText("Choose a product");
+        infobox->addWidget(wattage);
+
         QLabel* price = new QLabel("Price: " + QString::number(psu.getPrice()) + "€");
         price->setObjectName("Price");
         if(psu.getIdentifier() == 0)
-            price->setText("Choose a product");
+            price->setText("");
         infobox->addWidget(price);
 
         hbox->addStretch();
@@ -329,6 +359,12 @@ namespace ComponentRenderer {
         if(ram.getIdentifier() == 0)
             capacity->setText("Choose a product");
         infobox->addWidget(capacity);
+
+        QLabel* generation = new QLabel("Generation: " + QString::fromStdString(ram.getGeneration()));
+        generation->setObjectName("Generation");
+        if(ram.getIdentifier() == 0)
+            generation->setText("");
+        infobox->addWidget(generation);
 
         QLabel* price = new QLabel("Price: " + QString::number(ram.getPrice()) + "€");
         price->setObjectName("Price");
