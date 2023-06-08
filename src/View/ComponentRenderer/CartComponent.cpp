@@ -282,7 +282,7 @@ namespace ComponentRenderer {
         name->setWordWrap(true);
         infobox->addWidget(name);
 
-        QLabel* wattage = new QLabel("Wattage: " + QString::number(psu.getSuppWatt())+ "WATT");
+        QLabel* wattage = new QLabel("Wattage: " + QString::number(psu.getSuppWatt()));
         wattage->setObjectName("Wattage");
         if(psu.getIdentifier() == 0)
             wattage->setText("Choose a product");
