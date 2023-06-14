@@ -30,13 +30,13 @@ namespace Component
 
             AbstractComponent *Reader::read(const QJsonObject &object)
             {
-                QJsonValue type = object.value("type"); //?
+                QJsonValue type = object.value("type"); 
                 if (type.isUndefined())
                 {
                     Service::Logger::Singleton::get().error("Missing item type.");
                     throw std::invalid_argument("Missing item type.");
                 }
-                const unsigned int identifier = object.value("id").toInt(); //?
+                const unsigned int identifier = object.value("id").toInt(); 
                 if (cache.count(identifier) > 0)
                 {
                     return cache[identifier];
